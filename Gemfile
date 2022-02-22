@@ -30,3 +30,6 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Deploy locally
 gem "webrick"
+
+# Markdown Parser
+gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
