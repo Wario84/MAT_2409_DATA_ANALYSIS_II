@@ -51,12 +51,12 @@ But what about the sub-disciplines in the field of economics working with Data S
 ![try1](/assets/images/woc_dataS_ML_disc.png)
 
 <center>
-![try2](./assets/images/woc_dataS_ML_disc.png)
+<!-- ![try2](./assets/images/woc_dataS_ML_disc.png) -->
 
-<!-- try3 -->
-<img src="/assets/images/woc_dataS_ML_disc.png" alt="">
+<!-- <img src="/assets/images/woc_dataS_ML_disc.png" alt=""> -->
 
-![[try4]({{ site.base_url }}{% link /assets/imgs/woc_dataS_ML_disc.png %})
+
+<!-- ![[try4]({{ site.base_url }}{% link /assets/imgs/woc_dataS_ML_disc.png %})  -->
 
 </center>
 
