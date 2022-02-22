@@ -18,6 +18,8 @@ gem "github-pages", "~> 223", group: :jekyll_plugins
 #  gem "jekyll-feed", "~> 0.8.0"
 #end
 
+gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
