@@ -85,11 +85,12 @@ Indeed, the last definition, 16, provided by De Mauro, Andrea and Greco, Et. all
 
 In this section, I try to identify some properties of Big Data, that I have reflected upon my observation and practice.
 
+- *Cost-effective*: In the past, empirical studies use to work with large teams for data collection to implement surveys or deploy field experiments. However, today, Data Scientist with [Web Scrapping](https://www.tandfonline.com/doi/pdf/10.1080/10691898.2020.1787116) skills, can collect with a single computer millions of observations. 
 
-- *Dimension*: A feature of big data is that different from survey data, that only contains a lesser number of variables. Big data typically contain multiple dimensions of variables on the same unit of observation.
+- *Dimension*: A feature of big data is that different from survey data, that only contains a lesser number of variables. Big data typically contain multiple dimensions of variables on the same unit of observation. 
 
 - *Scope*: Another element of Big Data is that not it is able to merge multiple layers of units. That means that Big data is often able to map observations from micro units that is merge with higher order units. You can think of users of cellphones from a district, that are merge with data from their state and even their country. Some authors refers to this as the *granularity* of the data.
 
 - *Unstructured*:  However, with the advent of Data Science and ML, more and more scientist are harvesting data available from different databases and websites. This data however, is unstructured and fuzzy, deviates from neat relational databases and requires special Data Science skills to harvest the value out of it. 
 
-- *Cost-effective*: In the past, empirical studies use to work with large teams for data collection to implement surveys or deploy field experiments. However, today, Data Scientist with [Web Scrapping](https://www.tandfonline.com/doi/pdf/10.1080/10691898.2020.1787116) skills, can collect with a single computer millions of observations. 
+
