@@ -19,7 +19,6 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Introduction to Applied Data Science
-author: Mario H. Gonzalez Sauri
 email: mglezsauri@gmail.com
 
 description: >- # this means to ignore newlines until "baseurl:"
