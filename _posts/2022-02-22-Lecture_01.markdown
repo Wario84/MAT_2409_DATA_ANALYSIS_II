@@ -38,15 +38,30 @@ To understand better the scope of Data Science and ML this section presents an o
 
 Indeed, the histogram of publications from the field of Data Science shows that in the last years more economists are adopting these empirical set of skills. What is clear as well, is that the pattern seems to be exponential, with a clear increase in the trend between the years of 2014-2015.
 
+
 <center>
-![Web of Science Data Science Publications](./assets/fig/woc_dataS_ML_rise.png)
+![Web of Science Data Science Publications](/assets/images/woc_dataS_ML_rise.png)
 </center>
 
 But what about the sub-disciplines in the field of economics working with Data Science? The top 10 publications show that the field is growing faster in the intersection between empirical economics, finance and policy analysis. The following picture, looks at what are the top sub-disciplines within the field of economics working with data science. What the data is showing is that also fields like management, health economics and operations research are incorporating the use of Data Science for their research.
 
+
+
 <center>
-![Web of Science Data Science Publications](./assets/fig/woc_dataS_ML_disc.png)
+![try1](/assets/images/woc_dataS_ML_disc.png)
+
+<center>
+![try2](./assets/images/woc_dataS_ML_disc.png)
+
+<!-- try3 -->
+<img src="/assets/images/woc_dataS_ML_disc.png" alt="">
+
+![[try4]({{ site.base_url }}{% link /assets/imgs/woc_dataS_ML_disc.png %})
+
 </center>
+
+
+
 
 # The rise of Big Data
 
