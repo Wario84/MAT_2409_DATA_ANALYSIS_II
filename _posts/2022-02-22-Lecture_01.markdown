@@ -1,9 +1,10 @@
 ---
+
 layout: post
 title: "Introduction to Data Science and Big Data."
 author: "Mario H. Gonzalez-Sauri"
 date: "2022-02-22"
-categories: jekyll update
+
 ---
 
 <!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
@@ -39,27 +40,13 @@ To understand better the scope of Data Science and ML this section presents an o
 Indeed, the histogram of publications from the field of Data Science shows that in the last years more economists are adopting these empirical set of skills. What is clear as well, is that the pattern seems to be exponential, with a clear increase in the trend between the years of 2014-2015.
 
 
-<center>
-![Web of Science Data Science Publications](/assets/images/woc_dataS_ML_rise.png)
-</center>
+
+![Web of Science Data Science Publications in Economics](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/woc_dataS_ML_disc.png?raw=true)
+
 
 But what about the sub-disciplines in the field of economics working with Data Science? The top 10 publications show that the field is growing faster in the intersection between empirical economics, finance and policy analysis. The following picture, looks at what are the top sub-disciplines within the field of economics working with data science. What the data is showing is that also fields like management, health economics and operations research are incorporating the use of Data Science for their research.
 
-
-
-
-![try1](/assets/images/woc_dataS_ML_disc.png)
-
-![try2](./assets/images/woc_dataS_ML_disc.png)
-
-<img src="/assets/images/woc_dataS_ML_disc.png" alt="">
-
-
-<!-- ![[try4]({{ site.base_url }}{% link /assets/imgs/woc_dataS_ML_disc.png %})  -->
-
-
-
-
+![Web of Science Data Science Sub-disciplines in Economics](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/woc_dataS_ML_disc.png?raw=true)
 
 
 # The rise of Big Data
@@ -109,4 +96,12 @@ In this section, I try to identify some properties of Big Data, that I have refl
 - *Unstructured*:  However, with the advent of Data Science and ML, more and more scientist are harvesting data available from different databases and websites. This data however, is unstructured and fuzzy, deviates from neat relational databases and requires special Data Science skills to harvest the value out of it. 
 
 
+
 ![a gif!](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif)
+
+
+![Web of Science Data Science Publications in Economics!](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/woc_dataS_ML_disc.png?raw=true)
+
+
+
+![Web of Science Data Science Sub-disciplines in Economics](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/woc_dataS_ML_disc.png?raw=true)
