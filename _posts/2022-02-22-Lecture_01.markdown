@@ -50,9 +50,9 @@ But what about the sub-disciplines in the field of economics working with Data S
 
 ![try1](/assets/images/woc_dataS_ML_disc.png)
 
-<!-- ![try2](./assets/images/woc_dataS_ML_disc.png) -->
+![try2](./assets/images/woc_dataS_ML_disc.png)
 
-<!-- <img src="/assets/images/woc_dataS_ML_disc.png" alt=""> -->
+<img src="/assets/images/woc_dataS_ML_disc.png" alt="">
 
 
 <!-- ![[try4]({{ site.base_url }}{% link /assets/imgs/woc_dataS_ML_disc.png %})  -->
@@ -70,25 +70,26 @@ In the last decade, we have seem an increase in the number of publications using
 I is difficult to define what Big Data really is, it seem, somehow to be an "vague-term" that refers to just a large collection of data. Big data, is more a term "used to describe a wide range of concepts: from the technological ability to store, aggregate, and process data, to the cultural shift that is pervasively invading business and society, both drowning in information overload" [@2015DeMauro10.1063/1.4907823]. Their review provides an excellent group of definitions from different authors, that can guide our understanding of what the term encompasses:
 
 ## Towards a Definition of Big Data
-|    | Definitions of Big Data                                                                                                                                                                                              |
-|:--|<:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | High volume, velocity and variety information assets that demand   cost-effective, innovative forms of information processing for enhanced   insight and decision making.                                            |
-| 2  | The four characteristics defining big data are Volume, Velocity, Variety and Value.                                                                                                                                |
-| 3  | Complex, unstructured, or large amounts of data.                                                                                                                                                                     |
-| 4  | Can be defined using three data characteristics: Cardinality, Continuity and Complexity.                                                                                                                           |
-| 5  | Big data is a combination of Volume, Variety, Velocity and Veracity that creates an opportunity for organizations to gain competitive advantage in   today’s digitized marketplace.                                |
-| 6  | Extensive datasets, primarily in the characteristics of volume, velocity and/or variety, that require a scalable architecture for efficient storage,   manipulation, and analysis.                                 |
-| 7  | The storage and analysis of large and or complex data sets using a series of techniques including, but not limited to: NoSQL, MapReduce and machine   learning.                                                    |
-| 8  | The process of applying serious computing power, the latest in machine learning and artificial intelligence, to seriously massive and often highly   complex sets of information.                                  |
-| 9  | Data that exceeds the processing capacity of conventional database systems.                                                                                                                                        |
-| 10 | Data that cannot be handled and processed in a straightforward manner.                                                                                                                                               |
-| 11 | A dataset that is too big to fit on a screen.                                                                                                                                                                        |
-| 12 | Datasets whose size is beyond the ability of typical database software tools to capture, store, manage, and analyze.                                                                                               |
-| 13 | The data sets and analytical techniques in applications that are so large and complex that they require advanced and unique data storage, management,   analysis, and visualization technologies.                  |
-| 14 | A cultural, technological, and scholarly phenomenon that rests on the interplay of Technology, Analysis and Mythology.                                                                                             |
+
+|    | Definitions of Big Data   |
+|:--|:---:|
+| 1  | High volume, velocity and variety information assets that demand   cost-effective, innovative forms of information processing for enhanced   insight and decision making.     |
+| 2  | The four characteristics defining big data are Volume, Velocity, Variety and Value.         |
+| 3  | Complex, unstructured, or large amounts of data.											   |
+| 4  | Can be defined using three data characteristics: Cardinality, Continuity and Complexity.	   |
+| 5  | Big data is a combination of Volume, Variety, Velocity and Veracity that creates an opportunity for organizations to gain competitive advantage in today’s digitized marketplace. |
+| 6  | Extensive datasets, primarily in the characteristics of volume, velocity and/or variety, that require a scalable architecture for efficient storage, manipulation, and analysis. |
+| 7  | The storage and analysis of large and or complex data sets using a series of techniques including, but not limited to: NoSQL, MapReduce and machine learning. |
+| 8  | The process of applying serious computing power, the latest in machine learning and artificial intelligence, to seriously massive and often highly complex sets of information. |
+| 9  | Data that exceeds the processing capacity of conventional database systems.         |
+| 10 | Data that cannot be handled and processed in a straightforward manner.              |
+| 11 | A dataset that is too big to fit on a screen.									   |
+| 12 | Datasets whose size is beyond the ability of typical database software tools to capture, store, manage, and analyze. |
+| 13 | The data sets and analytical techniques in applications that are so large and complex that they require advanced and unique data storage, management,   analysis, and visualization technologies. |
+| 14 | A cultural, technological, and scholarly phenomenon that rests on the interplay of Technology, Analysis and Mythology. |
 | 15 | Phenomenon that brings three key shifts in the way we analyze information that transform how we understand and organize society: 1. More data, 2.   Messier (incomplete) data, 3. Correlation overtakes causality. |
-| 16 | Big Data represents the Information assets characterized by such a High Volume, Velocity and Variety to require specific Technology and Analytical   Methods for its transformation into Value.                    |
----
+| 16 | Big Data represents the Information assets characterized by such a High Volume, Velocity and Variety to require specific Technology and Analytical   Methods for its transformation into Value. |
+
 **Source: [De Mauro, Andrea and Greco, Et. all, 2015](https://aip-scitation-org.mu.idm.oclc.org/doi/abs/10.1063/1.4907823)**
 
 Indeed, the last definition, 16, provided by De Mauro, Andrea and Greco, Et. all (2015), highlights the "raw-value" of Big Data. Namely, Big Data itself is of no use without a specific set of skills, the skills of *Data Scientist*. Big data, implies large volume of data, but this is not necessary clean and neat as typical [relation database](https://en.wikipedia.org/wiki/Relational_database) used by companies and government. 
