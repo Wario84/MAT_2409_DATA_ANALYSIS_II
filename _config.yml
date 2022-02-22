@@ -30,6 +30,12 @@ github_username:  wario84
 
 # Build settings
 theme: minima
+
+# DATE FORMATS: https://www.ibm.com/docs/en/cmofz/10.1.0?topic=SSQHWE_10.1.0/com.ibm.ondemand.mp.doc/arsa0257.htm
+minima:
+  date_format: "%Y-%m-%d" 
+
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
