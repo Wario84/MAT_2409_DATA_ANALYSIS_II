@@ -72,7 +72,7 @@ I is difficult to define what Big Data really is, it seem, somehow to be an "vag
 
 ## Towards a Definition of Big Data
 |    | Definitions of Big Data                                                                                                                                                                                              |
-|----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|<-->|<-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->|
 | 1  | High volume, velocity and variety information assets that demand   cost-effective, innovative forms of information processing for enhanced   insight and decision making.                                            |
 | 2  | The four characteristics defining big data are Volume, Velocity, Variety and Value.                                                                                                                                |
 | 3  | Complex, unstructured, or large amounts of data.                                                                                                                                                                     |
