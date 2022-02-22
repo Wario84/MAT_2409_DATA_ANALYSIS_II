@@ -94,3 +94,4 @@ In this section, I try to identify some properties of Big Data, that I have refl
 - *Unstructured*:  However, with the advent of Data Science and ML, more and more scientist are harvesting data available from different databases and websites. This data however, is unstructured and fuzzy, deviates from neat relational databases and requires special Data Science skills to harvest the value out of it. 
 
 
+![a gif!](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif)
