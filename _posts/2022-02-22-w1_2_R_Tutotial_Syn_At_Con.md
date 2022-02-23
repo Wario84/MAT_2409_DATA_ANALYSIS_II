@@ -48,10 +48,7 @@ following way:
 3. Your task is to perform all the excercises of each tutorial in an `Rscrip`, you can download the [template](https://raw.githubusercontent.com/Wario84/idsc_mgs/master/assets/rscripts/w1_tutorial01_mgs.R).
 4. Here you can see an example of what to do in each tutorial:
 
-<figure>
-<img src="https://www.valamis.com/documents/10197/520324/steep-lc.png" height="300" alt="Learning Curve" /><figcaption aria-hidden="true">Learning Curve</figcaption>
-</figure>
-
+![How to solve the excercises](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/t0_example_solution.gif?raw=true)
 
 ***
 
