@@ -41,7 +41,7 @@ Indeed, the histogram of publications from the field of Data Science shows that 
 
 
 
-![Web of Science Data Science Publications in Economics](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/woc_dataS_ML_disc.png?raw=true)
+![Web of Science Data Science Publications in Economics](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/woc_dataS_ML_rise.png?raw=true)
 
 
 But what about the sub-disciplines in the field of economics working with Data Science? The top 10 publications show that the field is growing faster in the intersection between empirical economics, finance and policy analysis. The following picture, looks at what are the top sub-disciplines within the field of economics working with data science. What the data is showing is that also fields like management, health economics and operations research are incorporating the use of Data Science for their research.
@@ -96,12 +96,22 @@ In this section, I try to identify some properties of Big Data, that I have refl
 - *Unstructured*:  However, with the advent of Data Science and ML, more and more scientist are harvesting data available from different databases and websites. This data however, is unstructured and fuzzy, deviates from neat relational databases and requires special Data Science skills to harvest the value out of it. 
 
 
+# Data Science with **R**
 
-![a gif!](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif)
+[stackoverflow.co](https://stackoverflow.co/) is a platform of programmers and Data Scientiest that serves 100 million people every month, making it one of the most popular websites in the world. Every year, the platform releases a [survey of the Market of computer languages](https://insights.stackoverflow.com/survey/2021); without exeption, for the last 7 years at least **R** has been listed amont the top-computer used. A great feature of **R** is that everything is free and open-source. That means that you can actually deepen your knowledge by learning how the `functions`, `packages` and `snippets` of code that high-developers perform, are accesible for you. Indeed, In my own practice I have learned a lot digging the `Github` repositories of the packages that I use, even some times I have contributed or builded upon this knowledge.
+
+The community of **R** users is ever evolving, and highly supportive, till the day, [The Comprehensive R Archive Network](https://cran.r-project.org/web/packages/) has around *18990* fully working `packages`. If you are not familiar with what the `packages` are, think of them as *add-ons*. For instance, when you install **R**, it comes with the "so-called", [The R Base Package](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html). This "out-of-the-shelf" **R** has the main functions that has been used and depured for many year. However, this core package, evolves slowly, and other communities, for instance, "econometricians" and "statistician" develop and publish the state of art methodologies in the form of packages. You can read at the last developments of this powerfull packages and methodologies in the [The R Journal](https://journal.r-project.org/). The versatiligy of R, the collaborative community and state of the art methodologies implemented are powerful reasons to deploy your Data Science skills using **R**. The article of Weston, S. J., & Yee, D. (2017), [Why you should become a useR: A brief introduction to R.](https://www.psychologicalscience.org/observer/why-you-should-become-a-user-a-brief-introduction-to-r), list three main reason why you should learn R.
+
+> Reasons to learn **R**
+> > - will always be able to perform the newest statistical analyses as soon as anyone thinks of them;
+> > - will fix its bugs quickly and transparently; and
+> > - has brought together a community of programming and stats nerds (a.k.a., useRs) that you can turn to for help. 
+
+But if that is not enough encorage to speappen your learning curve and start learning Data Science with **R**, rith away, take a look at the demand for Data Science from the biggest companines in the world.
+
+![Top Companies Working with R](https://1.bp.blogspot.com/-CytixCJHq6w/WGOlcgvciDI/AAAAAAAAFvY/TkNVgC_bA5oEHutbmETCOXnxmzsaOJDzwCLcB/s1600/Companies%2Busing%2BR.png)
+**Source: [Deepanshu Bhalla, 2016](https://www.listendata.com/2016/12/companies-using-r.html)**
 
 
-![Web of Science Data Science Publications in Economics!](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/woc_dataS_ML_disc.png?raw=true)
 
 
-
-![Web of Science Data Science Sub-disciplines in Economics](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/woc_dataS_ML_disc.png?raw=true)
