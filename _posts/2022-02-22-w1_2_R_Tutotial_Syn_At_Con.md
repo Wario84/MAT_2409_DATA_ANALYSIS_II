@@ -45,10 +45,16 @@ following way:
 
 1. Each weak, you will take look in [this](https://wario84.github.io/idsc_mgs/) repository and read the corresponding tutorial exercise for each week.
 2. Here in this website, I am posting the instructions and the solutions to all the exercises.
-3. Your task is to perform all the excercises of each tutorial in an `Rscrip`.
-4. 
+3. Your task is to perform all the excercises of each tutorial in an `Rscrip`, you can download the [template](https://raw.githubusercontent.com/Wario84/idsc_mgs/master/assets/rscripts/w1_tutorial01_mgs.R).
+4. Here you can see an example of what to do in each tutorial:
+
+<figure>
+<img src="https://www.valamis.com/documents/10197/520324/steep-lc.png" height="300" alt="Learning Curve" /><figcaption aria-hidden="true">Learning Curve</figcaption>
+</figure>
+
 
 ***
+
 # 1. The operators
 
 The operators are **special characters** that perform an **action** with
