@@ -49,6 +49,7 @@ following way:
 4. Here you can see an example of what to do in each tutorial:
 
 ![How to solve the excercises](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/t0_example_solution.gif?raw=true)
+*Tip: If the image is too small, download it, and view in your computer.*
 
 ***
 
