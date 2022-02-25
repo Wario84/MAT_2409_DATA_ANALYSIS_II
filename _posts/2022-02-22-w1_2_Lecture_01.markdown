@@ -26,7 +26,15 @@ But, why all the fuss about around Data Science and ML and why do we should care
 - Cancer Detection:
 ML and Data science have prove to be effective method in the field of cancer research. For instance, the study of [Kourou,Exarchos, Et Al. (2015)](https://www-webofscience-com.mu.idm.oclc.org/wos/woscc/full-record/WOS:000367752600002), applies classification algorithms from ML to detect cancer patients into high or low risk groups. Similarly the work of [Bi, Hosny, Et Al. (2019)](https://www-webofscience-com.mu.idm.oclc.org/wos/woscc/full-record/WOS:000460475700005), show that ML and AI are effective for the prompt detection of cancer by automating the initial interpretation of radiographic images to asses whether or not to administer an intervention, and subsequent evaluation of patients. A third important example is the research by [Hirasawa, Hirasawa, Et Al. (2018)](uses neural networks algorithms to assess thousands of endoscopic images for the evaluation and diagnostics of gastric cancer.).
 
-- Transportation: Our cities are growing in density and to ensure economic growth we have to attend the movement of labor within and between cities, regions and counties. In this area, Data Science and ML, are also finding sulution to the complex problem of today's labor mobility. The survey of [Ghofrani, He, Et Al (2018)](https://www-sciencedirect-com.mu.idm.oclc.org/science/article/pii/S0968090X18303395) recollects the mayor contribitions of Data Science on the railway transportation industry from the last 15 years.
+- Transportation: Our cities are growing in density and to ensure economic growth we have to attend the movement of labor within and between cities, regions and counties. In this area, Data Science and ML, are also finding sulution to the complex problem of today's labor mobility. The survey of [Ghofrani, He, Et Al (2018)](https://www-sciencedirect-com.mu.idm.oclc.org/science/article/pii/S0968090X18303395) recollects the mayor contribitions of Data Science on the railway transportation industry from the last 15 years. He shows how Data Science has contributed to solve problems with logistics; such as traffic control systems, train tracking, ticket sales and authomatic fare collection. In Safety, the field has implemented system of incident analysis and rick management. For all these, researcher have applied ML and Data Science for image processing, string and semantic analysis and clustering and classification algorithms amongh many other applications.
+
+
+
+
+
+
+
+and operations 
 
 
 
