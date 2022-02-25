@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "Introduction to Data Science and Big Data."
+title: "Lecture 1: Introduction to Data Science and Big Data."
 author: "Mario H. Gonzalez-Sauri"
 date: "2022-02-22"
 
@@ -26,7 +26,14 @@ But, why all the fuss about around Data Science and ML and why do we should care
 - Cancer Detection:
 ML and Data science have prove to be effective method in the field of cancer research. For instance, the study of [Kourou,Exarchos, Et Al. (2015)](https://www-webofscience-com.mu.idm.oclc.org/wos/woscc/full-record/WOS:000367752600002), applies classification algorithms from ML to detect cancer patients into high or low risk groups. Similarly the work of [Bi, Hosny, Et Al. (2019)](https://www-webofscience-com.mu.idm.oclc.org/wos/woscc/full-record/WOS:000460475700005), show that ML and AI are effective for the prompt detection of cancer by automating the initial interpretation of radiographic images to asses whether or not to administer an intervention, and subsequent evaluation of patients. A third important example is the research by [Hirasawa, Hirasawa, Et Al. (2018)](uses neural networks algorithms to assess thousands of endoscopic images for the evaluation and diagnostics of gastric cancer.).
 
-- Transportation: Our cities are growing in density and to ensure economic growth we have to attend the movement of labor within and between cities, regions and counties. Tansportation is becoming a complex problem, 
+- Transportation: Our cities are growing in density and to ensure economic growth we have to attend the movement of labor within and between cities, regions and counties. In this area, Data Science and ML, are also finding sulution to the complex problem of today's labor mobility. The survey of [Ghofrani, He, Et Al (2018)](https://www-sciencedirect-com.mu.idm.oclc.org/science/article/pii/S0968090X18303395) recollects the mayor contribitions of Data Science on the railway transportation industry from the last 15 years.
+
+
+
+
+The contribution of 
+
+Tansportation is becoming a complex problem, and to  
 
 
 
@@ -133,8 +140,6 @@ I is difficult to define what Big Data really is, it seem, somehow to be an "vag
 
 Indeed, the last definition, 16, provided by De Mauro, Andrea and Greco, Et. all (2015), highlights the "raw-value" of Big Data. Namely, Big Data itself is of no use without a specific set of skills, the skills of *Data Scientist*. Big data, implies large volume of data, but this is not necessary clean and neat as typical [relation database](https://en.wikipedia.org/wiki/Relational_database) used by companies and government. 
 
-
-
 ## Properties of Big Data
 
 In this section, I try to identify some properties of Big Data, that I have reflected upon my observation and practice.
@@ -148,16 +153,11 @@ In this section, I try to identify some properties of Big Data, that I have refl
 - *Unstructured*: However, with the advent of Data Science and ML, more and more scientist are harvesting data available from different databases and websites. This data however, is unstructured and fuzzy, deviates from neat relational databases and requires special Data Science skills to harvest the value out of it. 
 
 - *Magnitude*: Given that Big Data contains occupies a large volume of cyber space, regular computers are not able to process and load the data for analysis. For instance, the work of 
-[Qian, (2014)](https://journal.r-project.org/archive/2014-1/RJ-2014-1.pdf#page=57), proposes that a solution to overcome computer overloading is to process the Big Data in a sequential manner. This is an important and somehowe more obvios feature of Big Data, the fact this kind of data is growing rapidly from Gigabyte ($$1024^3$$) 1024³
-
-
-PivotalR: A Package for Machine
-Learning on Big Data
-
+[Qian, (2014)](https://journal.r-project.org/archive/2014-1/RJ-2014-1.pdf#page=57), proposes that a solution to overcome computer overloading is to process the Big Data in a sequential manner. This is an important and somehowe more obvios feature of Big Data, the fact this kind of data is growing exponentially from Gigabyte ($$1024^3$$) to Petabyte ($$1024^7$$), and perhaps shortly to larger files.
 
 # Data Science with **R**
 
-[stackoverflow.co](https://stackoverflow.co/) is a platform of programmers and Data Scientiest that serves 100 million people every month, making it one of the most popular websites in the world. Every year, the platform releases a [survey of the Market of computer languages](https://insights.stackoverflow.com/survey/2021); without exeption, for the last 7 years at least **R** has been listed amont the top-computer used. A great feature of **R** is that everything is free and open-source. That means that you can actually deepen your knowledge by learning how the `functions`, `packages` and `snippets` of code that high-developers perform, are accesible for you. Indeed, In my own practice I have learned a lot digging the `Github` repositories of the packages that I use, even some times I have contributed or builded upon this knowledge.
+[stackoverflow.co](https://stackoverflow.co/) is a platform of programmers and Data Scientiest that serves 100 million people every month, making it one of the most popular websites in the world. Every year, the platform releases a [survey of the Market of computer languages](https://insights.stackoverflow.com/survey/2021); without exeption, for the last 7 years at least **R** has been listed amont the top-computer used. A great feature of **R** is that everything is free and open-source. That means that you can actually deepen your knowledge by learning how the `functions`, `packages` and `snippets` of code that high-developers perform, are accesible to you. Indeed, In my own practice I have learned a lot digging the `Github` repositories of the packages that I use, even some times I have contributed or builded upon this knowledge.
 
 The community of **R** users is ever evolving, and highly supportive, till the day, [The Comprehensive R Archive Network](https://cran.r-project.org/web/packages/) has around *18990* fully working `packages`. If you are not familiar with what the `packages` are, think of them as *add-ons*. For instance, when you install **R**, it comes with the "so-called", [The R Base Package](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html). This "out-of-the-shelf" **R** has the main functions that has been used and depured for many year. However, this core package, evolves slowly, and other communities, for instance, "econometricians" and "statistician" develop and publish the state of art methodologies in the form of packages. You can read at the last developments of this powerfull packages and methodologies in the [The R Journal](https://journal.r-project.org/). The versatiligy of R, the collaborative community and state of the art methodologies implemented are powerful reasons to deploy your Data Science skills using **R**. The article of Weston, S. J., & Yee, D. (2017), [Why you should become a useR: A brief introduction to R.](https://www.psychologicalscience.org/observer/why-you-should-become-a-user-a-brief-introduction-to-r), list three main reason why you should learn R.
 
