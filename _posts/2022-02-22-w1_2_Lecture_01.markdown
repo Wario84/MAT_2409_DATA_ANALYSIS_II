@@ -166,18 +166,6 @@ Building Models based on requirement
 Applying Machine learning algorithms
 Bringing out insights from the data
 Optimizing the data
-    
-    
-<div>
- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    Here is a mermaid diagram:
-    <div class="mermaid">
-        graph TD 
-        A[Client] --> B[Load Balancer] 
-        B --> C[Server01] 
-        B --> D[Server02]
-    </div>
-</div>
 
 
 {% mermaid %}
