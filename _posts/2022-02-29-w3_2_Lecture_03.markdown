@@ -1,9 +1,9 @@
 ---
 
 layout: post
-title: "Lecture 2: Inductive Reasoning, the Logic of Science."
+title: "Lecture 3: Type of Analysis: Descriptive, Predictive, Causal"
 author: "Mario H. Gonzalez-Sauri"
-date: "2022-02-28"
+date: "2022-02-29"
 mermaid: true
 
 ---
