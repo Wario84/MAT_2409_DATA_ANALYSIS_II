@@ -199,95 +199,18 @@ I use the frameworks of [Prakash, Padmapriy, and Kumar (2018)](https://ieeexplor
 
 1. Data: Involves all the process of data management: aquisition, extraction, cleaning, storage and retreaving. In principle, the ideal is that retreaving the data is a requirement for the second step, which is *data analysis*. However, in reality, these two process may end up being non-linear, but, they are an interactive loop. For instance, while conducting analysis, you may want to add a new variable that it was not properly extracted or stored; this happens really often.
 
+
 2. Type of Analysis: The kind of analysis connects back to the question that we want to address. All Data Science questions *say* something about the relation between a dependent variable $$Y$$ and a set of explanatory variable(s) $$X$$. What we want to say, or in other words, the type of *claim*, determines if the analysis that can be *descriptive*, *predictive* or *causal* (covered in [Lecture 3]()). Descriptive analysis, is characterize by questions such as "What is the current state of affairs?"; "How often, how many, when?" or "What happened?". Predictive analysis, revolves arounnd making forecasts about the outcome variable $$Y$$, with a set of predictors $$X$$-- prediction is the default outcome of ML algorithms. Finally, we have causal analysis uses statistical modelling, econometrics sometimes with mixed with ML, to estimate the effect $$X$$ on the dependent variable $$Y$$. Causal analysis typically is able to responde to "Why $$Y$$ behaves in certan manner?"; the answer is due to the effect of $$X$$. The interest of the last type of analysis is thus quantify or mesaure the effect of $$X$$ on $$Y$$.
 
 
-3. Methods of Data Sciene: The methods used by Data Science are varios and they are evolving rapidly. 
+3. Methods of Data Sciene: The methods used by Data Science are are evolving rapidly and is not the objective to give you an exahustive list. Rather, just the intution of the scope of Data Science and the overall process of can we relate a question, to the process of data adquisition ending with the analysis and conclusion. Brodly, descriptive methods can use measurements of central tendency, scatter plots, histograms and pie charts to describe the state of affairs of certain variables. Then, if the study is predictive we can start by using Linear Regression and ML algorithms. Finally, if we aim for a causal analysis, we must have a more refined model, based on theory and intution, and we care about the statistical significance of the estimated relation between $$X$$ and $$Y$$. The state of the art of empirical econometrics nowadays, is growing in the intersection between econometrics and ML techniques [(Gu, Kelly, Et Al, 2020)](https://www-webofscience-com.mu.idm.oclc.org/wos/woscc/full-record/WOS:000536040400008).
 
-
-
-
-
-
+# An applied example of Data Science.
 
 
 <br>
 
 
-
-
-
-3.1 Stereotypical examples
-Predicting passenger numbers
-A railway company develops an app that helps passengers find empty seats in the train. At the heart
-of the application is a correlational predictive model, that predicts the number of passengers in a
-train compartment from measured CO2 levels in the air and other ’s. CO2 is a good predictor for the
-number of passengers, but it is not a causal influence factor: increasing CO2 levels by artificially
-releasing extra CO2 would not increase the number of passengers. The cause-and-effect mechanism
-is actually the reverse, with passengers as causal influence and CO2 as the effect.
-
-
-ne of the challenges in maintenance of systems like trains is timing when a component should be
-replaced. If the replacement is scheduled too late, the component breaks down in the field, which
-may result in very high costs. Therefore, components are preferably replaced preventively, when this
-can be done at a convenient moment and in a convenient place. However, premature replacement
-wastes useful lifetime of the component, so the preventive replacement should be scheduled as late
-as possible. Predictive maintenance is based on a model that predicts when a breakdown is imminent,
-for example, by monitoring a condition such as vibration patterns or the concentration of ferrous
-particles in lubrication (Carden and Fanning 2004). In our framework, the solution strategy is driven
-by a correlational predictive model , with the probability of a breakdown in the next
-epoch, and a predictor such as a vibration characteristic or particles concentration. The
-controllable variable is the timing of the replacement. We try to minimize the total expected cost,
-which is a weighted average of the cost of a breakdown in the field and the cost of a preventive
-replacement (weighed by the probability that a breakdown occurs)
-
-
-.2 Identifying the ’s
-Before a model can be fitted, we first need to identify potential predictors. Often in
-machine learning practice, the data for fitting a model are assumed given, and the collection of new
-data is deemed impossible or not needed (De Veaux, Hoerl and Snee 2016). Identifying the X’s, then,
-boils down to selecting, merging, transforming and rescaling features recorded in the available data
-sources into variables to be used in the model-building effort, a task that is described as Feature
-engineering in Table 1. Feature engineering is done by human analysts, but the promise of deep-
-learning techniques is that stacked neural networks can be trained to recognize structure and features
-in raw data automatically, at least within certain domains such as image recognition and natural-
-language processing.
-In addition to feature engineering, frameworks for data science such as CRISP-DM
-(Chapman et al. 2000) recommend to consult domain experts, which is similar to approach number 2
-in Table 1 (Experiential knowledge). Domain experts may help identify ’s not yet represented in
-available data sources, for which it may yet be possible to obtain data either by initiating new
-measurements or by acquiring data sources in which they are represented. Other approaches
-suggested in machine learning are techniques such as principal-components analysis, t-SNE and auto
-encoders, which facilitate the discovery of candidate ’s by revealing structure in data through
-clustering and dimensionality reduction (James, Witten, Hastie and Tibshirani 2013). Such
-techniques for unsupervised learning are similar to Exploratory data analysis (approach number 1 in
-Table 1).
-
-3.3 Modelling the relationship
-Random forests, neural networks, support-vector machines and other models popular in machine
-learning do not make a causal claim. The predictions are essentially based on the correlation
-(association) structure of and variables: high CO2 levels co-occur with large numbers of
-passengers, but they do not cause them, and ferrous particles may predict a breakdown, but they do
-not cause it.
-This has important ramifications for inference. First, the model should be fitted on a
-representative dataset, in which the correlation structure is representative for the correlations in the
-target population (the universe of future observations that the model is claimed to predict). This
-implies that, in general, experiments are unsuited, since by deliberately setting the levels of the ’s,
-they break the correlation structure among the ’s and potentially the . For example, a randomized
-controlled experiment studying the effect (sic) of CO2 on the number of passengers would have the
-experimenter manipulate CO2 levels according to an experimental design, and then measure the corresponding passenger numbers (note how inappropriate the term effect is in this context of
-correlational modelling). By manipulating the CO2 levels, their relationship with passenger numbers
-is perturbed, and the algorithm cannot be used to predict passenger numbers in normal situations.
-Second, the fitted model can only be trusted within the population from which the dataset was
-sampled. The algorithm predicting passengers from CO2 levels does not give reliable predictions for
-passenger numbers in different types of train compartments (or for aircraft cabins, boat cabins, etc.).
-Instead of causality, machine learning focuses on predictive accuracy and generalizability
-(James et al. 2013). The latter refers to the model’s predictive accuracy for a new dataset generated
-by the same data generating mechanism. Machine learning uses a variety of metrics for expressing
-predictive accuracy, such as the mean-squared error , the coefficient of determination , or the
-precision and recall pair. To guard against the detrimental effect overfitting has on generalizability,
-machine learning uses the train-test split method and cross validation to regulate a model’s
-complexity.
 
 
 
