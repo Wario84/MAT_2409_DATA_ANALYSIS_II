@@ -10,5 +10,11 @@
   {%- endif -%}
 
   {%- include custom-head.html -%}
+
+  <!-- 1) Step https://jojozhuang.github.io/tutorial/jekyll-diagram-with-mermaid/ -->
+  <!-- 2) Step https://mermaid-js.github.io/mermaid/#/n00b-gettingStarted?id=_3-calling-the-javascript-api -->
+  {% if page.mermaid %}
+  {% include mermaid.html %}
+  {% endif %}
   
 </head>

@@ -4,6 +4,7 @@ layout: post
 title: "Lecture 1: Introduction to Data Science and Big Data."
 author: "Mario H. Gonzalez-Sauri"
 date: "2022-02-22"
+mermaid: true
 
 ---
 
@@ -144,5 +145,45 @@ But if that is not enough encorage to speappen your learning curve and start lea
 
 # The scope of Data Science
 
+<!-- https://www.projectpro.io/data-science-in-python-tutorial/introduction-to-data-science-r -->
+
+## What is a Data Scientist?
+It is complicated to stack all the skills and knowledge that a Data Science field encompasses, symply because the fielt is evolving rapidly. But perhapts, one the simples definitions that can help us to understand the role of a Data Science is put fordward by [Hicks and Irizarry, (2018)](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1356747?src=recsys). They describe a Data Scientist with two main features, one, is that they focuss on analysis, but different from a statistician they focuss on how to process and interpret data to answer real-world questions. The second feature, is that have very strong coding skills, they know how to aquire, clean and manipulate data for analysis.
 
 
+
+Data Science applications in R
+
+
+
+The first re-call in mind now a days whenever someone sounds a word Data science the next words comes as R as a supporting language.  R is organized in many ways but let’s see what structure in which we proceed is.
+
+Gather the data required
+Loading the data into R. (Importing data into R)
+Data deduction/ Data reduction/ Data Cleaning
+Exploratory Data Analysis
+Building Models based on requirement
+Applying Machine learning algorithms
+Bringing out insights from the data
+Optimizing the data
+    
+    
+<div>
+ <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    Here is a mermaid diagram:
+    <div class="mermaid">
+        graph TD 
+        A[Client] --> B[Load Balancer] 
+        B --> C[Server01] 
+        B --> D[Server02]
+    </div>
+</div>
+
+
+{% mermaid %}
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+{% endmermaid %}
