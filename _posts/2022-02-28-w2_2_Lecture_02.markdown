@@ -3,7 +3,7 @@
 layout: post
 title: "Lecture 2: Inductive Reasoning, the Logic of Science."
 author: "Mario H. Gonzalez-Sauri"
-date: "2022-02-28"
+date: "2022-02-22"
 mermaid: true
 
 ---
