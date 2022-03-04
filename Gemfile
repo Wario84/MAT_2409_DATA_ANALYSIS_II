@@ -34,3 +34,7 @@ gem "webrick"
 
 # Markdown Parser
 gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
+
+# Security update
+gem "commonmarker", ">= 0.23.4"
+
