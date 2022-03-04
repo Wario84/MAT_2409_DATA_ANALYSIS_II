@@ -12,7 +12,14 @@ mermaid: true
 
 # Introduction
 
-<!--  https://trends.google.com/trends/explore?date=2012-01-01%202022-02-25&q=%2Fm%2F0jt3_q3,%2Fm%2F01hyh_,Big%20Data  -->
+In lecture one, we had an overview of the set of skills that we need to acquire as Data scientists. But, aside from the set of skills, we need to use our reason to solve complex problems. Reasoning is a cognitive process that takes sets of information, evidence and principles to revise or generate conclusions [(Johnson-Laird & Byrne, 1993)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib10). As Data scientists we are regularly facing complex problems and our weapons are our set of skills but also an effective and efficient use of our reason. Gathering the skills without a properly ordered mind may be like a powerful construction tool in the hands of an untrained worker.
 
+It is important for our training to distinguish between two ways of using our reason, one is inductive and the second one is deductive [Klauer, 2001](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib14). According to Klauer, deductive reasoning is a process that departs from a set of general premises to reach a logically valid conclusion. The conclusions from deductive reasoning are implicit because if the first general statement is true, the other claims are then valid. However, in Data Science and statistics, we typically rely more on inductive reasoning. Because
 
-Welcome to the Introduction to Applied Data Science! I'm sure you hace heard the terms, Big Data, Machine Learning and Data Science in the media or perhaps from other peers. It seems that today, that the terms are being used more often. In fact, Data Science and Machine Learning (ML) have reach the Top in the Google index of most frequent terms as fields of study. This pattern has been increasing for the last 10 years, and the trend seem to be upward.
+We do not observe the population.
+It is not evident what is the relationship between variables $$F(x)=y$$.
+Hence, we use inductive reasoning that starts with lower-level premises or observations from data to reach a general conclusion or an overall rule. 
+
+You may be wondering how does this be related to Data Science? Well, most of the work in statistics and science uses inductive reasoning. In fact, I'm almost sure that inductive reasoning is not new for you. Perhaps you are only becoming aware that you use this kind of reasoning more often than you may have thought. Because inductive reasoning involves finding regularities, differences, patterns and relations among variables to arrive at a more general conclusion [(Neubert and Binko, 1992)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib21). We perform this activity all the time in our daily life when we make decisions with little information under uncertainty. 
+
+The seminal work of [ Pólya (1967)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib23) defined inductive reasoning as the natural way of deriving scientific principles. In a nutshell, the scientific method starts from acquiring a smaller set of observations and then testing to derive higher-level principles and theories. 

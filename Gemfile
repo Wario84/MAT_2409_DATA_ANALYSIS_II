@@ -17,6 +17,7 @@ gem "github-pages", "~> 223", group: :jekyll_plugins
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.9"
   gem "jekyll-mermaid"
+  gem "jekyll-commonmark-ghpages", ">= 0.1.6"
 end
  	
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -36,5 +37,5 @@ gem "webrick"
 gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
 
 # Security update
-gem "commonmarker", ">= 0.23.4"
+gem "commonmarker", ">= 0.17.6"
 
