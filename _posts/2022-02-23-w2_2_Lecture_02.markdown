@@ -46,14 +46,38 @@ recognizing relationships, differentiating relationships and system construction
 
 
 
-This framework, uses two levels, one for relations 
+The framework of Klauer was simplified by [Christou and Papageorgiou (2007)](https://www.sciencedirect.com/science/article/pii/S0959475206001198), who proposed to approach the process of inductive reasoning distinguishing between three main countructs: *similarity, dissimilarity and integration*.
 
 
 
 
-To understand better some specific ways in which we use inductive reasoning, let's navigate some specific examples using the framework of [Christou and Papageorgiou (2007)](https://www.sciencedirect.com/science/article/pii/S0959475206001198) for teaching inductive reasoning:
+
+
+
+To understand better some specific ways in which we use inductive reasoning, let's navigate some specific examples using the framework of  for teaching inductive reasoning:
 
 <br>
+
+
+| Construct     | Level 1: attributes                                                                                                  | Level 2: relations                                                                                     |   |   |   |   |   |   |   |
+|---------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|---|---|---|---|---|---|---|
+|               |                                                                                                                      |                                                                                                        |   |   |   |   |   |   |   |
+| Similarity    | Finds an attribute that is common among numbers or shapes.                                                           | Recognizes the relations that exist between pairs of figures or numbers and tests it on the next pair. |   |   |   |   |   |   |   |
+|               | Selects a number or shape which belongs to a group of numbers or shapes that share a common attribute.               | Completes series                                                                                       |   |   |   |   |   |   |   |
+|               | Compares attributes of numbers or shapes by matching them to other numbers or shapes that follow the same attribute. | Solves analogy problems                                                                                |   |   |   |   |   |   |   |
+|               |                                                                                                                      |                                                                                                        |   |   |   |   |   |   |   |
+| Dissimilarity | Finds differences among numbers or shapes with respect to attributes                                                 | Reorders numbers of a set in order to define a correct series.                                         |   |   |   |   |   |   |   |
+|               |                                                                                                                      | Excludes one number so that the remaining numbers constitute the same pattern of relation.             |   |   |   |   |   |   |   |
+|               |                                                                                                                      |                                                                                                        |   |   |   |   |   |   |   |
+| Integration   | Considers two or more attributes simultaneously                                                                      | Considers two or more relations in which similarity or dissimilarity are to be verified                |   |   |   |   |   |   |   |
+|               |                                                                                                                      |                                                                                                        |   |   |   |   |   |   |   |
+
+
+
+
+
+
+
 
 
 
