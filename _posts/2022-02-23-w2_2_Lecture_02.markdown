@@ -1,0 +1,36 @@
+---
+
+layout: post
+title: "Lecture 2: Inductive Reasoning, the Logic of Science."
+author: "Mario H. Gonzalez-Sauri"
+date: "2022-02-22"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Introduction
+
+In lecture one, we had an overview of the set of skills that we need to acquire as Data scientists. But, aside from the set of skills, we need to use our reason to solve complex problems. Reasoning is a cognitive process that takes sets of information, evidence and principles to revise or generate conclusions [(Johnson-Laird & Byrne, 1993)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib10). As Data scientists we are regularly facing complex problems and our weapons are our set of skills but also an effective and efficient use of our reason. Gathering the skills without a properly ordered mind may be like a powerful construction tool in the hands of an untrained worker.
+
+It is important for our training to distinguish between two ways of using our reason, one is inductive and the second one is deductive [Klauer, 2001](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib14). According to Klauer, deductive reasoning is a process that departs from a set of general premises to reach a logically valid conclusion. The conclusions from deductive reasoning are implicit because if the first general statement is true, the other claims are then valid. However, in Data Science and statistics, we typically rely more on inductive reasoning, because:
+
+- We do not observe the population.
+- It is not evident what is the relationship between variables $$F(x)=y$$.
+
+You may be wondering how does this be related to Data Science? Well, most of the work in statistics and science uses inductive reasoning. Because, inductive reasoning starts with lower-level premises or observations from data to reach a general conclusion or an overall rule. In fact, I'm almost sure that inductive reasoning is not new for you. Perhaps you are only becoming aware that you use this kind of reasoning more often than you may have thought. Because inductive reasoning involves finding regularities, differences, patterns and relations among variables to arrive at a more general conclusion [(Neubert and Binko, 1992)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib21). We perform this activity all the time in our daily life when we make decisions with little information under uncertainty. But also, inductive reasoning as the natural way of deriving scientific principles [(Polya, 1967)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib23).
+
+In Data science and statistics, follow the scientific method in the sense that starts acquiring a set of observations for testing to derive higher-level principles or predictions. We can thus, distinguish between inductive reasoning as a creative process of the mind, and inductive inference, a more rigid mathematical or statistical procedure [(HASSAD, (2020)](https://www.iase-web.org/ojs/SERJ/article/view/133/41). This distiction is important, because, as Hassad, pointed out, even if Data Science and Machine learning methods use well-defined induction processes they do not reduce the need for human reasoning. In other words, they depend on the mind of the Data Scientist that will deploy and interpreat these novel methodologies.
+
+# Knowledge Discovery From a Database as a problem of induction
+
+
+
+
+
+
+
+
+
+
