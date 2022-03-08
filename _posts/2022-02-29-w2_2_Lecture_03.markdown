@@ -1,0 +1,14 @@
+---
+
+layout: post
+title: "Lecture 3:..."
+author: "Mario H. Gonzalez-Sauri"
+date: "2022-02-22"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Introduction
+
