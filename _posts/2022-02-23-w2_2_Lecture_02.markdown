@@ -209,4 +209,4 @@ To understand better some specific ways in which we use inductive reasoning, let
 
 
 ## 3.1 Considers two or more relations in which similarity or dissimilarity are to be verified.
-![Is the relationship positive or negative?](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/difference.svg?raw=true)
+![Is the relationship positive or negative?](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/attitude_data.svg?raw=true)
