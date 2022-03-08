@@ -31,23 +31,14 @@ You may be wondering how does this be related to Data Science? Well, most of the
 
 
 
-
-Inductive reasoning is the default reasoning that we use in Data science and statistics because follows the scientific method. We start acquiring a set of observations or data for testing and conducting analysis to derive higher-level principles or predictions. But we should distinguish between inductive reasoning as a creative process of the mind, and inductive inference, a more rigid mathematical or statistical procedure [(Hassad, (2020)](https://www.iase-web.org/ojs/SERJ/article/view/133/41). This distinction is important, because, as Hassad, pointed out, even if Data Science and Machine learning methods use well-defined induction processes they do not reduce the need for human reasoning. In other words, they depend on the mind of the Data Scientist that will deploy and interpret these novel methodologies.
+Inductive reasoning is the default in Data science and statistics because follows the scientific method. We start acquiring a set of observations or data for testing and analyzing to derive higher-level principles or predictions. But we should distinguish between inductive reasoning as a creative process of the mind, and inductive inference, a more rigid mathematical or statistical procedure [(Hassad, (2020)](https://www.iase-web.org/ojs/SERJ/article/view/133/41). This distinction is important, because, as Hassad, pointed out, even if Data Science and Machine learning methods use well-defined induction processes they do not reduce the need for human reasoning. In other words, they depend on the mind of the Data Scientist that will deploy and interpret these novel methodologies.
 
 # Knowledge Discovery From a Database as a problem of induction
 
 
 # A framework of Inductive Reasoning
 
-The research of [Klauer, (1988, ](https://dialnet.unirioja.es/servlet/articulo?codigo=5171693) [1992, ](https://www.tandfonline.com/doi/abs/10.1080/0937445920030205), [1999)](http://publicatio.bibl.u-szeged.hu/11927/1/CsBeno_Teaching_1999.pdf#page=132), defines inductive reasoning as *the systematic and analytic comparison of objects aiming at discovering similarities and/or differences between attributes or relations*. According to his work, most inductive problems can be broken down to six classes: generalization, discrimination, cross-classification,
-recognizing relationships, differentiating relationships and system construction). Relations, as in the kind of bonds between objects, if we are familiar with statistics, we may think about the relationship between $$X$$ on $$Y$$. But, it may be also the relationship between two individuals; friendship, partnership or kindship. The second class refers to the attritutes of the object, for instance, if a geometric figure is a triangle, or if a fruit is an apple, or if a person has certain nationality. 
-
-
-
-
-
-The framework of Klauer was simplified by [Christou and Papageorgiou (2007)](https://www.sciencedirect.com/science/article/pii/S0959475206001198), who proposed to approach the process of inductive reasoning distinguishing between three main countructs: *similarity, dissimilarity and integration*.
-
+The research of [Klauer, (1988, ](https://dialnet.unirioja.es/servlet/articulo?codigo=5171693) [1992, ](https://www.tandfonline.com/doi/abs/10.1080/0937445920030205), [1999)](http://publicatio.bibl.u-szeged.hu/11927/1/CsBeno_Teaching_1999.pdf#page=132), defines inductive reasoning as *the systematic and analytic comparison of objects aiming at discovering similarities and/or differences between attributes or relations*. According to his work, most inductive problems can be broken down to six classes: generalization, discrimination, cross-classification, recognizing relationships, differentiating relationships and system construction). Relations, as in the kind of bonds between objects, if you are familiar with statistics, we may think about the relationship between an $$X$$ variable on $$Y$$ dependent variable. For instance, this may be the impact of $$CO_2$$ emmissions on temperature. But, it may be also the relationship between two individuals; friendship, partnership or kindship. The second class of construct refers to the attritutes of the object, for instance, if a geometric figure is a triangle, or if a fruit is an apple, or if a person has certain nationality. To simplify our understanding of inductive reasoning, the framework of Klauer was simplified by [Christou and Papageorgiou (2007)](https://www.sciencedirect.com/science/article/pii/S0959475206001198), who proposed to approach the process of inductive reasoning distinguishing between three main countructs: *similarity, dissimilarity and integration*.
 
 
 
@@ -58,32 +49,153 @@ To understand better some specific ways in which we use inductive reasoning, let
 
 <br>
 
-
-| Construct     | Level 1: attributes                                                                                                  | Level 2: relations                                                                                     |   |   |   |   |   |   |   |
-|---------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|---|---|---|---|---|---|---|
-|               |                                                                                                                      |                                                                                                        |   |   |   |   |   |   |   |
-| Similarity    | Finds an attribute that is common among numbers or shapes.                                                           | Recognizes the relations that exist between pairs of figures or numbers and tests it on the next pair. |   |   |   |   |   |   |   |
-|               | Selects a number or shape which belongs to a group of numbers or shapes that share a common attribute.               | Completes series                                                                                       |   |   |   |   |   |   |   |
-|               | Compares attributes of numbers or shapes by matching them to other numbers or shapes that follow the same attribute. | Solves analogy problems                                                                                |   |   |   |   |   |   |   |
-|               |                                                                                                                      |                                                                                                        |   |   |   |   |   |   |   |
-| Dissimilarity | Finds differences among numbers or shapes with respect to attributes                                                 | Reorders numbers of a set in order to define a correct series.                                         |   |   |   |   |   |   |   |
-|               |                                                                                                                      | Excludes one number so that the remaining numbers constitute the same pattern of relation.             |   |   |   |   |   |   |   |
-|               |                                                                                                                      |                                                                                                        |   |   |   |   |   |   |   |
-| Integration   | Considers two or more attributes simultaneously                                                                      | Considers two or more relations in which similarity or dissimilarity are to be verified                |   |   |   |   |   |   |   |
-|               |                                                                                                                      |                                                                                                        |   |   |   |   |   |   |   |
-
+| Construct        |     | Level 1: attributes                                                                                                  | Level 2: relations                                                                                     |
+|------------------|-----|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+|                  |     |                                                                                                                      |                                                                                                        |
+| 1. Similarity    | 1.1 | Finds an attribute that is common among numbers or shapes.                                                           | Recognizes the relations that exist between pairs of figures or numbers and tests it on the next pair. |
+|                  | 1.2 | Selects a number or shape which belongs to a group of numbers or shapes that share a common attribute.               | Completes series                                                                                       |
+|                  | 1.3 | Compares attributes of numbers or shapes by matching them to other numbers or shapes that follow the same attribute. | Solves analogy problems                                                                                |
+|                  |     |                                                                                                                      |                                                                                                        |
+| 2. Dissimilarity | 2.1 | Finds differences among numbers or shapes with respect to attributes                                                 | Reorders numbers of a set in order to define a correct series.                                         |
+|                  | 2.2 |                                                                                                                      | Excludes one number so that the remaining numbers constitute the same pattern of relation.             |
+|                  |     |                                                                                                                      |                                                                                                        |
+| 3. Integration   | 3.1 | Considers two or more attributes simultaneously                                                                      | Considers two or more relations in which similarity or dissimilarity are to be verified                |
+|                  |     |                                                                                                                      |                                                                                                        |
 
 
 
+## An Example 1.1 Similarity of attribute between numbers.
 
 
 
+<!--  The code was taken from: view-source:https://cdn.datacamp.com/dcl-react/standalone-example.html -->
+
+<html>
+    <center>
+      <head>
+  <meta charset="utf-8" />
+  <title>DataCamp Light | Standalone example</title>
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.datacamp.com/assets/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+<script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+<div class="exercise">
+    <div class="title">
+      <h2>Similarity of attributes between series.</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="r" data-height="350">
+      <code data-type="pre-exercise-code"># no pec</code>
+      <code data-type="sample-code">
+        
+        # 1.1 Sequence 
+        a <- c(1L, 5L, 11L)
+
+        # 1.2 Sequence
+        b <- c(8L, 9L, 12L)
+
+        # 1.3 Sequence
+        c <- c(9L, 3L, 12L)
+
+        # 1.4 Sequence
+        d <- seq(from=1L, to=3L, by=1L)
+
+        # 1.5 All sequence contain 3 elements.
+
+        print("All sequences contain 3 elements.")
+        lapply(list(a,b,c,d), length)
+
+        # 1.6 All sequence contain 3 elements are integers.
+
+        print("All sequences contain integers.")
+        lapply(list(a,b,c,d), is.integer)
+ 
+       </code>
+      <code data-type="sct">
+         success_msg(&quot;1.5. Indeed, The four vectors(sequences) have 3 elements .&quot;)
+         success_msg(&quot;1.6 Indeed, The four vectors(sequences) contain integer numbers .&quot;)
+      </code>
+    </div>
+  </div>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'60c84adf8f0efa94',m:'6264a6c7b7098b4664f0029861e33345e755ecfb-1609798256-1800-AZ5SiMx9+8i1DUaATF29pUU2DgD2hGBahMTLzCp0u9zdneaWsgKHvJYIb63Nx6Kzrq22t/E1NgZ80qHhsGzmOUnf6ustaizE64ZpsRpRyOr+rEzbRTMYNIUp1ONMTGQCO+iTTwZJ9vTD6t2y4viZZeePccInWm+gDseSQ66FC7lD',s:[0x2d0011f590,0x51d56ce6c4],}})();</script></body>
+   </center>
+</html>
 
 
 
+## An Example 1.2 Similarity of relations between numbers.
 
 
 
+<!--  The code was taken from: view-source:https://cdn.datacamp.com/dcl-react/standalone-example.html -->
 
+<html>
+    <center>
+      <head>
+  <meta charset="utf-8" />
+  <title>DataCamp Light | Standalone example</title>
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.datacamp.com/assets/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
 
+<script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+<div class="exercise">
+    <div class="title">
+      <h2>Similarity of attributes between series.</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="r" data-height="350">
+      <code data-type="pre-exercise-code"># no pec</code>
+      <code data-type="sample-code">
+        
+        # 1.1 Sequence 
+        a <- c(0L, 1L)
 
+        # 1.2 Sequence
+        b <- a + 2L
+        b
+
+        # 1.3 Sequence
+        c <- c(b, sum(b))
+        c
+
+        # 1.4 Write the corresponding number in the series.
+        d <- c(c, ) 
+
+       </code>
+        <code data-type="solution">
+        
+          # 1.1 Sequence 
+        a <- c(0L, 1L)
+
+        # 1.2 Sequence
+        b <- a + 2L
+        b
+
+        # 1.3 Sequence
+        c <- c(b, sum(b))
+        c
+        
+        # 1.4 Write the corresponding number in the series.
+        d <- c(c, 8)
+        d
+
+      </code>
+      <code data-type="sct">
+         test_output_contains(&quot;6&quot;, incorrect_msg = &quot;The last number of the series is `3 + 5`.&quot;)
+         success_msg(&quot;1.6 Indeed, The serie is a Fibonacci sequence.&quot;)
+      </code>
+    </div>
+  </div>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'60c84adf8f0efa94',m:'6264a6c7b7098b4664f0029861e33345e755ecfb-1609798256-1800-AZ5SiMx9+8i1DUaATF29pUU2DgD2hGBahMTLzCp0u9zdneaWsgKHvJYIb63Nx6Kzrq22t/E1NgZ80qHhsGzmOUnf6ustaizE64ZpsRpRyOr+rEzbRTMYNIUp1ONMTGQCO+iTTwZJ9vTD6t2y4viZZeePccInWm+gDseSQ66FC7lD',s:[0x2d0011f590,0x51d56ce6c4],}})();</script></body>
+   </center>
+</html>
