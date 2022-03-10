@@ -19,7 +19,7 @@ For our training we have to distinguish between two ways of reasoning, one is in
 - We do not observe the population, and typically we work with samples.
 - It is not evident what is the relationship between variables $$f(x)=y$$.
 
-You may be wondering how does this be related to Data Science? Well, most of the work in statistics and science uses inductive reasoning. Because inductive reasoning starts with lower-level premises or observations from data to reach a general conclusion or an overall rule. In fact, I'm almost sure that inductive reasoning is not new for you. Perhaps you are only becoming aware that you use this kind of reasoning more often than you may have thought. Because inductive reasoning involves finding regularities, differences, patterns and relations among variables to arrive at a more general conclusion [(Neubert and Binko, 1992)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib21). We perform this activity all the time in our daily life when we make decisions with little information under uncertainty. But also, inductive reasoning as the natural way of deriving scientific principles [(Polya, 1967)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib23). Indeed, we use inductive reasoning more often than you may be aware. 
+You may be wondering how does this be related to Data Science? Well, most of the work in statistics and science uses inductive reasoning. Because inductive reasoning starts with lower-level premises or observations from data to reach a general conclusion or an overall rule. In fact, I'm almost sure that inductive reasoning is not new for you. Perhaps you are only becoming aware that you use this kind of reasoning more often than you may have thought. Because inductive reasoning involves finding regularities, differences, patterns and relations among variables (or objects) to arrive at a more general conclusion [(Neubert and Binko, 1992)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib21). We perform this activity all the time in our daily life when we make decisions with little information under uncertainty. But also, inductive reasoning is the natural way of deriving scientific principles [(Polya, 1967)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib23). Indeed, we use inductive reasoning more often than you may be aware. 
 
 > The work of [Feene, Heit and Evan (2020)](https://www.cambridge.org/nl/academic/subjects/psychology/cognition/inductive-reasoning-experimental-developmental-and-computational-approaches?format=PB&isbn=9780521672443), lists four main reasons why inductive reasoning is important.
 > > - Inductive reasoning corresponds to probabilistic, uncertain, approximate reasoning, and as such, it corresponds to everyday reasoning;
@@ -31,7 +31,8 @@ You may be wondering how does this be related to Data Science? Well, most of the
 
 
 
-Inductive reasoning is the default in Data science and statistics because follows the scientific method. We start acquiring a set of observations or data for testing and analyzing to derive higher-level principles or predictions. But we should distinguish between inductive reasoning as a creative process of the mind, and inductive inference, a more rigid mathematical or statistical procedure [(Hassad, (2020)](https://www.iase-web.org/ojs/SERJ/article/view/133/41). This distinction is important, because, as Hassad, pointed out, even if Data Science and Machine learning methods use well-defined induction processes they do not reduce the need for human reasoning. In other words, they depend on the mind of the Data Scientist that will deploy and interpret these novel methodologies.
+Inductive reasoning is the default in Data science and statistics because follows the scientific method. We start acquiring a set of observations or data for testing and analyzing to derive higher-level principles or predictions. To understand better the process of inductive reasoning go through the following frameworks.
+
 
 # Knowledge Discovery From a Database as a problem of induction
 
@@ -126,6 +127,8 @@ To understand better some specific ways in which we use inductive reasoning, let
    </center>
 </html>
 
+The lines of code from the example above (**1-10**), present four different examples of series. Using the construct of similarity between attribute we can derive some conclusions about the series. If we press the `Submit` or `Run`, the line **16** of the code `lapply(list(a,b,c,d), length)`, proofs our conclusion by induction about the series, a, b, c and d; namely, that the lenght of the vectors is three. Then, the line **21**, `lapply(list(a,b,c,d), is.integer)`, shows that the four numerical series are compose of integers. We can then conclude by induction that all the 4 series contain 3 integer numbers.
+
 
 
 ## Example 1.2 Similarity of relations between numbers.
@@ -157,11 +160,11 @@ To understand better some specific ways in which we use inductive reasoning, let
       <code data-type="pre-exercise-code"># no pec</code>
       <code data-type="sample-code">
         
-        # 1.1 Sequence 
+       # 1.1 Sequence 
         a <- c(0L, 1L)
 
         # 1.2 Sequence
-        b <- a + 2L
+        b <- c(a, sum(a))
         b
 
         # 1.3 Sequence
@@ -174,24 +177,23 @@ To understand better some specific ways in which we use inductive reasoning, let
        </code>
         <code data-type="solution">
         
-          # 1.1 Sequence 
+      # 1.1 Sequence 
         a <- c(0L, 1L)
 
         # 1.2 Sequence
-        b <- a + 2L
+        b <- c(a, sum(a))
         b
 
         # 1.3 Sequence
         c <- c(b, sum(b))
         c
-        
+
         # 1.4 Write the corresponding number in the series.
-        d <- c(c, 8)
-        d
+        d <- c(c, 5) 
 
       </code>
       <code data-type="sct">
-         test_output_contains(&quot;6&quot;, incorrect_msg = &quot;The last number of the series is `3 + 5`.&quot;)
+         test_output_contains(&quot;6&quot;, incorrect_msg = &quot;The last number of the series is `2 + 3`.&quot;)
          success_msg(&quot;1.6 Indeed, The serie is a Fibonacci sequence.&quot;)
       </code>
     </div>
@@ -200,13 +202,60 @@ To understand better some specific ways in which we use inductive reasoning, let
    </center>
 </html>
 
+For this second example, we use the similarity of relations between the numerical series. The lines (**1-2**), show the numerical series of `a` containing `0` and `1`. Interestingly, the line **5**, shows that the series `b`, contains the elements of `a` plus the summation of themselves.
+
+Then the line **9**, is a series composed again by the elements of `b`. Ok, let us inspect the series more closely to derive the answer of the last element of the series on line **13**.
+
+<center>
+<br>
+$$a=[0, 1]$$
+<br>
+$$b=[0, 1, 2]$$
+<br>
+$$c=[0, 1, 2, 3]$$
+<br>
+$$d=[0, 1, 2, 3, ?]$$
+</center>
+
+The sum of the last two elements of each series derives the last number of the new series. You guess right, by induction we can tell that these series are part of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number), and the solution of line 13 is **5**.
+
+
 ## 2.1 Differences: Compare attributes by matching circles of the same color.
 ![Difference in color attribute](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/circles.svg?raw=true)
 
+This example also uses induction, we observe firstly an array of circles. Then, we observe that they are spread diagonally, following a pattern of colors. Each line has a set of circles filled with the same color.
 
-## 2.2 Excludes one figure so that the remaining ones constitute the same pattern of relation.
+
+
+## 2.2 Excludes one figure so that the remaining ones constitute the same pattern of relationships.
 ![Difference of one element](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/difference.svg?raw=true)
+
+In the above example, we can tell that we have a similar diagonal array of geometric figures. But there is one element, that does not follow the pattern. Yes, the red circle on the top right is out of place, because is the only red circle in the picture. 
 
 
 ## 3.1 Considers two or more relations in which similarity or dissimilarity are to be verified.
 ![Is the relationship positive or negative?](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/attitude_data.svg?raw=true)
+
+Each square in the plot above shows the relationship between two variables. Similarly, we can elaborate by using our observation and inductive reasoning, that each column or a row assesses the relationship with one variable on all other variables. Moreover, when we inspect the squares horizontally the variable in the middle is placed in the vertical axis. Conversely, when we inspect the boxes vertically, the variable flips to the horizontal axis.
+<!-- arrows : https://cloford.com/resources/charcodes/utf-8_arrows.htm -->
+What is more important is what is the relation between each pair of variables. In each box, we observer a red line, that depicts a pattern. We observe, four sets of patterns. The first shows a positive relation between two variables, when the red line is 45 degrees <span style="color:red">&#8599;</span>. Converselly, a negative relation between two variables will be depicted by <span style="color:red">&#8600;</span>. No relation between two variables is depicted by an horizontal line  <span style="color:red">&#8594;</span>. A fourth pattern, is what is called, a non-linear patter, that looks similar to this arrow  <span style="color:red">&#8605;</span>.
+
+
+# Inductive reasoning in Statistics
+
+We should distinguish between inductive reasoning as a creative process of the mind, and inductive inference, a more rigid mathematical or statistical procedure [(Hassad, (2020)](https://www.iase-web.org/ojs/SERJ/article/view/133/41). This distinction is important, because, as Hassad, pointed out, even if Data Science and Machine learning methods use well-defined induction processes they do not reduce the need for human reasoning. In other words, they depend on the mind of the Data Scientist that will deploy and interpret these novel methodologies. A excelent example of a well-defined induction processes is statistical hypothesis testing. Hypothesis testing is a pillar of statistical inference and science because the outcome of the test asserts something about the relation between two or more variables. 
+
+For instance, imagine you are estimating the effect of `education` $$x$$ , on `income` $$y$$. Assuming this relationship is linear, the univariate regression model will take the form of $$income = \beta* education + u$$. Here, the main interest for causal analysis is the inference of the effect $$\beta$$ of `education` on `income` via an hypothesis test. The most frequent hypothesis test that you can find in regression tables tests the `NULL` $$H_0: \beta=0$$ hypothesis agains the alternative $$H_a: \beta \neq 0$$. Obviosly, these are mutually exclusive statements; where rejecting the `NULL` implies that there is statatisticall significant relation between `education` on `income`. To shed some light on these difference, lets take the seminal paper by [Fisher, (1955)](https://www.jstor.org/stable/2983785), where he describes the use of inductive reasoning for inference in hypothesis testing, as follows:
+
+> >
+> The framing of the hypothesis in terms of which the data are to be interpreted. This hypothesis must fulfill several requirements: 
+> (i) it must be in accordance with the facts of nature as so far known; 
+> (ii) it must specify the frequency distribution of all observational facts included in the data, so that the data as a whole may be taken as a typical sample;
+> (iii) it must incorporate as parameters all constants of nature which it is intended to estimate, in addition possibly to special, or ad hoc, parameters;
+> (iv) it must not be contradicted, in any way judged relevant, by the data in hand. 
+
+However, he distinguishes well, the use of inductive reasoning as a formal part and requisite of statistical inference, but he acknoledge the use of inductive reasoning as something that goes beyond the formal inductive procedure as follows:
+>>
+> It is by no means obvious that different persons should not put forward different successful hypotheses, among which the data can supply little or no discrimination. The 
+> hypothesis is sometimes called a model, but I should suggest that the word model should only be used for aspects of the hypothesis between which the data cannot discriminate. 
+> As an act of construction the hypothesis is not altogether impersonal, for the scientist's personal capacity for theorizing comes into it; moreover, the criteria by which it is approved require a certain honesty, or integrity, in their application.
