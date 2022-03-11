@@ -26,9 +26,34 @@ layout: default
       {%- endif -%}</p>
   </header>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.toc {
+  /*width: 90%;*/
+  content: "";
+  display: table;
+  clear: both;
+  text-align: left;
+}
+</style>
+
+  <center>
+  <div class="toc" style="background-color:#f0f0f0;">
+    <h2>Table of Content:</h2>
+     {% include toc.html html=content %}
+  </div>
+  </center>
+
   <div class="post-content e-content" itemprop="articleBody">
+
     {{ content }}
   </div>
+
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}

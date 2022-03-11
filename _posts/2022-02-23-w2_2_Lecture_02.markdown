@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "Lecture 2: Inductive Reasoning, the Logic of Science."
+title: "Lecture 2: Inductive Reasoning, the Logic of Data Science."
 author: "Mario H. Gonzalez-Sauri"
 date: "2022-02-22"
 mermaid: true
@@ -14,7 +14,7 @@ mermaid: true
 
 In lecture one, we had an overview of the set of skills that we need to acquire as Data scientists. But, in addition to these skills, we also need to set our analytical skills and our reason to navigate complex problems. As Data scientists we are regularly facing complexity and our weapons are our set of skills and also a well-ordered use of our reason. Reasoning is a cognitive process that takes sets of information, evidence and principles to revise or generate conclusions [(Johnson-Laird & Byrne, 1993)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib10).  Gathering the skills without a properly ordered mind may be like a powerful construction tool in the hands of an untrained worker.
 
-For our training we have to distinguish between two ways of reasoning, one is inductive and the second one is deductive [Klauer, 2001](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib14). According to Klauer, deductive reasoning is a process that departs from a set of general premises to reach a logically valid conclusion. The conclusions from deductive reasoning are implicit because if the first general statement is true, the other claims are then valid. However, in Data Science, Econometrics and Statistics, we typically rely more on inductive reasoning, because:
+For our training we have to distinguish between two ways of reasoning, one is inductive and the second one is deductive [(Klauer, 2001)](https://www.sciencedirect.com/science/article/pii/S0959475206001198#bib14). According to Klauer, deductive reasoning is a process that departs from a set of general premises to reach a logically valid conclusion. The conclusions from deductive reasoning are implicit because if the first general statement is true, the other claims are then valid. However, in Data Science, Econometrics and Statistics, we typically rely more on inductive reasoning, because:
 
 - We do not observe the population, and typically we work with samples.
 - It is not evident what is the relationship between variables $$f(x)=y$$.
@@ -32,9 +32,6 @@ You may be wondering how does this be related to Data Science? Well, most of the
 
 
 Inductive reasoning is the default in Data science and statistics because follows the scientific method. We start acquiring a set of observations or data for testing and analyzing to derive higher-level principles or predictions. To understand better the process of inductive reasoning go through the following frameworks.
-
-
-# Knowledge Discovery From a Database as a problem of induction
 
 
 # A framework of Inductive Reasoning
@@ -259,3 +256,54 @@ However, he distinguishes well, the use of inductive reasoning as a formal part 
 > It is by no means obvious that different persons should not put forward different successful hypotheses, among which the data can supply little or no discrimination. The 
 > hypothesis is sometimes called a model, but I should suggest that the word model should only be used for aspects of the hypothesis between which the data cannot discriminate. 
 > As an act of construction the hypothesis is not altogether impersonal, for the scientist's personal capacity for theorizing comes into it; moreover, the criteria by which it is approved require a certain honesty, or integrity, in their application.
+
+
+# Inductive reasoning in databases and data mining.
+
+To finalize this second lecture let's give an example of the use of inductive reasoning when we consult databases and perform queries. We perform queries on databases in our daily life when we Google terms or when searching in any sort of database. The work of [Kakemotom, 1996](https://link.springer.com/chapter/10.1007/978-1-4471-1486-4_18) put forward this examples that illustrate the use of inductive reasoning in databases:
+
+
+a. Suppose you are searching from a database of computers. The information is arranged in a relational table that contains, the `model` of the computer, the `ram` memory and the `price`. You aim to distinguish (difference) computer models by price, and you use the following `SQL` query:
+
+```
+SELECT * FROM relation-name
+WHERE PRICE> 1000;
+
+```
+
+The output of this query yield the following results:
+
+| **MODEL**                   | **RAM** | **PRICE** |
+|:---------------------------:|:-------:|:---------:|
+|                             |         |           |
+| Lenovo Chromebook S330      | 4 GB    | 205.00    |
+| ASUS Laptop L510            | 4 GB    | 268.00    |
+| ...                         | ...     | ...       |
+| ASUS Vivobook L410          | 4 GB    | 350.00    |
+|                             |         |           |
+| Dell Inspiron 3000          | 8 GB    | 419.00    |
+| ...                         | ...     | ...       |
+| Laptop Acer Aspire 5        | 8 GB    | 499.00    |
+|                             |         |           |
+| Lenovo Flex 5               | 16 GB   | 600.00    |
+| Acer Nitro 5 AN515-55-53E5  | 16 GB   | 785.00    |
+| ...                         | ...     | ...       |
+| HP Pavilion de 15.6       | 16 GB   | 779.00    |
+| ...                         | ...     | ...       |
+
+
+Using inductive reasoning, we can distinguish the differences between groups of laptops.
+
+1. The common attribute of those examples are `MODEL`, `RAM`, `PRICE` .
+
+2. We apply a similarity strategy to refine the results of the query. 
+
+3. We observe that we have three groups of laptops:
+
+    a.  when the $$200<$$`PRICE`$$<=350$$, the `RAM` memory is not more than `4 GB`. 
+
+    b.  If the laptop has `8 GB` of `RAM` then the price range is between $$350<$$`PRICE`$$<=500$$.
+
+    c.  But if the laptop has `16 GB` the price then is then higher than `PRICE`$$>600$$,
+
+4. We conclude from the process of inductive reasoning that the`RAM` memory is an important determinant of the price.
