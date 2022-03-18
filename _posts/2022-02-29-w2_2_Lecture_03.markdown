@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "Lecture 3: Introduction to statistics and inference."
+title: "Lecture 3: Introduction to Descriptive Statistics using R."
 author: "Mario H. Gonzalez-Sauri"
 date: "2022-02-22"
 mermaid: true
@@ -12,7 +12,7 @@ mermaid: true
 
 # Introduction to Statistics for Data Science.
 
-In the first lecture, we learn about the scope of Data Science and in lecture two, we set our minds to use inductive reasoning to analyze patterns in data. In this llecture,we are going to build upon the last two lectures by giving a brief introduction to the powerhouse of Data Science: Statistic Using **R.
+In the first lecture, we learn about the scope of Data Science and in lecture two, we set our minds to use inductive reasoning to analyze patterns in data. In this lecture,we are going to build upon the last two lectures by giving a brief introduction to the powerhouse of Data Science: Statistic Using **R**.
 
 ## What is statistics?
 
@@ -20,10 +20,263 @@ Suppose you have a question, for instance, what is the proportion of internation
 
 ## Descriptive and Inferential Statistics.
 
-There are two kinds of questions that we can answer from data using statistics. One group of questions, uses  *descriptive statistics* to summarize facts from the given data. For instance, what is the frequency of late arrivals from Utrecht to Amsterdam by train? Which is the most popular song on the Radio? What is the chance of getting divorced after marriage? What is the average time of train arrival? The second group of questions makes use of *inferential statistics* to draw conclusions using the data about an underlying population. For instance, what is the effect of education on income? What is the effect of a vaccine on a variant of COVID-19? What is the change in the outcome variable for one unit of the dependent variable?
+There are two kinds of questions that we can answer from data using statistics. One group of questions, uses  *descriptive statistics* to summarize facts from the given data. For instance, what is the frequency of late arrivals from Utrecht to Amsterdam by train? Which is the most popular song on the Radio? What is the chance of getting divorced after marriage? What is the average time of train arrival? The second group of questions makes use of *inferential statistics* to draw conclusions using the data about an underlying population. For instance, what is the effect of education on income? What is the effect of a vaccine on a variant of COVID-19? What is the change in the outcome variable for one unit of the dependent variable? The latter kind of questions are covered in [lecture 4](https://wario84.github.io/idsc_mgs/2022/02/22/w4_2_Lecture_04.html) were we dive into some basic inferencial techniques and we draw the line between correlation, causation and prediction.
+
 
 # Basics of Descriptive Statistics.
 
-##
+This lecture covers different techniques to summarize and describe facts and patterns withing our data. First we start with some methods to summarize data using tables.
+
+## Frequency Tables
+
+Frequency tables eliminate the redundancy of the values and present how often the values appear in the data set. First, lets give an example from a random variable $$X \sim [A, B, \dots, J]$$. I assume that each realization has equal chance of being selected, and sample $$n=100$$ with replacement. 
 
 
+```
+
+set.seed(7953)
+# Sample 100 from the set 1 to 10.
+n <- 100L
+X <- sample(LETTERS[1:10], n, replace = T)
+
+# Create a data.frame with the frequencies.
+df <- as.data.frame(table(X))
+
+# Add a column of the cumulative sum of the frequencies
+df$cum_sum <- cumsum(df$Freq)
+
+```
+
+With the cumulative sum on the third column, we can that around 60% of the values in the series lie between $$[A-F]$$.
+
+<table border=1>
+<caption align="top"> Table: 1 </caption>
+<tr> <th>  </th> <th> X </th> <th> Freq </th> <th> cum_sum </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td> A </td> <td align="right">   5 </td> <td align="right">   5 </td> </tr>
+  <tr> <td align="right"> 2 </td> <td> B </td> <td align="right">   7 </td> <td align="right">  12 </td> </tr>
+  <tr> <td align="right"> 3 </td> <td> C </td> <td align="right">  11 </td> <td align="right">  23 </td> </tr>
+  <tr> <td align="right"> 4 </td> <td> D </td> <td align="right">  14 </td> <td align="right">  37 </td> </tr>
+  <tr> <td align="right"> 5 </td> <td> E </td> <td align="right">  12 </td> <td align="right">  49 </td> </tr>
+  <tr> <td align="right"> 6 </td> <td> F </td> <td align="right">   7 </td> <td align="right">  56 </td> </tr>
+  <tr> <td align="right"> 7 </td> <td> G </td> <td align="right">  13 </td> <td align="right">  69 </td> </tr>
+  <tr> <td align="right"> 8 </td> <td> H </td> <td align="right">  11 </td> <td align="right">  80 </td> </tr>
+  <tr> <td align="right"> 9 </td> <td> I </td> <td align="right">  11 </td> <td align="right">  91 </td> </tr>
+  <tr> <td align="right"> 10 </td> <td> J </td> <td align="right">   9 </td> <td align="right"> 100 </td> </tr>
+   </table>
+
+
+For *continuous variables*, we do not have differentiated intervals or breaks. Simply because the continuous nature of the variable. For instance, lets define another random variable  $$Y \sim [1-10]$$ of real numbers (contains decimals and other rational numbers) with equal change of being selected. Similarly, we sample only $$n=100$$ values.
+
+
+```
+set.seed(7953)
+# Sample 100 from the set 1 to 10.
+Y <- rep(seq(from=1, to=10, by=sample(1:10, 1)/10), 100L)
+n <- 100L
+Y_hat <- sample(Y, n)
+
+# Create breaks to summarize the realizations
+breaks = seq(1, 10, by=0.5)
+Y_breaks = cut(Y_hat, breaks, right=FALSE) 
+
+# Create a data.frame with the frequencies.
+df <- as.data.frame(table(Y_breaks))
+
+# Add a column of the cumulative sum of the frequencies
+df$cum_sum <- cumsum(df$Freq)
+```
+From this frequency table summarizing a continuous variable we can observe that the $$60\%$$ of the values lie between $$[1-6)$$.
+
+<!-- html table generated in R 4.1.2 by xtable 1.8-4 package -->
+<!-- Fri Mar 18 15:35:54 2022 -->
+<table border=1>
+<caption align="top"> Table: 2 </caption>
+<tr> <th>  </th> <th> Y_breaks </th> <th> Freq </th> <th> cum_sum </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td> [1,1.5) </td> <td align="right">  10 </td> <td align="right">  10 </td> </tr>
+  <tr> <td align="right"> 2 </td> <td> [1.5,2) </td> <td align="right">   6 </td> <td align="right">  16 </td> </tr>
+  <tr> <td align="right"> 3 </td> <td> [2,2.5) </td> <td align="right">   5 </td> <td align="right">  21 </td> </tr>
+  <tr> <td align="right"> 4 </td> <td> [2.5,3) </td> <td align="right">   0 </td> <td align="right">  21 </td> </tr>
+  <tr> <td align="right"> 5 </td> <td> [3,3.5) </td> <td align="right">   8 </td> <td align="right">  29 </td> </tr>
+  <tr> <td align="right"> 6 </td> <td> [3.5,4) </td> <td align="right">  10 </td> <td align="right">  39 </td> </tr>
+  <tr> <td align="right"> 7 </td> <td> [4,4.5) </td> <td align="right">   0 </td> <td align="right">  39 </td> </tr>
+  <tr> <td align="right"> 8 </td> <td> [4.5,5) </td> <td align="right">  10 </td> <td align="right">  49 </td> </tr>
+  <tr> <td align="right"> 9 </td> <td> [5,5.5) </td> <td align="right">   8 </td> <td align="right">  57 </td> </tr>
+  <tr> <td align="right"> 10 </td> <td> [5.5,6) </td> <td align="right">   6 </td> <td align="right">  63 </td> </tr>
+  <tr> <td align="right"> 11 </td> <td> [6,6.5) </td> <td align="right">   0 </td> <td align="right">  63 </td> </tr>
+  <tr> <td align="right"> 12 </td> <td> [6.5,7) </td> <td align="right">  10 </td> <td align="right">  73 </td> </tr>
+  <tr> <td align="right"> 13 </td> <td> [7,7.5) </td> <td align="right">   7 </td> <td align="right">  80 </td> </tr>
+  <tr> <td align="right"> 14 </td> <td> [7.5,8) </td> <td align="right">   0 </td> <td align="right">  80 </td> </tr>
+  <tr> <td align="right"> 15 </td> <td> [8,8.5) </td> <td align="right">   6 </td> <td align="right">  86 </td> </tr>
+  <tr> <td align="right"> 16 </td> <td> [8.5,9) </td> <td align="right">   4 </td> <td align="right">  90 </td> </tr>
+  <tr> <td align="right"> 17 </td> <td> [9,9.5) </td> <td align="right">  10 </td> <td align="right"> 100 </td> </tr>
+  <tr> <td align="right"> 18 </td> <td> [9.5,10) </td> <td align="right">   0 </td> <td align="right"> 100 </td> </tr>
+   </table>
+
+## Frequency, Average and Probability.
+
+Lets define the following random variable,  $$X = \{1,2, \dots, 6\}$$, that describes the *experiment* of rolling a dice. Every time we roll a dice is called an $$n$$-*trial* in the experiment of rolling the dice $$X$$. And each trial has an outcome that is called *realization* of the random variable $$X$$.
+
+The concept of *probability*, is defined with a *probability space* of an experiment that has three elements: $$(\Omega, \mathcal{F}, \mathcal{P})$$.
+
+- $$\Omega = \{1, 2, \dots, 6\}$$ is a set that contains all possible outcomes of an experiment called *sample space*.
+- $$\mathcal{F}$$ is set one or more events $$E$$ whose elements are subsets of $$\Omega$$, called as a *field*.
+- $$\mathcal{P}$$ is a function that maps the outcomes events, $$P(\mathcal{F}) \rightarrow [0,1]$$
+
+
+I'm sure all this sounds very abstract to some of you. But that is precisely why I am explaining probability in this section, so you will build upon the use of the frequency table to understand the concept of probability and the average or mean. So we go back out our experiment $$X$$ of rolling a dice $$n=1000$$ times. Since, the number of trials $$n>\Omega$$, is bigger than the sample space we have to use a sample by replacement ` sample(1L:6L, n, replace = T)`.
+
+
+```
+set.seed(7953)
+# Sample 100 from the set 1 to 10.
+n <- 1000L
+X <- sample(1L:6L, n, replace = T)
+# Create a data.frame with the frequencies.
+df <- as.data.frame(table(X))
+
+# Add a column of the cumulative sum of the frequencies
+df$cum_sum <- cumsum(df$Freq)
+
+# Add a column with the corresponding emp. probability of each realization
+df$prob <- df$Freq/n
+
+```
+
+Naturally, we know that if the dice is fair, and all sides have equal chance of showing off, then the probability of each event it $$P[X=1]={1/6}=0.16$$. Now look at the fourth column we have added the empirical probability of $$X$$. It seems that $$n=1000$$ is approaching the theoretical probability of $$1/6$$.
+
+<table border=1>
+<caption align="top"> Table: 3 </caption>
+<tr> <th>  </th> <th> X </th> <th> Freq </th> <th> cum_sum </th> <th> prob </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td> 1 </td> <td align="right"> 164 </td> <td align="right"> 164 </td> <td align="right"> 0.16 </td> </tr>
+  <tr> <td align="right"> 2 </td> <td> 2 </td> <td align="right"> 159 </td> <td align="right"> 323 </td> <td align="right"> 0.16 </td> </tr>
+  <tr> <td align="right"> 3 </td> <td> 3 </td> <td align="right"> 166 </td> <td align="right"> 489 </td> <td align="right"> 0.17 </td> </tr>
+  <tr> <td align="right"> 4 </td> <td> 4 </td> <td align="right"> 165 </td> <td align="right"> 654 </td> <td align="right"> 0.16 </td> </tr>
+  <tr> <td align="right"> 5 </td> <td> 5 </td> <td align="right"> 175 </td> <td align="right"> 829 </td> <td align="right"> 0.17 </td> </tr>
+  <tr> <td align="right"> 6 </td> <td> 6 </td> <td align="right"> 171 </td> <td align="right"> 1000 </td> <td align="right"> 0.17 </td> </tr>
+   </table>
+
+*Probability* is defined as relative frequency of occurrence or *realization* of outcomes of an event $$X$$ given $$n$$ trials of an experiment. If $$x_i$$ is a realization of $$X$$, an $$1(.)$$ indicator function takes a value of $$1$$ or $$0$$ otherwise, such a *function of probability* is defined as follows:
+
+<br>
+$$P(X=x_i)=\frac{1}{n}\sum_{i=1}^n 1_{\{ X = x_i\}}$$
+<br>
+
+
+
+
+
+From the table, we can put some numbers to the formula to make it less abstract, using our induction skills. First, we take one event $$X=5$$, then we write the formula:
+
+<br>
+$$P(X=5)= \frac{1}{1000}\sum_{i=1}^n 1_{\{ X = 5\}}=\frac{1}{1000}*(175)=0.175$$
+<br>
+
+That wasn't that hard isn't?
+
+
+Now we can link the frequency and probability to the *sample mean* and the *expectation*. We conclude that if the dice is fair then we expect that on average each event show up $$16$$ times for every $$100$$ trials. That means the expectation of the random variable $$X$$ is defined as:
+
+<br>
+$$E[X]= \bar{X}=\frac{1}{6}$$
+<br>
+
+Bare in mind that the $$E[X]$$ describes the behavior of the random variables when we observe the totally of the population. Or in other words, when our sample size is sufficiently large to approximate the $$E[X]$$. In the previous example, we only have $$n=1000$$ trials, and for this sample we can compute the *sample mean* or average in the following way:
+
+<br>
+$$\hat{X}=\sum_1^S \frac{x_i *1_{\{ X = x_i\}}}{n}$$
+<br>
+
+To understand this better, lets use deductive reasoning to expand the current formula. To make explicit the connection between the frequency, average and probability, lets follow the follow steps:
+
+
+a. Replace $$n=1000$$ in the formula.
+
+b. Replace $$x_i$$ for each realization of $$X = \{1,2, \dots, 6\}$$.
+
+c. Replace $$1_{\{ X = x_1\}}$$ for the **Freq** of Table 3.
+
+This yields the following expansion:
+
+<br>
+$$\hat{X}= \frac{1 * 164}{1000}+ \dots + \frac{6 * 171}{1000}$$
+<br>
+
+Now, to make the computation easier we can add the Table 3, one additional column equal to **X** times **Freq** divided by $$n$$. Summing this column completes the procedure of the computation of the *sample average* or mean, $$\hat{X}=3.541$$, given by `sum(df$x_freq)`. 
+
+```
+df$x_freq <- (as.integer(df$X) * df$Freq)/n
+sum(df$x_freq)
+```
+
+<table border=1>
+<caption align="top"> Table: 4 </caption>
+<tr> <th>  </th> <th> X </th> <th> Freq </th> <th> cum_sum </th> <th> prob </th> <th> x_freq </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td> 1 </td> <td align="right"> 164 </td> <td align="right"> 164 </td> <td align="right"> 0.16 </td> <td align="right"> 0.16 </td> </tr>
+  <tr> <td align="right"> 2 </td> <td> 2 </td> <td align="right"> 159 </td> <td align="right"> 323 </td> <td align="right"> 0.16 </td> <td align="right"> 0.32 </td> </tr>
+  <tr> <td align="right"> 3 </td> <td> 3 </td> <td align="right"> 166 </td> <td align="right"> 489 </td> <td align="right"> 0.17 </td> <td align="right"> 0.50 </td> </tr>
+  <tr> <td align="right"> 4 </td> <td> 4 </td> <td align="right"> 165 </td> <td align="right"> 654 </td> <td align="right"> 0.16 </td> <td align="right"> 0.66 </td> </tr>
+  <tr> <td align="right"> 5 </td> <td> 5 </td> <td align="right"> 175 </td> <td align="right"> 829 </td> <td align="right"> 0.17 </td> <td align="right"> 0.88 </td> </tr>
+  <tr> <td align="right"> 6 </td> <td> 6 </td> <td align="right"> 171 </td> <td align="right"> 1000 </td> <td align="right"> 0.17 </td> <td align="right"> 1.03 </td> </tr>
+   </table>
+
+The previos procedure is exactly the same if you compute `mean(X)`, prove it yourself. This formula, $$\hat{X}=\sum_1^S \frac{x_i *1_{\{ X = x_i\}}}{n}$$,  of the mean is very tedious, and normally it does not appear in the text books. Instead what typically shows up is the simpler version of the average, similarly to [Wikipedia's Formula](https://en.wikipedia.org/wiki/Sample_mean_and_covariance).
+
+<br>
+
+$$\hat{X}=\frac{1}{n}\sum_{i=1}^n x_i$$
+<br>
+
+You, may be wondering then, if we have a simpler manner of computing the mean, why bother? Well the purpose of this exercise was to teach you the use of frequency tables to summarize variables. Then a second purpose was to show you that there is a link between the mean the frequency and the probability of a random variable, because is very important!
+
+
+## Types of Data
+
+Not all variables are arranged in the same way. For instance, in a census, makes sense to use discrete or whole numbers to describe the *number of household* members. Similarly, the inventories of companies producing items are filled with whole numbers; for instance, we report 100 computers in our monthly production. **Discrete Variables** are things that we can count. In **R**, this class of atomic element and variables is called `class = integer`. There are other type of variables that we approximate or measure, this are called **Continuous Variables**. For instance, we measure the temperature of every day, also we measure the GDP growth of a given country and the time of waking up every day. This variables are called `class = numeric` in **R**.
+
+
+Then, we have also **Categorical** variables, this can be *binary* or also called *dummy* variables in economics, because they describe two mutually exclusive types or kinds. Categorical variables can also describe more than two levels of categories, and when they have order then we call them *ordinal*. In the language of **R**, they are called `class = factor`. Aside from these 4 main kinds (discrete, continuous, categorical and ordinal), we have another kind called **Strings**, `class = string`. This type of data is not straightforward to analyze because contain alpha-numeric characters that are not so easy to manipulate. In lecture 7, we will learn some techniques to manipulate and analyze strings.
+
+
+To illustrate the kinds of data using **R**, lets explore the `cars` data set from the `ggplot2` package that contains characteristics of car models released between 1999 and 2008, you can read more about this data set [here](https://ggplot2.tidyverse.org/reference/mpg.html).
+
+```
+library(ggplot2)
+
+data(mpg)
+mpg_ <- mpg
+mpg_ <- as.data.frame(unclass(mpg_), stringsAsFactors = TRUE)    # Convert all columns to factor
+
+# Classes of each variable
+sapply(mpg_, class)
+
+# The first 20 observations of the mpg dataset
+head(mpg, 10L)
+
+```
+
+<!-- html table generated in R 4.1.2 by xtable 1.8-4 package -->
+<!-- Fri Mar 18 17:21:37 2022 -->
+<table border=1>
+<caption align="top"> Table: 5 </caption>
+<tr> <th>  </th> <th> manufacturer </th> <th> model </th> <th> displ </th> <th> year </th> <th> cyl </th> <th> trans </th> <th> drv </th> <th> cty </th> <th> hwy </th> <th> fl </th> <th> class </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td> audi </td> <td> a4 </td> <td align="right"> 1.80 </td> <td align="right"> 1999 </td> <td align="right">   4 </td> <td> auto(l5) </td> <td> f </td> <td align="right">  18 </td> <td align="right">  29 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 2 </td> <td> audi </td> <td> a4 </td> <td align="right"> 1.80 </td> <td align="right"> 1999 </td> <td align="right">   4 </td> <td> manual(m5) </td> <td> f </td> <td align="right">  21 </td> <td align="right">  29 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 3 </td> <td> audi </td> <td> a4 </td> <td align="right"> 2.00 </td> <td align="right"> 2008 </td> <td align="right">   4 </td> <td> manual(m6) </td> <td> f </td> <td align="right">  20 </td> <td align="right">  31 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 4 </td> <td> audi </td> <td> a4 </td> <td align="right"> 2.00 </td> <td align="right"> 2008 </td> <td align="right">   4 </td> <td> auto(av) </td> <td> f </td> <td align="right">  21 </td> <td align="right">  30 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 5 </td> <td> audi </td> <td> a4 </td> <td align="right"> 2.80 </td> <td align="right"> 1999 </td> <td align="right">   6 </td> <td> auto(l5) </td> <td> f </td> <td align="right">  16 </td> <td align="right">  26 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 6 </td> <td> audi </td> <td> a4 </td> <td align="right"> 2.80 </td> <td align="right"> 1999 </td> <td align="right">   6 </td> <td> manual(m5) </td> <td> f </td> <td align="right">  18 </td> <td align="right">  26 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 7 </td> <td> audi </td> <td> a4 </td> <td align="right"> 3.10 </td> <td align="right"> 2008 </td> <td align="right">   6 </td> <td> auto(av) </td> <td> f </td> <td align="right">  18 </td> <td align="right">  27 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 8 </td> <td> audi </td> <td> a4 quattro </td> <td align="right"> 1.80 </td> <td align="right"> 1999 </td> <td align="right">   4 </td> <td> manual(m5) </td> <td> 4 </td> <td align="right">  18 </td> <td align="right">  26 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 9 </td> <td> audi </td> <td> a4 quattro </td> <td align="right"> 1.80 </td> <td align="right"> 1999 </td> <td align="right">   4 </td> <td> auto(l5) </td> <td> 4 </td> <td align="right">  16 </td> <td align="right">  25 </td> <td> p </td> <td> compact </td> </tr>
+  <tr> <td align="right"> 10 </td> <td> audi </td> <td> a4 quattro </td> <td align="right"> 2.00 </td> <td align="right"> 2008 </td> <td align="right">   4 </td> <td> manual(m6) </td> <td> 4 </td> <td align="right">  20 </td> <td align="right">  28 </td> <td> p </td> <td> compact </td> </tr>
+   </table>
+
+
+Looking at this first 10 rows, we can tell that the `model` column is a *categorical* variable, the variable `trans` describes the year of the model and it is a *discrete variable*. To have a better overview of each column class we can run `sapply(mpg, class)`
+
+
+<table border=1>
+<caption align="top"> Table: 6 </caption>
+<tr> <th>  </th> <th> manufacturer </th> <th> model </th> <th> displ </th> <th> year </th> <th> cyl </th> <th> trans </th> <th> drv </th> <th> cty </th> <th> hwy </th> <th> fl </th> <th> class </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td> factor </td> <td> factor </td> <td> numeric </td> <td> integer </td> <td> integer </td> <td> factor </td> <td> factor </td> <td> integer </td> <td> integer </td> <td> factor </td> <td> factor </td> </tr>
+   </table>
