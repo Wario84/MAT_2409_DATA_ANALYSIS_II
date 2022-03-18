@@ -16,9 +16,7 @@ In the first lecture, we learn about the scope of Data Science and in lecture tw
 
 ## What is statistics?
 
-Suppose you have a question, for instance, what is the proportion of international students in your university? What is the chance of passing a course in econometrics? What is the percentage of expats living in the Netherlands from Latin American origin?... To find an answer to any of these questions you probably will use your inductive reasoning and collect information from friends, the internet and your own experience. However, if you want to convince people that you have a solid answer for some question, you may want to collect some evidence. Namely, to put together or find a dataset suitable to answer your question in an objective manner.
-
-Statistics is simply the art of learning from data [(Ross, 2010)](https://www.sciencedirect.com/science/article/pii/B9780123743886000016). We use objective recollections of certain events to put together a dataset. Statistics is thus the set of methods that we use to answer questions from data.
+Suppose you have a question, for instance, what is the proportion of international students in your university? What is the chance of passing a course in econometrics? What is the percentage of expats living in the Netherlands from Latin American origin?... To find an answer to any of these questions you probably will use your inductive reasoning and collect information from friends, the internet and your own experience. However, if you want to convince people that you have a solid answer for some question, you may want to collect some evidence. Namely, to put together or find a dataset suitable to answer your question in an objective manner. Statistics is simply the art of learning from data [(Ross, 2010)](https://www.sciencedirect.com/science/article/pii/B9780123743886000016). We use objective recollections of certain events to put together a dataset. Statistics is thus the set of methods that we use to answer questions from data.
 
 ## Descriptive and Inferential Statistics.
 
