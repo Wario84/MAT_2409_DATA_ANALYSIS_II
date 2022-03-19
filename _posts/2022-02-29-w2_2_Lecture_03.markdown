@@ -288,10 +288,58 @@ $$\hat{X}=\frac{1}{n}\sum_{i=1}^n x_i$$
 You, may be wondering then, if we have a simpler manner of computing the mean, why bother? Well, the purpose of this exercise was to teach you the use of frequency tables to summarize variables. Then a second purpose was to show you that there is a link between the mean of the frequency and the probability of a random variable; this link is very important.
 
 
+## Measurements of Central Tendency and Dispersion.
+
+In the last section, we learn that our data sets are collected to summarize and assert something about a certain population of interest. Further, we use **frequency tables** to group the realizations of random variable, and to calculate the **probability** of certain event. Most importantly, we learn the connection between frequency, probability and **average**. The average is only one way to describe the event that most often shows-up, the most popular. In this section, I will show you other measurements to describe the behavior of our variables. Namely, the `mean`, `median`, `mode` and `variance` and `standard deviation`.
+
+To give these measurements a flavor, let use a real data set that is rich in variables describing the behavior of credit card users. You may want to download this data set using the following [link](https://www.kaggle.com/code/amanpatyal/exploratory-analysis-bankchurners-csv/data). First, let's compute the `mean` of some important variables such as `age`, `credit limit`, number of `months inactive` in the past year.  
+
+```
+
+df_chunkers <- read.csv("BankChurners.csv")
+df_chunkers <- as.data.frame(unclass(df_chunkers), 
+                             stringsAsFactors = TRUE) # Convert all columns to factor
+
+mean(df_chunkers$Customer_Age)
+mean(df_chunkers$Credit_Limit)
+mean(df_chunkers$Months_Inactive_12_mon)
+
+
+```
+<table border=1>
+<caption align="top"> Table: 7 </caption>
+<tr> <th>  </th> <th> mean_cust_age </th> <th> mean_cred_lim </th> <th> mean_inac_months </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td align="right"> 46.33 </td> <td align="right"> 8631.95 </td> <td align="right"> 2.34 </td> </tr>
+   </table>
+
+   
+
+One issue of the mean or average is that unfortunately changes rapidly with higher values that may not come from the same data generation process as the described variable. In Data science and statistics, we call these values outlines, to detect them we have to do a separate lecture. But for demonstration purposes, follow this example with artificial data, so you can understand the use of the next measurement of central tendency: median. The variables `X` and `Y` both contain `10` elements, they are identical. The first `9` numbers of are actually the same $$[1-9]$$, however, the variable `Y` last number is `576`, whereas for `X` is `10`. Table 8, summarizes the `mean` of `X` and `Y`, followed by the `median` of `Y`. The value of the mean $$\hat{Y}=62.10$$ is 10 times more than the mean of $$\hat{X}=5.5$$. The difference is huge, and the increase of $$\hat{Y}$$ is only due to one large value. The median thus reflects better the central tendency of a random variable in the presence of outliers.
 
 
 
-# Visualizing Data
+```{r}
+X <- 1L:10L
+mean(X)
+
+Y <- c(1L:9L, 576)
+mean(Y)
+median(Y)
+
+```
+
+
+<table border=1>
+<caption align="top"> Table: 8 </caption>
+<tr> <th>  </th> <th> X_mean </th> <th> mean_Y </th> <th> median_Y </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td align="right"> 5.50 </td> <td align="right"> 62.10 </td> <td align="right"> 5.50 </td> </tr>
+   </table>
+
+   **The median**, similar to the mean, aims to capture the central value of a set of realizations of a random variable. But different to the mean, the calculation starts by sorting the values from the smallest to the largest. Then if $$n$$ is an odd number, the median is the value in the $$(n+1)/2$$ position in the set. Conversely, if $$n$$ is an even number, the median is defined as the average of the positions $$n/2$$ and $$(n/2)+1$$.
+
+
+
+# Visualizing Data.
 
 Another important way to understand data is by using graphical techniques or plots. I will use the `ggplot2` package, that is an elegant environment to graph data using **R**. It is out of the scope of the course to describe in details the use of `ggplot2`. For that reason you may read the following resources before continuing:
 
@@ -300,7 +348,7 @@ Another important way to understand data is by using graphical techniques or plo
 - [`ggplot2` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf)
 
 
-## Visualizing Discreate and Cathegorical Variables
+## Visualizing Discreate and Cathegorical Variables.
 
 First I will use the `cars` data to illustrate how can we use the `ggplot2` to plot and describe discrete variables.  
 
@@ -312,8 +360,8 @@ library(gridExtra)
 
 data(mpg)
 mpg_ <- mpg
-mpg_ <-
-  as.data.frame(unclass(mpg_), stringsAsFactors = TRUE)    # Convert all columns to factor
+mpg_ <-  as.data.frame(unclass(mpg_),
+stringsAsFactors = TRUE)    # Convert all columns to factor
 
 
 
@@ -368,10 +416,7 @@ grid.arrange(
 ```
 
 
-![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/pie_bar_charts.svg?raw=true){width=500px}
-
-
-
+![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/pie_bar_charts.svg?raw=true)
 
 
 
