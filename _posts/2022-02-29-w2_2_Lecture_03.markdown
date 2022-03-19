@@ -305,7 +305,8 @@ Another important way to understand data is by using graphical techniques or plo
 First I will use the `cars` data to illustrate how can we use the `ggplot2` to plot and describe discrete variables.  
 
 <!-- https://dk81.github.io/dkmathstats_site/rvisual-piecharts.html -->
-```{r, results='asis'}
+
+```
 library(ggplot2)
 library(gridExtra)
 
