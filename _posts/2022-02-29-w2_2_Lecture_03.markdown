@@ -293,7 +293,7 @@ You, may be wondering then, if we have a simpler manner of computing the mean, w
 
 # Visualizing Data
 
-Another important way to understand data is by using graphical techniques or plots. I will use the `ggplot2`, that is an elegant environment to graph data using **R**. I strongly advice you to take a look a the following resources before continuing:
+Another important way to understand data is by using graphical techniques or plots. I will use the `ggplot2` package, that is an elegant environment to graph data using **R**. It is out of the scope of the course to describe in details the use of `ggplot2`. For that reason you may read the following resources before continuing:
 
 - [First Steps to `ggplot2`](https://ggplot2-book.org/getting-started.html).
 
@@ -302,13 +302,12 @@ Another important way to understand data is by using graphical techniques or plo
 
 ## Visualizing Discreate and Cathegorical Variables
 
-First I will use the `cars` data to illustrate how can we use the `ggplot2` to plot and describe discrete variables.
+First I will use the `cars` data to illustrate how can we use the `ggplot2` to plot and describe discrete variables.  
 
 <!-- https://dk81.github.io/dkmathstats_site/rvisual-piecharts.html -->
 ```{r, results='asis'}
 library(ggplot2)
 library(gridExtra)
-library(dplyr)
 
 data(mpg)
 mpg_ <- mpg
@@ -364,7 +363,6 @@ grid.arrange(
 )
 
 ```
-
 
 ![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/pie_bar_charts?raw=true)
 
