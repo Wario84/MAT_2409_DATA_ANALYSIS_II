@@ -312,7 +312,9 @@ library(gridExtra)
 
 data(mpg)
 mpg_ <- mpg
-mpg_ <- as.data.frame(unclass(mpg_), stringsAsFactors = TRUE)    # Convert all columns to factor
+mpg_ <-
+  as.data.frame(unclass(mpg_), stringsAsFactors = TRUE)    # Convert all columns to factor
+
 
 
 p <- ggplot(mpg_, aes(y =  year )) # year of car production, discrete.
@@ -365,7 +367,7 @@ grid.arrange(
 
 ```
 
-![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/pie_bar_charts?raw=true)
+![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/pie_bar_charts.SVG?raw=true)
 
 
 
