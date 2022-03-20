@@ -288,12 +288,11 @@ $$\hat{X}=\frac{1}{n}\sum_{i=1}^n x_i$$
 You, may be wondering then, if we have a simpler manner of computing the mean, why bother? Well, the purpose of this exercise was to teach you the use of frequency tables to summarize variables. Then a second purpose was to show you that there is a link between the mean of the frequency and the probability of a random variable; this link is very important.
 
 
-## Measurements of Central Tendency and Dispersion.
+## Measurements of Central Tendency.
 
 In the last section, we learn that our data sets are collected to summarize and assert something about a certain population of interest. Further, we use **frequency tables** to group the realizations of random variable, and to calculate the **probability** of certain event. Most importantly, we learn the connection between frequency, probability and **average**. The average is only one way to describe the event that most often shows-up, the most popular. In this section, I will show you other measurements to describe the behavior of our variables. Namely, the `mean`, `median`, `mode` and `variance` and `standard deviation`.
 
-To give these measurements a flavor, let use a real data set that is rich in variables describing the behavior of credit card users. You may want to download this data set using the following [link](https://www.kaggle.com/code/amanpatyal/exploratory-analysis-bankchurners-csv/data). First, let's compute the `mean` of some important variables such as `age`, `credit limit`, number of `months inactive` in the past year.  
-
+To give these measurements a flavor, let use a real data set that is rich in variables describing the behavior of credit card users. You may want to download this data set using the following [link](https://www.kaggle.com/code/amanpatyal/exploratory-analysis-bankchurners-csv/data). First, let's compute the `mean` of some important variables such as `age`, `credit limit`, number of `dependents` in the past year.  
 ```
 
 df_chunkers <- read.csv("BankChurners.csv")
@@ -302,14 +301,14 @@ df_chunkers <- as.data.frame(unclass(df_chunkers),
 
 mean(df_chunkers$Customer_Age)
 mean(df_chunkers$Credit_Limit)
-mean(df_chunkers$Months_Inactive_12_mon)
+mean(df_chunkers$Dependent_count)
 
 
 ```
 <table border=1>
 <caption align="top"> Table: 7 </caption>
 <tr> <th>  </th> <th> mean_cust_age </th> <th> mean_cred_lim </th> <th> mean_inac_months </th>  </tr>
-  <tr> <td align="right"> 1 </td> <td align="right"> 46.33 </td> <td align="right"> 8631.95 </td> <td align="right"> 2.34 </td> </tr>
+  <tr> <td align="right"> 1 </td> <td align="right"> 46.33 </td> <td align="right"> 8631.95 </td> <td align="right"> 2.35 </td> </tr>
    </table>
 
    
@@ -335,7 +334,68 @@ median(Y)
   <tr> <td align="right"> 1 </td> <td align="right"> 5.50 </td> <td align="right"> 62.10 </td> <td align="right"> 5.50 </td> </tr>
    </table>
 
-   **The median**, similar to the mean, aims to capture the central value of a set of realizations of a random variable. But different to the mean, the calculation starts by sorting the values from the smallest to the largest. Then if $$n$$ is an odd number, the median is the value in the $$(n+1)/2$$ position in the set. Conversely, if $$n$$ is an even number, the median is defined as the average of the positions $$n/2$$ and $$(n/2)+1$$.
+- **The median**, similar to the mean, aims to capture the central value of a set of realizations of a random variable. But different to the mean, the calculation starts by sorting the values from the smallest to the largest. Then if $$n$$ is an odd number, the median is the value in the $$(n+1)/2$$ position in the set. Conversely, if $$n$$ is an even number, the median is defined as the average of the positions $$n/2$$ and $$(n/2)+1$$. In **R** we compute the median, by passing a vector through the function `median()`. In the next table, we compare the three selected variables from the data set of credit card users using the `mean` and `median`.
+
+
+```
+
+median(df_chunkers$Customer_Age)
+median(df_chunkers$Credit_Limit)
+median(df_chunkers$Dependent_count)
+
+```
+
+<table border=1>
+<caption align="top"> Table: 9 </caption>
+<tr> <th>  </th> <th> mean_cust_age </th> <th> median_cust_age </th> <th> mean_cred_lim </th> <th> median_cred_lim </th> <th> mean_dep_count </th> <th> median_dep_count </th>  </tr>
+  <tr> <td align="right"> 1 </td> <td align="right"> 46.33 </td> <td align="right">  46 </td> <td align="right"> 8631.95 </td> <td align="right"> 4549.00 </td> <td align="right"> 2.35 </td> <td align="right">   2 </td> </tr>
+   </table>
+
+
+What we can observe, is that the variable `Credit_Limit`, must be loaded of few consumers with high credit card limit. We know that because the *mean* is significantly bigger than the *median*, or what is called **right-skewness**.  Is called right skewness because there are few values significantly bigger than the rest of the realizations of the random variable. Conversely, **left-skewness*** happens when the *mean* is smaller than the *median*. In the section of visualizing continuous variables, you can see a graphic representation of these two kinds of data arrangements.
+
+- **The mode** is the element with the highest frequency in a set of realizations of a random variable, or in other words the most popular value. In **R**, it is a good practice to calculate the `mode`, alongside the minimum and maximum value of a random variable. Unfortunately, there is no straightforward manner to calculate the `mode`, so what we typically do, is to compute a frequency by computing a `table(X)`, and retrieving the value with the highest frequency. In [Stackoverflow](https://stackoverflow.com/questions/2547402/how-to-find-the-statistical-mode), there is a nice `function` that we can apply to simplify the computation of the mode, as follows:
+
+
+
+```
+
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+Mode(df_chunkers$Customer_Age)
+min(df_chunkers$Customer_Age)
+max(df_chunkers$Customer_Age)
+
+Mode(df_chunkers$Credit_Limit)
+min(df_chunkers$Credit_Limit)
+max(df_chunkers$Credit_Limit)
+
+Mode(df_chunkers$Dependent_count)
+min(df_chunkers$Dependent_count)
+max(df_chunkers$Dependent_count)
+
+```
+
+
+<table border=1>
+<caption align="top"> Table: 10 </caption>
+<tr> <th>  </th> <th> cust_age </th> <th> cred_lim </th> <th> dep_count </th>  </tr>
+  <tr> <td align="right"> Mean </td> <td align="right"> 46.33 </td> <td align="right"> 8631.95 </td> <td align="right"> 2.35 </td> </tr>
+  <tr> <td align="right"> Median </td> <td align="right"> 46.00 </td> <td align="right"> 4549.00 </td> <td align="right"> 2.00 </td> </tr>
+  <tr> <td align="right"> Mode </td> <td align="right"> 44.00 </td> <td align="right"> 34516.00 </td> <td align="right"> 3.00 </td> </tr>
+  <tr> <td align="right"> Min </td> <td align="right"> 26.00 </td> <td align="right"> 1438.30 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> Max </td> <td align="right"> 73.00 </td> <td align="right"> 34516.00 </td> <td align="right"> 5.00 </td> </tr>
+   </table>
+
+
+## Measurements of Central Tendency.
+
+## Measurements of Association.
+
+
 
 
 
@@ -346,6 +406,60 @@ Another important way to understand data is by using graphical techniques or plo
 - [First Steps to `ggplot2`](https://ggplot2-book.org/getting-started.html).
 
 - [`ggplot2` Cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf)
+
+## Normal Distribution.
+
+The measurements of *centrality* and *dispersion* are better observed if we sort them, and we arrange the realizations of the random variable using plots. The first plot is called **histogram** and a smother version of this plot is called **density** plot. Histograms are excellent to visualize the arrangement of discrete variables, for instance `age` and `number of dependents` in the credit card data set. However, continuous variables like `credit card` limit are better observed with the density plot.
+
+If we pay attention to column three, from table 10, we can see how come the arrangement or **distribution** of a random variable `Credit_Limit` is **right-skewed**. The reason, is due to the fact that most observations lie to the left of the mean, but there are few individuals with a very high credit limit. This is also observed in the third row of the picture below Here, we can see that the distribution of `Credit_Limit` is leaning towards the left, because, there are few high values, the `mean` is bigger than the `median` and the `QQ-plot` deviates from at 45 degree line, but it is heavily loaded on the tails of the distribution.
+
+The variables `age` and `number of dependents` show a symmetrical arrangement. When the variables display this pattern, we called them approximately **normally distributed**. Many empirical variables render this pattern, when the `mean` and `median` do not deviate largely, such as the variables `age` and `number of dependents`. Furthermore, we can observe that the `QQ-plot` renders a line that is closer to a 45 degree line from origin to the top-right of the plot in rows one and two. Similarly, we can observe the symmetry of the distributions because the mean and the median are close to each other in the center of the distribution, and values to the right and left have a lower frequency.
+
+<br>
+
+```
+library(ggplot2)
+library(gridExtra)
+
+p <- ggplot(df_chunkers, aes(x =  Customer_Age)) # Customer age.
+c <- ggplot(df_chunkers, aes(x = Dependent_count)) # Number of dependents.
+m <- ggplot(df_chunkers, aes(x =  Credit_Limit )) # Credit card limit.
+
+
+grid.arrange(
+  p + geom_histogram() +
+    ggtitle("Histogram"),
+  
+  p + geom_density() +
+    ggtitle("Density"),
+  
+  ggplot(df_chunkers) + geom_qq(aes(sample = Customer_Age)) +
+    ggtitle("QQ-Plot"),
+  
+  c + geom_histogram() +
+    ggtitle("Histogram"),
+  
+  c + geom_density() +
+    ggtitle("Density"),
+  
+  ggplot(df_chunkers) + geom_qq(aes(sample = Dependent_count)) +
+    ggtitle("QQ-Plot"),
+  
+  m + geom_histogram() +
+    ggtitle("Histogram"),
+  
+  m + geom_density() +
+    ggtitle("Density"),
+  
+  ggplot(df_chunkers) + geom_qq(aes(sample = Credit_Limit)) +
+    ggtitle("QQ-Plot"),
+  
+  ncol = 3
+)
+
+```
+
+![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/histo_densi_qq.svg?raw=true)
 
 
 ## Visualizing Discreate and Cathegorical Variables.
