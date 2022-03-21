@@ -23,7 +23,30 @@ Suppose you have a question, for instance, what is the proportion of internation
 There are two kinds of questions that we can answer from data using statistics. One group of questions, uses  *descriptive statistics* to summarize facts from the given data. For instance, what is the frequency of late arrivals from Utrecht to Amsterdam by train? Which is the most popular song on the Radio? What is the chance of getting divorced after marriage? What is the average time of train arrival? The second group of questions makes use of *inferential statistics* to draw conclusions using the data about an underlying population. For instance, what is the effect of education on income? What is the effect of a vaccine on a variant of COVID-19? What is the change in the outcome variable for one unit of the dependent variable? The latter kind of questions are covered in [lecture 4](https://wario84.github.io/idsc_mgs/2022/02/22/w4_2_Lecture_04.html) where we dive into some basic inferential techniques, and we draw the line between correlation, causation and prediction.
 
 
-# Types of Data
+
+# Samples, Population and Data Generation Process.
+
+In Data Science and Statistics, it is crucial to distinguish between two different process. The first process is called,  **data generation process** is a higher level process that corresponds to certain **population**. The second process is called **data collection**, and it is concern on ways of collecting data from the population. The goal of Statistics is to use the sample to describe or draw conclusions about the population that remains hidden or latent. The population is the collection of all elements that we are interested. A simple example of these two processes are clearer if we reflect upon a *census*. The census is oriented towards collecting data about a population or certain country, region or state. The collective behavior of individuals in this population generates the data. A second process aims to collect the sample from the corresponding population. We use a sample, because almost impossible and costly to have data of all the individuals that belong to a country at every point in time. Even if the census have a good representation of the population, daily deaths and births of every day are very difficult to collect instantaneously.
+
+## Parameters and Estimators
+
+ In Statistics, we assume that there is a set of **population parameters** that we can estimate using samples called **estimators**. Because this course revolves around application rather than on theory, the following sections pay attention to the estimators rather than the parameters. What you have to keep in mind, is that the parameters remain hidden because they are the outcome of the data generation process from the population. Instead, what we observe is only the estimators from our sample, such as the measurements of central tendency, dispersion and association [(Next Section)](#Basics of Descriptive Statistics.). 
+ 
+ 
+ When we talk about the parameters, we are talking in an abstract level about key values from our population that we are estimating from our sample. Don't get confused, a good way to get your mind around parameters and estimators is using your knowledge from the past lecture about *inductive reasoning*. The parameters are similar to deductive statements, because knowing the parameters (although almost impossible), it knows the estimators. However, statistics does not work in that way, most of the time we are confronted with the problem of estimating the parameters with samples from the population. Namely, we use *inductive* reasoning to calculate what could be the parameter from our samples, namely, the **estimators**. The following tables provide an overview of the common symbols used to describe the parameters and sample estimators.
+
+<table border=1>
+<caption align="top"> Table: Parameters vs Estimators </caption>
+<tr> <th>  </th> <th> Parameter </th> <th> Estimator </th>  </tr>
+  <tr> <td align="right"> Mean </td> <td>$$\mu_x=E[X]$$</td> <td> $$\bar{X}$$ </td> </tr>
+  <tr> <td align="right"> Variance </td> <td> $$\sigma^2$$  </td> <td> $$S^2$$  </td> </tr>
+  <tr> <td align="right"> Standard Dev. </td> <td>  $$\sigma$$ </td> <td> $$S$$ </td> </tr>
+  <tr> <td align="right"> Covariance </td>  <td> $$\sigma_{XY}$$ </td> <td> $$S_{XY}$$ </td> </tr>
+  <tr> <td align="right"> Correlation </td> <td> $$\rho_{XY}$$  </td> <td> $$R_{XY}$$ </td> </tr>
+   </table>
+
+
+## Types of Data
 
 Not all variables are arranged in the same way. For instance, in a census, it makes sense to use discrete or whole numbers to describe the *number of household* members. Similarly, the inventories of companies producing items are filled with whole numbers; for instance, A manager shows 100 computers in the monthly production report. **Discrete Variables** are things that we can count. In **R**, this class of atomic element and variables is called `class = integer`. There are other type of variables that we approximate or measure, these are called **Continuous Variables**. For instance, we measure the temperature of every day, also we measure the GDP growth of a given country and the time of waking up every day. These variables are called `class = numeric` in **R**.
 
@@ -76,11 +99,8 @@ Looking at this first 10 rows, we can tell that the `model` column is a *categor
 
 
 
-## Samples, Population and Data Generation Process.
+In the next section, I define random variables and simulate the data generation process using R. Think of this random variables as your population, because they contain all the elements that we are interested in. Using **R**, I perform a simulated experiment that yields one or more realizations of a random variable to compute the frequency, the sample mean and the empirical probability.
 
-In Data Science and Statistics, it is crucial to distinguish between two different process. The first process is called,  **data generation process** is a higher level process that corresponds to certain **population**. The second process is called **data collection**, and it is concern on ways of collecting data from the population. The goal of Statistics is to use the sample to describe or draw conclusions about the population that remains hidden or latent. The population is the collection of all elements that we are interested. A simple example of these two processes are clearer if we reflect upon a *census*. The census is oriented towards collecting data about a population or certain country, region or state. The collective behavior of individuals in this population generates the data. A second process aims to collect the sample from the corresponding population. We use a sample, because almost impossible and costly to have data of all the individuals that belong to a country at every point in time. Even if the census have a good representation of the population, daily deaths and births of every day are very difficult to collect instantaneously.
-
-In the next section, we will define random variables that come from a data generation process. Think of them as your population, because they contain all the elements that we are interested in. Then using **R**, we sample this random variable, and we collect the output of this experiment.
 
 # Basics of Descriptive Statistics.
 
@@ -88,7 +108,7 @@ This lecture covers different techniques to summarize and describe facts and pat
 
 ## Frequency Tables
 
-Frequency tables eliminate the redundancy of the values and present how often the values appear in the data set. First, let's give an example from a random variable $$X = [A, B, \dots, J]$$. I assume that each realization, letters from A-J, has equal chance of being selected, and sample $$n=100$$ with replacement. This sample is with replacement because the total number of elements in the sample space (10 letters) is smaller than the sample (100).
+Frequency tables eliminate the redundancy of the values and present how often the values appear in the data set. First, let's give an example from a random variable $$X = \{A, B, \dots, J\}$$. I assume that each realization, letters from A-J, has equal chance of being selected, and sample $$n=100$$ with replacement. This sample is with replacement because the total number of elements in the sample space (10 letters) is smaller than the sample (100).
 
 
 ```
@@ -124,7 +144,7 @@ With the cumulative sum on the third column, we can that around 60% of the value
    </table>
 
 
-For *continuous variables*, we do not have differentiated intervals or breaks. Simply because of the continuous nature of the variable. For instance, let's define another random variable  $$Y \sim [1-10]$$ of real numbers (contains decimals and other rational numbers) with equal chance of being selected. Similarly, we sample only $$n=100$$ values.
+For *continuous variables*, we do not have differentiated intervals or breaks. Simply because of the continuous nature of the variable. For instance, let's define another random variable  $$Y = \{1-10\}$$ of real numbers (contains decimals and other rational numbers) with equal chance of being selected. Similarly, we sample only $$n=100$$ values.
 
 
 ```
@@ -236,7 +256,7 @@ That wasn't that hard, isn't?
 Now we can link the frequency and probability to the *sample mean* and the *expectation*. We conclude that if the die is fair then we expect that on average each event show up $$16$$ times for every $$100$$ trials. That means the expectation of the random variable $$X$$ is defined as:
 
 <br>
-$$E[X]= \bar{X}=\frac{1}{6}$$
+$$E[X]= \mu_{X} =\frac{1}{6}$$
 <br>
 
 Bear in mind that the $$E[X]$$ describes the behavior of the random variables when we observe the population. Or in other words, when our sample size is sufficiently large to approximate the $$E[X]$$. In the previous example, we only have $$n=1000$$ trials, and for this sample we can compute the *sample mean* or average in the following way:
@@ -278,6 +298,8 @@ sum(df$x_freq)
   <tr> <td align="right"> 6 </td> <td> 6 </td> <td align="right"> 171 </td> <td align="right"> 1000 </td> <td align="right"> 0.17 </td> <td align="right"> 1.03 </td> </tr>
    </table>
 
+<br>
+
 The previous procedure is exactly the same if you compute `mean(X)`, prove it yourself. This formula, $$\hat{X}=\sum_1^S \frac{x_i *1_{\{ X = x_i\}}}{n}$$,  of the mean is very tedious, and normally it does not appear in the text books. Instead, what typically shows up is the simpler version of the average, similarly to [Wikipedia's Formula](https://en.wikipedia.org/wiki/Sample_mean_and_covariance).
 
 <br>
@@ -285,7 +307,7 @@ The previous procedure is exactly the same if you compute `mean(X)`, prove it yo
 $$\hat{X}=\frac{1}{n}\sum_{i=1}^n x_i$$
 <br>
 
-You, may be wondering then, if we have a simpler manner of computing the mean, why bother? Well, the purpose of this exercise was to teach you the use of frequency tables to summarize variables. Then a second purpose was to show you that there is a link between the mean of the frequency and the probability of a random variable; this link is very important.
+You, may be wondering then, if we have a simpler manner of computing the mean, why bother? Well, the purpose of this exercise was to teach you the use of frequency tables to summarize variables. Then a second purpose is to make explicit the link between the mean, the frequency and the probability of a random variable.
 
 
 ## Measurements of Central Tendency.
@@ -391,12 +413,139 @@ max(df_chunkers$Dependent_count)
    </table>
 
 
-## Measurements of Central Tendency.
+## Measurements of Dispercion.
+
+In the last sections, I show you measurements that summarize the central tendency of the variables. In this section, I am presenting the basic measurements that describe the dispersion of the variables. First, it is useful to know the spread of a variable in terms of the minimum and maximum variable in the set, using the function `range`. This however is not very informative because we do not have an idea of the values within these two extreme points. To have a better understanding of the spread of the values, we compute the `variance` the and `standard deviation`. These two measurements describe the spread of a variable, taking the mean as the point of comparison. The two measurements are related, because the standard deviation is simply the square root of the variance $$\sqrt{s^2}$$. 
+
+
+- The **variance** starts by comparing all $$x_i$$ realizations to the mean of the random variable. These deviations are simply the difference of the realization to the mean $$\sum^n_{i=1}\frac{(x_i - \hat{x})}{(n-1)}$$. Naturally, the previous expression yields positive and negative that attenuate the real dispersion of the variable. For instance, imagine that we roll two dice, $$X=\{1, 2, \dots 12\}$$ 4 times, assume that the average is $$E[X]=6$$, and the field of realizations is $$[4,8,2,10]$$. Computing the average of deviations from the mean yields $$[4-6,\ 8-6,\ 2-6,\ 10-6]= (-2)+(2)+(-4)+(4)=0$$. This previous measurement is not informative because positive and negative deviations from the mean cancel each other out. Because of that reason, the variance takes the squared deviations from the mean as follows:
+
+<br>
+ $$s^2=\sum^n_{i=1}\frac{(x_i - \hat{x})^2}{(n-1)}$$
+<br>
+
+- The **standard deviation** is based on the variance, and it is defined as the squared root of the average squared deviations from the mean. In plain words the standard deviations tells us the average deviations from the mean. This measurement of dispersion helps us to map realizations of a random variable with corresponding probabilities (Section Normal Distribution).
+
+<br>
+ $$s=\sqrt{s^2}$$
+<br>
+
+
+From our previous analysis of measurements of central tendency (Table 10), we found that the credit `card limit` is a right-skewed variable. We may suspect already that this variable has a high dispersion in comparison to the `age` and `number of dependents` because there is large difference between the minim value and the maximum value, that is the `range`. Lets verify this suspicion using our R-skills.
+
+
+```
+
+mean(df_chunkers$Customer_Age)
+median(df_chunkers$Customer_Age)
+Mode(df_chunkers$Customer_Age)
+range(df_chunkers$Customer_Age)
+var(df_chunkers$Customer_Age)
+sd(df_chunkers$Customer_Age)
+
+
+mean(df_chunkers$Credit_Limit)
+median(df_chunkers$Credit_Limit)
+Mode(df_chunkers$Credit_Limit)
+range(df_chunkers$Credit_Limit)
+var(df_chunkers$Credit_Limit)
+sd(df_chunkers$Credit_Limit)
+
+mean(df_chunkers$Dependent_count)
+median(df_chunkers$Dependent_count)
+Mode(df_chunkers$Dependent_count)
+range(df_chunkers$Dependent_count)
+var(df_chunkers$Dependent_count)
+sd(df_chunkers$Dependent_count)
+
+
+```
+
+
+<table border=1>
+<caption align="top"> Table: 11 </caption>
+<tr> <th>  </th> <th> cust_age </th> <th> cred_lim </th> <th> dep_count </th>  </tr>
+  <tr> <td align="right"> Mean </td> <td align="right"> 46.33 </td> <td align="right"> 8631.95 </td> <td align="right"> 2.35 </td> </tr>
+  <tr> <td align="right"> Median </td> <td align="right"> 46.00 </td> <td align="right"> 4549.00 </td> <td align="right"> 2.00 </td> </tr>
+  <tr> <td align="right"> Mode </td> <td align="right"> 44.00 </td> <td align="right"> 34516.00 </td> <td align="right"> 3.00 </td> </tr>
+  <tr> <td align="right"> Range-Min </td> <td align="right"> 26.00 </td> <td align="right"> 1438.30 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> Range-Max </td> <td align="right"> 73.00 </td> <td align="right"> 34516.00 </td> <td align="right"> 5.00 </td> </tr>
+  <tr> <td align="right"> Variance </td> <td align="right"> 64.27 </td> <td align="right"> 82605861.00 </td> <td align="right"> 1.69 </td> </tr>
+  <tr> <td align="right"> S.D </td> <td align="right"> 8.02 </td> <td align="right"> 9088.78 </td> <td align="right"> 1.30 </td> </tr>
+   </table>
+
+
+
+
+What can we conclude from Table 11? As we suspected, the variables `credit card limit` depicts a very large dispersion from the mean; around $$9000.00$$ US dollars. The `number of dependents` does not depart much from the mean, on average all the observations departs around $$1.3$$ units from the mean. Also the variable `age` does not have a high dispersion, as we find customers ranging from 26 to 76 but the observations only deviate $$8$$ years on average from the mean of $$46$$ years.
+
+
 
 ## Measurements of Association.
 
+Aside from describing the data using the measurements of central tendency and dispersion, descriptive statistics, also involve measuring relations between pairs of variables. In [Lecture 4](https://wario84.github.io/idsc_mgs/2022/02/22/w4_2_Lecture_04.html), is all about the kinds of relationships between variables. As we will learn, an association is not a synonym of causation, and we should be careful about the claim you make about the relationship between two variables using the following measurements. These two measurements of association are not causal, which means they only inform about the way the pair of variables change together, namely *positive*, *negative* or *no-relation*.
 
 
+- **Covariance** measures the extent from which two random variables change together. We compute the sample co-variance by adding the product of the deviations between two variables $$X$$ and $$Y$$.
+
+<br>
+$$S_{XY}= \sum_i^{n} \frac{(x_i - \bar{x})(y_i - \bar{y})}{(n-1)}$$
+<br>
+
+- **Correlation** is the standardized version of the co-variance. The output of the co-variance is difficult to interpret, because the units of $$X$$ are multiplied times the units of $$Y$$. To avoid this problem, the correlations standardizes the change between the two variables by dividing the co-variance by the product of the sample standard deviation of the two variables. The result is an index that varies between $$[-1,1]$$, indicating the strengh of the relationship as it approxes the extreme values, and the type of relationship if the computation of the index yields positive or negative values.
+
+
+<br>
+$$R_{XY}=  \frac{S_{XY}}{S_x \, S_y}$$
+<br>
+
+
+In **R**, the computation of the co-variance and correlation is straight fordward. The most common ways to present the co-variances and correlations between variables in a data set is by using a matrix.
+
+
+
+```
+
+cov(df_chunkers$Customer_Age, df_chunkers$Credit_Limit)
+cor(df_chunkers$Customer_Age, df_chunkers$Credit_Limit)
+
+cov(df_chunkers$Customer_Age, df_chunkers$Dependent_count)
+cor(df_chunkers$Customer_Age, df_chunkers$Dependent_count)
+
+cor(df_chunkers$Dependent_count, df_chunkers$Credit_Limit)
+cov(df_chunkers$Dependent_count, df_chunkers$Credit_Limit)
+
+
+cols <- c("Customer_Age", "Dependent_count", "Total_Revolving_Bal", 
+"Avg_Utilization_Ratio") # subset of variables.
+  
+cov(df_chunkers[,cols]) # covariance matrix
+cor(df_chunkers[,cols]) # correlation matrix
+
+
+```
+<table border=1>
+<caption align="top"> Table 12: Co-variance Matrix </caption>
+<tr> <th>  </th> <th> Customer_Age </th> <th> Dependent_count </th> <th> Total_Revolving_Bal </th> <th> Avg_Utilization_Ratio </th>  </tr>
+  <tr> <td align="right"> Customer_Age </td> <td align="right"> 64.27 </td> <td align="right">  </td> <td align="right">  </td> <td align="right">  </td> </tr>
+  <tr> <td align="right"> Dependent_count </td> <td align="right"> -1.27 </td> <td align="right"> 1.69 </td> <td align="right">  </td> <td align="right">  </td> </tr>
+  <tr> <td align="right"> Total_Revolving_Bal </td> <td align="right"> 96.57 </td> <td align="right"> -2.85 </td> <td align="right"> 664204.36 </td> <td align="right">  </td> </tr>
+  <tr> <td align="right"> Avg_Utilization_Ratio </td> <td align="right"> 0.02 </td> <td align="right"> -0.01 </td> <td align="right"> 140.21 </td> <td align="right"> 0.08 </td> </tr>
+   </table>
+
+As expected, the co-variance matrix (Table 12) is only able to describe if the relationship between the variables is positive or negative. However, the values of the matrix does not tell anything about the strength of the relationship between pairs of variables.
+
+
+<table border=1>
+<caption align="top"> Table: Correlation Matrix </caption>
+<tr> <th>  </th> <th> Customer_Age </th> <th> Dependent_count </th> <th> Total_Revolving_Bal </th> <th> Avg_Utilization_Ratio </th>  </tr>
+  <tr> <td align="right"> Customer_Age </td> <td align="right"> 1.00 </td> <td align="right">  </td> <td align="right">  </td> <td align="right">  </td> </tr>
+  <tr> <td align="right"> Dependent_count </td> <td align="right"> -0.12 </td> <td align="right"> 1.00 </td> <td align="right">  </td> <td align="right">  </td> </tr>
+  <tr> <td align="right"> Total_Revolving_Bal </td> <td align="right"> 0.01 </td> <td align="right"> -0.00 </td> <td align="right"> 1.00 </td> <td align="right">  </td> </tr>
+  <tr> <td align="right"> Avg_Utilization_Ratio </td> <td align="right"> 0.01 </td> <td align="right"> -0.04 </td> <td align="right"> 0.62 </td> <td align="right"> 1.00 </td> </tr>
+   </table>
+
+The correlation matrix (Table 13) show more clearly the relationship between pairs of variables. Similarly to Table 12, the main diagonal (composed of ones) is not informative, as it only measures the correlation with the variable itself. Assessing the first column of the matrix, we can compare the correlation between `Customer_Age` and all the other variables in the sub-sample. We can tell that there is a negative relationship between `Dependent_count` and `Customer_Age`. This signifies that there when the age of the customers increases (for instance above the mean of 46 years) the tendency to have children reduces. Although, this association is weak, as the correlation coefficient is only $$-0.12$$. `Customer_Age` shows no correlation to the other variables `Total_Revolving_Bal` and `Avg_Utilization_Ratio`. Focusing on column three or the row number four of Table 13, we can see that there is a positive relationship between the `Avg_Utilization_Ratio` and `Total_Revolving_Bal`. This correlation follows our intuition, as customers use more often their credit card also most likely have a higher balance.
 
 
 # Visualizing Data.
