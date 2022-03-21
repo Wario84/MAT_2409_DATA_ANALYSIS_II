@@ -421,13 +421,13 @@ In the last sections, I show you measurements that summarize the central tendenc
 - The **variance** starts by comparing all $$x_i$$ realizations to the mean of the random variable. These deviations are simply the difference of the realization to the mean $$\sum^n_{i=1}\frac{(x_i - \hat{x})}{(n-1)}$$. Naturally, the previous expression yields positive and negative that attenuate the real dispersion of the variable. For instance, imagine that we roll two dice, $$X=\{1, 2, \dots 12\}$$ 4 times, assume that the average is $$E[X]=6$$, and the field of realizations is $$[4,8,2,10]$$. Computing the average of deviations from the mean yields $$[4-6,\ 8-6,\ 2-6,\ 10-6]= (-2)+(2)+(-4)+(4)=0$$. This previous measurement is not informative because positive and negative deviations from the mean cancel each other out. Because of that reason, the variance takes the squared deviations from the mean as follows:
 
 <br>
- $$s^2=\sum^n_{i=1}\frac{(x_i - \hat{x})^2}{(n-1)}$$
+ $$S^2=\sum^n_{i=1}\frac{(x_i - \hat{x})^2}{(n-1)}$$
 <br>
 
 - The **standard deviation** is based on the variance, and it is defined as the squared root of the average squared deviations from the mean. In plain words the standard deviations tells us the average deviations from the mean. This measurement of dispersion helps us to map realizations of a random variable with corresponding probabilities (Section Normal Distribution).
 
 <br>
- $$s=\sqrt{s^2}$$
+ $$S=\sqrt{S^2}$$
 <br>
 
 
@@ -611,9 +611,10 @@ grid.arrange(
 ![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/histo_densi_qq.svg?raw=true)
 
 
-## Visualizing Discreate and Cathegorical Variables.
+## Visualizing Discrete and Categorical Variables
 
-First I will use the `cars` data to illustrate how can we use the `ggplot2` to plot and describe discrete variables.  
+Categorical variables are different in nature to continuous or discrete variables. Categorical variables, typically map a list of mutually exclusive categories. The list of categories is typically smaller range in comparison to spread of continuous or discrete variables. The purpose of categorical variables is mapping changes in kind, state or quality, in comparison of numerical and discrete variables that map subtle changes of one kind. In the data set of credit card customers, we have examples of numerical variables that map changes in one dimension in terms of `age`, `number of dependents` or `utilization ratio`. But categorical variables map changes of different kinds, for instance, the `cars` data set of the `ggplot2` package is rich in categorical variables. The selected categorical variables, `year`, map changes in production from two years; the variable `cyl` maps the number of motor cylinders of a car; the variable `manufacturer` maps different brands of cars and the variable `trans` specifies the type of gear of the cars. This kind of variables are better visualized using **Bar Plots** and **Pie Charts**, as follows:
+
 
 <!-- https://dk81.github.io/dkmathstats_site/rvisual-piecharts.html -->
 
