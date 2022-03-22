@@ -1,9 +1,9 @@
 ---
 
 layout: post
-title: "Lecture 4: ..."
+title: "Lecture 4: Inferential Statistics: Causation or Correlation?"
 author: "Mario H. Gonzalez-Sauri"
-date: "2022-02-22"
+date: "2022-03-21"
 mermaid: true
 
 ---
@@ -12,12 +12,42 @@ mermaid: true
 
 # Introduction
 
-<!--  https://trends.google.com/trends/explore?date=2012-01-01%202022-02-25&q=%2Fm%2F0jt3_q3,%2Fm%2F01hyh_,Big%20Data  -->
+In the first lecture, we learn that most of our work in Data Science revolves around combining advanced coding with computational statistics to summarize data, claim something about the relationship between variables, and to make predictions. Sometimes, these three types of analysis are no so obvios to distinguish. Hence the purpose of this lecture is to draw a line between these types of analysis, in order to select the right kind of tools to solve a particular problem or to answer the right question. In Lecture 3, we review the use of descriptive statistics to answer "What is the current state of affairs?"; "How often, how many, when?" or "what is the association between two variables?". This last question, is central quest of econometrics and and has a special place in empirical economics.
+
+# Causality and Correlation
+As it turns out, the kind of relationship between two variables is no so clear. As Data Scientist we should proceed with scientific skepticism when we analize the relationship between two variables. When we measure a `correlation` between two variables we are merely assessing the asociation between two variables but that is not the same as causation. If you are approaching this distinction for the first time, perhaps it is better to give examples, so by induction you are able to understand the difference. 
+
+- [Chocolate consumption and Noble laureates](https://www.sciencedirect.com/science/article/pii/S2590291120300711): The study of Aloys LeoPrinz, (2020), studies the well known association between Noble laureates and chocolate consumption. At first glimpse, when we look at the consumption of coffee and chocolate with then number of Noble laurates winner, we can tell that there is a positive relationship. Using the our descriptive statistics we can assess this easily with a scatter plot or correlation table.
+
+<table border=1>
+<caption align="top"> Table: 1 </caption>
+<tr> <th>  </th> <th> cholate_per_cap </th> <th> coffee_per_cap </th> <th> no_nobel_lau </th>  </tr>
+  <tr> <td align="right"> cholate_per_cap </td> <td align="right"> 1.00 </td> <td align="right">  </td> <td align="right">  </td> </tr>
+  <tr> <td align="right"> coffee_per_cap </td> <td align="right"> 0.45 </td> <td align="right"> 1.00 </td> <td align="right">  </td> </tr>
+  <tr> <td align="right"> no_nobel_lau </td> <td align="right"> 0.17 </td> <td align="right"> -0.12 </td> <td align="right"> 1.00 </td> </tr>
+   </table>
 
 
-Welcome to the Introduction to Applied Data Science! I'm sure you hace heard the terms, Big Data, Machine Learning and Data Science in the media or perhaps from other peers. It seems that today, that the terms are being used more often. In fact, Data Science and Machine Learning (ML) have reach the Top in the Google index of most frequent terms as fields of study. This pattern has been increasing for the last 10 years, and the trend seem to be upward.
+   ![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/choc_coffee.svg?raw=true)
 
 
+
+
+## Experimental Data
+
+
+# Observational Data
+
+# Endogenous and Exogenous
+
+
+
+## Ommited Variable Bias
+
+## Reverse Causality
+
+## Measurement Error
+ 
 
 
 
