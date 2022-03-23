@@ -12,12 +12,73 @@ mermaid: true
 
 # Introduction
 
-In the first lecture, we learn that most of our work in Data Science revolves around combining advanced coding with computational statistics to summarize data, claim something about the relationship between variables, and to make predictions. Sometimes, these three types of analysis are no so obvios to distinguish. Hence the purpose of this lecture is to draw a line between these types of analysis, in order to select the right kind of tools to solve a particular problem or to answer the right question. In Lecture 3, we review the use of descriptive statistics to answer "What is the current state of affairs?"; "How often, how many, when?" or "what is the association between two variables?". This last question, is central quest of econometrics and and has a special place in empirical economics.
+In the first lecture, we learn that most of our work in Data Science revolves around combining advanced coding with computational statistics to summarize data, claim something about the relationship between variables, and to make predictions. Sometimes, these three types of analysis are not so obvious to distinguish. Hence, the purpose of this lecture is to draw a line between these types of analysis, in order to select the right kind of tools to solve a particular problem or to answer the right question. In Lecture 3, we review the use of descriptive statistics to answer "What is the current state of affairs?"; "How often, how many, when?" or "what is the association between two variables?". This last question, is the central quest of econometrics and has a special place in empirical economics.
 
 # Causality and Correlation
-As it turns out, the kind of relationship between two variables is no so clear. As Data Scientist we should proceed with scientific skepticism when we analize the relationship between two variables. When we measure a `correlation` between two variables we are merely assessing the asociation between two variables but that is not the same as causation. If you are approaching this distinction for the first time, perhaps it is better to give examples, so by induction you are able to understand the difference. 
+As it turns out, the kind of relationship between two variables is no so clear. As Data Scientist, we should proceed with scientific skepticism when we analyze the relationship between two variables. When we measure a correlation between two variables, we are merely assessing the association between two variables, but that is not the same as causation. If you are approaching this distinction for the first time, perhaps it is better to give examples, so by induction you are able to understand the difference. But before I give you some examples, I want to explain a framework, so you can have enough knowledge to navigate the examples.
 
-- [Chocolate consumption and Noble laureates](https://www.sciencedirect.com/science/article/pii/S2590291120300711): The study of Aloys LeoPrinz, (2020), studies the well known association between Noble laureates and chocolate consumption. At first glimpse, when we look at the consumption of coffee and chocolate with then number of Noble laurates winner, we can tell that there is a positive relationship. Using the our descriptive statistics we can assess this easily with a scatter plot or correlation table.
+To draw a line between an association or correlation to a causal relationship between two variables, I elaborate on two properties that causal relationships must have:
+
+
+## A Causal Mechanism
+
+The development of Machine Learning and Big Data are pushing the boundaries between **data-driven** and **theory-driven** research [(Maass, Parsons, Et Al., 2018)](https://aisel.aisnet.org/jais/vol19/iss12/1/). However, in Economics, we are skeptical about weather data driven methods can really be a substitute for theory driven research. There is a long tradition among, in Econometrics, of pointing out the problems of **spurious** relationships between variables. In Layman's terms, bias means two variables seem to have a relationship, but they are in fact completely unrelated. The core of the issue is that with the advent of Information Communication Systems and now Big data, we are generating a large volume of information. This possesses a challenge because given the high availability of data, more often than before, we can find out of chance pairs of variables that are completely unrelated, but they have almost identical behavior.
+
+So then, what is the solution to avoid the trap of the *spurious* relationship between two variables? The answer is a well-defined and coherent theoretical framework. In fact, the main stream of methodology in economics, has always been about finding methods to prove economic theory and not the other way around. Although, that trend is changing, and some Data Scientist would argue that research is becoming more data driven, the fact is that in economics there is no substitute for a well-defined and coherent theory. The seminal work of [Blaug (1992)](https://www.cambridge.org/core/books/methodology-of-economics/A02870A52E4F457D4EFBAA3242BAE541), takes a closer look at the developments of methodology in economics and argues that:
+
+>> Methodology is study of the relationship between *theoretical concepts* and warranted conclusions about the real world; in particular, methodology is that branch of economics where we examine the ways in which economists justify their theories and the reasons they offer for preferring one theory over another.
+
+## An Exogenous Model
+
+To argue that two or more variables hold a causal relationship, we must ensure that our models are exogenous. What does that mean? Well, to say that $$X \rightarrow Y$$, requires that we control in the estimation all other factors that affect $$Z \rightarrow Y$$ our dependent variable. If our theory suggest that $$X$$ causes $$Y$$, we must ensure that our estimation isolates well the causal mechanism. In other words, that we account jointly with $$X$$ all the other $$Z$$ determinants of $$Y$$. If we fail to include all the variables that are systematically affecting $$Y$$, we fall in the **omitted variable bias (OVB)** trap. OVB is common, because most of the time there are variables that remain confounded or unobservable, thus making it really hard to distinguish if $$X$$ determines $$Y$$, or perhaps is $$Z$$. The classic example is the estimation of years of *education* ($$X$$) on *income* ($$Y$$). The problem is that we can measure really well the years of education, but other determinants like ability, motivation and number of hours of study are very hard to measure. Even if we have psychometric measurements of IQ, there are only proxies of the latent ability at the individual level. A proxy means that is just an approximation of the real variable that remains latent or confounded most of the time. The book of [Stock and Watson, (2019)](https://www.pearson.com/us/higher-education/program/Stock-Introduction-to-Econometrics-Plus-My-Lab-Economics-with-Pearson-e-Text-Access-Card-Package-4th-Edition/PGM2416966.html), offers another example from the study of shool grades ($$Y$$) and the student-teacher ratio. The intuition of the study is that if the student-teacher ratio is high, then the grades are low. The causal mechanism is that explains this negative relation is the lack of capacity of teachers to properly tutor many students. However, the estimation, suffers from OBV, because it does not account for the percentage of English learners in some schools. This is a problem because migrant children might require additional tutoring, given that they do not master the language. Another potential source of OVB is the lack of control of the time of the test. As it turns out, the time of the test can impact the scores, because in early morning and later in the evening the alertness may reduce.
+
+A second source of **endogeneity** (opposite of exogeneity) is called **reverse-causality**. Reverse causality is a real problem in many datasets because there is some feedback mechanism $$Y \rightarrow X$$ in which the dependent variable also affects the explanatory variable. A classic example in economics of these issue is presents in the functions of supply and demand. The issue is that $$S=P$$ supply varies depending on the selling price, but simultaneously, the price is also changing according to the demand $$D=P$$. These are a problem because the dependent variable supply adjust the price under equilibrium. This system of equations has a problem or **reverse causality** that is not so straightforward to solve. A similar problem, is called **circularity**, and it happens when past realizations of a dependent variable have an impact on contemporaneous values. There are many examples of this problem in finance and time series econometrics, for instance, in macroeconomic estimations of the $$GDP_{t}$$ is crucial to include the previous state of affairs $$GDP_{t-y}$$. Where $$t>y$$ stands for a previous period, such that the current or contemporaneous $$GDP$$ depends on the state of affairs of the last year. In many empirical applications, the past realizations of random variables are determinants of future values (Stochastic Process).
+
+
+
+## Nature of the data
+
+He uses observational data and he does not solve the problem of self-selection. The problem of self-selection is difficult to solve using observational data. In fact, the Nobel Prize Winners of Economics of 2021, receive their rewards because they find novel ways of using observational 
+
+
+
+
+# Examples
+
+## [Chocolate consumption and Noble laureates](https://www.sciencedirect.com/science/article/pii/S2590291120300711)
+
+The study of Aloys LeoPrinz, (2020), studies the well known association between Noble laureates and chocolate consumption. At first glimpse, when we look at the consumption of coffee and chocolate with then number of Noble laurates winner, we can tell that there is a positive relationship. Using the our descriptive statistics we can assess this easily with a scatter plot or correlation table.
+
+
+
+```
+library(ggplot2)
+library(gridExtra)
+library(dplyr)
+
+
+choc_lauretes <- readRDS("choc_lauretes.rds")
+
+grid.arrange(
+  
+choc_lauretes %>% 
+  ggplot(aes(cholate_per_cap, no_nobel_lau)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = T),
+  
+choc_lauretes %>% 
+  ggplot(aes(coffee_per_cap, no_nobel_lau)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = T),
+  
+  nrow = 1
+)
+
+
+
+cor(choc_lauretes[, c(2L:4L)],  use="complete.obs")
+
+```
 
 <table border=1>
 <caption align="top"> Table: 1 </caption>
@@ -27,27 +88,36 @@ As it turns out, the kind of relationship between two variables is no so clear. 
   <tr> <td align="right"> no_nobel_lau </td> <td align="right"> 0.17 </td> <td align="right"> -0.12 </td> <td align="right"> 1.00 </td> </tr>
    </table>
 
+<br>
+
+The correlation matrix shows that both chocolate and coffee have a positive association to the number of Laurates winners. The correlation of chocolate is to the Nobel winners is stronger than of the coffee. While looking at the scatter plot, we see that the trend indicates almost no relation between the coffee consumption and Nobel winners, however, we can observe a clear positive trend between chocolate consumption and Nobel prize winners. Does chocolate consumption cause people to become smarter?
+
+<br>
+
 
    ![](https://github.com/Wario84/idsc_mgs/raw/master/assets/imgs/choc_coffee.svg?raw=true)
 
 
+   As you are probably suspecting, to show a causal link between chocolate and human cognition, a simple correlation and trend analysis are not enough. But what is missing? 
+
+- Causal Mechanism
+
+In fact the sduty of [Aloys LeoPrinz, (2020)](https://www.sciencedirect.com/science/article/pii/S2590291120300711) provides a compelling theory that claims that because of the effects of flavonoids and caffeine has a positive effect on cognition and the dopaminergic reward system of the human brain. However, his paper does not provide the nuances about how come the flavoids and cafferine interact with a particular area(s) of the brain to yield that effect. In fact his empirical study does not provide any biological evidence supporting that claim.
+
+- Endogeneity
+
+The study is weak in many regards. Firstly, he attempts to describe a causal mechanism that occurs at the micro level, namely, in the brain of Nobel prize winners. However, his data only accounts for consumption at the country level. In other words, he is using a macro data at the country level to draw conclusions about the brain of researchers. The second problem is that he is not controling for important counfounding variables such as natural ability and the level of education of indiviuals. Also there is no account for motivation and the number of weekly hours that researchers invest in their work. The lack of this controls, induces doubts in the estimation because they are important determiants of research productivity.
+
+- Data
+
+He uses observational data and he does not solve the problem of self-selection. The problem of self-selection for this study is clear as it is imposible to observe 
 
 
-## Experimental Data
 
-
-# Observational Data
-
-# Endogenous and Exogenous
+# No endogeneity
 
 
 
-## Ommited Variable Bias
-
-## Reverse Causality
-
-## Measurement Error
- 
 
 
 
