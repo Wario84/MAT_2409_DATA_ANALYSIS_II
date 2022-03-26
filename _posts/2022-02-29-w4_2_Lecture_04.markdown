@@ -22,11 +22,21 @@ To draw a line between an association or correlation to a causal relationship be
 
 ## A Causal Mechanism
 
-The development of Machine Learning and Big Data are pushing the boundaries between **data-driven** and **theory-driven** research [(Maass, Parsons, Et Al., 2018)](https://aisel.aisnet.org/jais/vol19/iss12/1/). However, in Economics, we are skeptical about weather data driven methods can really be a substitute for theory driven research. With the advent of Information Communication Systems (ICT) and now Big data, we are generating a large volumes of information. However, the availability of all sorts of data, also pose a challenge of identifying meaningful relationships between variables. The issue is that more often than before, we can find out by chance pairs of variables that seem to be related, but in fact they are completely disconnected from each other. In Economics, there is long persistent concern about this kind of problem called **spurious** relationship between variables. In Layman's terms, a spurious relationship occurs when a set of variables seem to have a relationship, however, they are in fact completely unrelated.
+The development of Machine Learning and Big Data are pushing the boundaries between **data-driven** and **theory-driven** research [(Maass, Parsons, Et Al., 2018)](https://aisel.aisnet.org/jais/vol19/iss12/1/). Indeed, there is nowadays a real debate on the power of Data Science to replace the scientific method:
+
+<br>
+
+>>Very large databases are a major opportunity for science and data analytics is a remarkable new field of investigation in computer science. The effectiveness of these tools is used to support a "philosophy" against the scientific method as developed throughout history. According to this view, computer-discovered correlations should replace understanding and guide prediction and action. Consequently, there will be no need to give scientific meaning to phenomena, by proposing, say, causal relations, since regularities in very large databases are enough: "with enough data, the numbers speak for themselves". The "end of science" is proclaimed... [Claude & Longo, 2017](https://link.springer.com/article/10.1007/s10699-016-9489-4#Sec9).
+
+<br>
+
+However, in Economics, we are skeptical about weather data driven methods can really be a substitute for theory driven research. With the advent of Information Communication Systems (ICT) and now Big data, are generating large volumes of information. The availability of all sorts of data, also pose a challenge of identifying meaningful relationships between variables. The issue is that more often than before, we can find out by chance pairs of variables that seem to be related, but in fact they are completely disconnected from each other. In Economics, there is long persistent concern about this kind of problem called **spurious** relationship between variables. In Layman's terms, a spurious relationship occurs when a set of variables seem to have a relationship, however, they are in fact completely unrelated.
 
 So then, what is the solution to avoid the trap of the *spurious* relationship between two variables? The answer is a well-defined and coherent theoretical framework. In fact, the main stream of methodology in economics, has always been about finding methods to prove economic theory and not the other way around. Although, that trend is changing, and some Data Scientist would argue that research is becoming more data driven, the fact is that in economics there is no substitute for a well-defined and coherent theory. The seminal work of [Blaug (1992)](https://www.cambridge.org/core/books/methodology-of-economics/A02870A52E4F457D4EFBAA3242BAE541), takes a closer look at the developments of methodology in economics and argues that:
 
+<br>
 >> Methodology is study of the relationship between *theoretical concepts* and warranted conclusions about the real world; in particular, methodology is that branch of economics where we examine the ways in which economists justify their theories and the reasons they offer for preferring one theory over another.
+<br>
 
 ## An Exogenous Model
 
@@ -65,7 +75,7 @@ The classic example is the estimation of years of *education* ($$X$$) on *income
 
 A special type of OVB is called **self-selection**. Self-selection appears in an estimation when there are inherent characteristics of the unit of observation that affect the outcome variable ($$Y$$) but remain confounded or latent. This perhaps sounds quite abstract, so let's give some examples to clarify the concept. Imagine that you are interested in estimating the effect of education quality ($$Y$$) on the career success ($$Y$$), measured in monthly income. So you run a model and control for the different schools; among the sample you have graduates from Oxford, Harvard, Stanford and so on. Then in your estimation, it appears that indeed the higher the rank of the university (for the [World University Ranking](https://www.timeshighereducation.com/world-university-rankings)) the higher the measured salary of the graduates $$Y$$. But wait, aren't more able students also more likely to enroll themselves into highly ranked universities? Indeed, variables such as ability and motivation are very difficult to observe, and hence it is hard to determine if schooling from highly ranked universities causes latter career success. Although the association between university prestige and career success intuitively makes sense, most of the time we are only able to describe a simple correlation between the variables. Another example, from studies of science and technology, is whether research collaboration causes higher research productivity? Similarly to the previous example, intuitively, we may expect that increments in the collaboration render beneficial exchanges between researchers that increase the overall productivity of authors. Similar to the previous example, intuitively, makes sense collaboration brings gains of human capital, division of labor and pooling of resources. However, we disregard, that these positive externalities from collaboration depend on the individual self-selection into networks or teams. The self-selection takes place because researchers do not connect or make partnerships with everybody randomly. But most of the time, a researcher's own preferences in terms of discipline, research interest and other individual characteristics such as their personality are the reason behind the membership into different networks. Thus, it is hard to tell weather is collaboration the determinant of productivity or is it some other individual characteristics that help some researchers to be part of prolific networks.
 
-A second source of **endogeneity** (opposite of exogeneity) is called **reverse-causality**. Reverse causality is a real problem in many datasets because there is some feedback mechanism $$Y \rightarrow X$$ in which the dependent variable also affects the explanatory variable. A classic example in economics of this issue is presents in the functions of supply and demand. The issue is that $$S=P$$ supply varies depending on the selling price, but simultaneously, the price is also changing according to the demand $$D=P$$. These are a problem because the dependent variable supply adjust the price under equilibrium. This system of equations has a problem or **reverse causality** that is not so straightforward to solve. In graphical form, the problem or reverse causality is represented in the following way:
+A second source of **endogeneity** (opposite of exogeneity) is called **reverse-causality**. Reverse causality is a real problem in many datasets because there is some feedback mechanism $$Y \rightarrow X$$ in which the dependent variable also affects the explanatory variable. A classic example in economics of this issue is presents in the functions of supply and demand. The issue is that $$S=P$$ supply varies depending on the selling price, but simultaneously, the price is also changing according to the demand $$D=P$$. This is an issue of feedback, in which the dependent variable (supply-demand), affects the explanatory variable (price) under equilibrium. This system of equations has a problem of **reverse causality** that is not so straightforward to solve. In graphical form, the problem or reverse causality is represented in the following way:
 
 <center>
 <div>
@@ -100,7 +110,7 @@ $$D=\beta_2 P +\epsilon$$
 
 
 
-A similar problem, is called **circularity**, and it happens when past realizations of a dependent variable have an impact on contemporaneous values. There are many examples of this problem in finance and time series econometrics. For instance, in macroeconomic estimations of the $$GDP_{t}$$ is crucial to include the previous state of affairs $$GDP_{t-y}$$. Where $$t>y$$ stands for a previous period, such that the current or contemporaneous $$GDP$$ depends on the state of affairs of the last year. In many empirical applications, the past realizations of random variables are determinants of future values (Stochastic Process) affecting
+A similar problem that poses a thread to exogeneity, is called **circularity**, and it happens when past realizations of a dependent variable have an impact on contemporaneous values. There are many examples of this problem in finance and time series econometrics. For instance, in macroeconomic estimations of the $$GDP_{t}$$ it is crucial to include the previous state of affairs $$GDP_{t-y}$$. Where $$t>y$$ stands for a previous period, such that the current or contemporaneous $$GDP$$ depends on the state of affairs of the last year. The problem of circularity in graphical form is described as follows:
 
 
 <center>
@@ -131,15 +141,32 @@ $$GDP_{t+1}=\beta_1 X + \beta_2 GDP_{t+1} +\epsilon$$
 
 </center>
 
+## Nature of the data: Observational vs Experimental
+
+ If we think deeply about the exogeneity threads discussed in the last section (OVB, self-selection, reverse causality and circularity) we may see a common problem. Yes indeed, at the heart of the issue of endogeneity (opposite of exogeneity) there is a common problem of confounding factors. A confounding factor, in Layman's terms, is simply a variable that we can't get our hands on. Either because we do not have the data, we can't measure it (OVB), due to a problem of self-selection or because our dependent variable has a form of feedback (reverse causality or circularity). All the listed problems, induce bias and yield an unreliable inference because at the backbone of the estimation there is a problem of confounding variables. Having confounding factors in an estimation is like cooking with an incomplete recipe, or analogous to having a jigsaw puzzle with missing pieces.
 
 
+<div style="text-align:center;line-height:150%">
+<a href="https://www.zazzle.com/one_missing_puzzle_piece_black_tile-227261345801427234"><img src="https://rlv.zcache.com/one_missing_puzzle_piece_black_tile-rd6c9e5c34175418fa4d8d833eb958540_agtk1_8byvr_1024.jpg?max_dim=325" alt="One Missing Puzzle Piece - Black Tile" style="border:0;" /></a>
+<br/>
+<a href="https://www.zazzle.com/one_missing_puzzle_piece_black_tile-227261345801427234">One Missing Puzzle Piece - Black Tile</a>
+<br/>by <a href="https://www.zazzle.com/store/flowstonegraphics">FlowstoneGraphics</a>
+</div>
 
 
+ This general issue of confounding variables is not easy to solve with the vast majority of the data sets that we can get our hands on. Indeed, the aforementioned threads to exogeneity may persist even in the most tidy and organize data from relational datasets (SQL for instance), surveys or administrative records. And unfortunately, the issue of confounding factors is not solved by increasing the magnitude and quantity of the data at our disposal. Even if we could collect Big Data that has millions of records using Web Scrapping algorithms, a large company or government agency, the problems may persist.
 
+ 
+ One way to solve the problem of confounding factors is to employ what has become the golden standard in Economics and Social Sciences is called **Randomized Control Trials (RCTs)**. Data that comes from RCTs is called **experimental data** and is different from all data we can collect from other sources, generally called **observational data**. An RCT typically has a well-defined causal mechanism that directs the process of data collection to eradicate by design the problems of confounding variable. Indeed, the power of the RCTs derive from their power to isolate well the causal mechanism by virtue of a random assignment. In simple terms, the ideal RCT design starts by selecting at least two groups of similar units (individuals, firms, regions). These two groups must be similar in all characteristics such that any difference between them becomes insignificant on the averages. The comparison is then an "apples to apples" and not "apples to oranges".
+ 
+ 
+ ![](https://noushinn.github.io/experimentation_course/fig/RCT-graphic.png)
+ *Source:[Initiating an Experiment, Ch.4](https://noushinn.github.io/experimentation_course/defining-the-problem.html)*
+ 
+ The heart of the RCT is changing randomly the circumstances that surround the causal-mechanism in one of the two groups, namely, the **treatment-group**. The randomized assignment has two main virtues, firstly, we eradicate the problem of self-selection by controlling which of the two identical groups receives the treatment. Keep in mind that the treatment embodies the causal-mechanism that we are aiming to showcase $$X \rightarrow Y$$. The second benefit is that by changing the circumstances randomly, the variable of interest is most likely disconnected or unrelated to any other $$Z$$ factor affecting the outcome variable $$Y$$ of our research.
 
-## Nature of the data
-
-He uses observational data and he does not solve the problem of self-selection. The problem of self-selection is difficult to solve using observational data. In fact, the Nobel Prize Winners of Economics of 2021, receive their rewards because they find novel ways of using observational
+ 
+ <!-- The Joshua Angrist, on of the 2021 Nobel Prize winner in his book Mastering Metrics, described the key and simple power fool advantages of RCTs. First, the RCTS -->
 
 
 
@@ -207,11 +234,13 @@ In fact the sduty of [Aloys LeoPrinz, (2020)](https://www.sciencedirect.com/scie
 
 - Endogeneity
 
-The study is weak in many regards. Firstly, he attempts to describe a causal mechanism that occurs at the micro level, namely, in the brain of Nobel prize winners. However, his data only accounts for consumption at the country level. In other words, he is using a macro data at the country level to draw conclusions about the brain of researchers. The second problem is that he is not controling for important counfounding variables such as natural ability and the level of education of indiviuals. Also there is no account for motivation and the number of weekly hours that researchers invest in their work. The lack of this controls, induces doubts in the estimation because they are important determiants of research productivity.
+The study is weak in many regards. Firstly, he attempts to describe a causal mechanism that occurs at the micro level, namely, in the brain of Nobel Prize winners. However, his data only accounts for consumption at the country level. In other words, he is using a macro data at the country level to draw conclusions about the brain of researchers. The second problem is that he is not controlling for important confounding variables such as natural ability and the level of education of individuals. Also, there is no account for motivation and the number of weekly hours that researchers invest in their work. The lack of these controls, induces doubts in the estimation because they are important determinants of research productivity.
 
 - Data
 
-He uses observational data and he does not solve the problem of self-selection. The problem of self-selection for this study is clear as it is imposible to observe
+He uses observational data, and he does not solve the problem of self-selection. The problem of self-selection for this study is clear as it is impossible to observe
+
+
 
 
 
