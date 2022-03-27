@@ -1,9 +1,9 @@
 ---
 
 layout: post
-title: "Lecture 5 Introduction to Algorithms"
+title: "Lecture 8: Impact of Data Science in Society"
 author: "Mario H. Gonzalez-Sauri"
-date: "2022-04-10"
+date: "2022-03-30"
 mermaid: true
 
 ---
