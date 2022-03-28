@@ -12,9 +12,12 @@ mermaid: true
 
 # Introduction
 
-In the first lecture, we learn that most of our work in Data Science revolves around combining advanced coding with computational statistics to summarize data, unravel relationship between variables, or to make predictions. Sometimes, these three types of analysis are not so obvious to distinguish. Hence, the purpose of this lecture is to draw a line between these types of analysis, in order to select the right kind of tools to solve a particular problem or to answer our research question. In Lecture 3, we review the use of descriptive statistics to answer questions such as: "What is the current state of affairs?"; "How often, how many, when?" An we also pointed out the use of correlation to answer "what is the association between two variables?". To show that two variables have an association sometime is not enough, in some cases we would like to know the determinants and the effects of variables. Imagine for intance the development of a vaccine or an important policy prescription. Obviosly, the research that backs-up these developemntes will impact the life of many people and a then a simple asociation between two variables is just not enough. In many cases we would like to move from showing a correlation between variables to find which variable is the cause or determinant of the other. This kind of research is the central quest of econometrics and Data Science and has a special place in empirical economics.
+In lecture number three, we review the use of descriptive statistics to answer questions such as: "What is the current state of affairs?"; "How often, how many, when?" An also I introduce the us of the correlation coefficient to assess "what is the association between two variables?" However, in many cases, to show that two variables have an association sometime is not enough. Associations only measure how the set of variables change toguether, but, they do not say anything regarding the direction or magnitude of the relationship. To say something about the direction, means to discover if one varibles is the cause or determinant of another. Here, there is a clear order in the relationship between two varibles, for instance, $$X \rightarrow Y$$, represents that $$X$$ is the cause or determinant of $$Y$$. The magnitude of the relationship refers the measurement of the effect of $$X$$ on $$Y$$, for instance, if $$X$$ changes by one unit how much does $$Y$$ would vary?
+
+The distiction between a correlation and a causal relationship between two variables is not only important but necesarry in many applications. Imagine for intance the development of a vaccine or an important policy prescription. Obviosly, the research that backs-up these developments will impact the life of many people. Therefore, we would like to make a precise inference to be able to claim with robustness the magnitude and the direction that exist between variables. An asociation between two variables is not strong enough to draw conclusions about the population of our interest. In many cases we would like to move then from showing a correlation between variables to find which variable is the cause or determinant of the other. This kind of research is the central quest of econometrics and Data Science and has a special place in empirical economics.
 
 # Causality and Correlation
+
 As it turns out, the kind of relationship between two variables is no so clear. As Data Scientist, we should proceed with scientific skepticism when we analyze the relationship between two variables. When we measure a correlation between two variables, we are merely assessing the association between two variables, but that is not the same as causation. If you are approaching this distinction for the first time, perhaps it is better to give examples, so by induction you are able to understand the difference. But before I give you some examples, I want to explain a framework, so you can have enough knowledge to navigate the examples.
 
 To draw a line between an association or correlation to a causal relationship between two variables, I elaborate on two properties that causal relationships must have:
@@ -173,9 +176,9 @@ $$GDP_{t+1}=\beta_1 X + \beta_2 GDP_{t+1} +\epsilon$$
 
 # Examples
 
-## [Chocolate consumption and Noble laureates](https://www.sciencedirect.com/science/article/pii/S2590291120300711)
+## Chocolate consumption and Noble laureates
 
-The study of Aloys LeoPrinz, (2020), studies the well known association between Nobel laureates and chocolate consumption. At first glimpse, when we look at the consumption of coffee and chocolate with then number of Nobel laureates winner, we can tell that there is a positive relationship. Using our descriptive statistics, we can assess this easily with a scatter plot or correlation table.
+The study of [Aloys LeoPrinz, (2020)](https://www.sciencedirect.com/science/article/pii/S2590291120300711), studies the well known association between Nobel laureates and chocolate consumption. At first glimpse, when we look at the consumption of coffee and chocolate with the number of Nobel laureates winner, we can tell that there is a positive relationship. Using descriptive statistics, we can assess this easily with a scatter plot or correlation table.
 
 
 
@@ -232,15 +235,29 @@ The correlation matrix shows that both chocolate and coffee have a positive asso
 
 In fact the sduty of [Aloys LeoPrinz, (2020)](https://www.sciencedirect.com/science/article/pii/S2590291120300711) provides a compelling theory that claims that because of the effects of flavonoids and caffeine has a positive effect on cognition and the dopaminergic reward system of the human brain. However, his paper does not provide the nuances about how come the flavoids and caffeine interact with a particular area(s) of the brain to yield that effect. In fact, his empirical study does not provide any biological evidence supporting that claim.
 
+- Data
+
+The study uses observational data, and does not solve the problem of self-selection and confounding variables. Moreover, the unit of observation (countries) is quite disconnected from the unit of analysis (Nobel laureates winners). That is, the study attempts to describe a causal mechanism that occurs at the micro level, namely, in the brain of Nobel Prize winners. In other words, he is using a macro data at the country level to draw conclusions about the brain of researchers.
+
 - Endogeneity
 
-The study is weak in many regards. Firstly, he attempts to describe a causal mechanism that occurs at the micro level, namely, in the brain of Nobel Prize winners. However, his data only accounts for consumption at the country level. In other words, he is using a macro data at the country level to draw conclusions about the brain of researchers. The second problem is that he is not controlling for important confounding variables such as natural ability and the level of education of individuals. Also, there is no account for motivation and the number of weekly hours that researchers invest in their work. The lack of these controls, induces doubts in the estimation because they are important determinants of research productivity.
+ The study does not controls for important confounding variables such as natural ability and the level of education of individuals. Also, there is no account for motivation and the number of weekly hours that researchers invest in their work. The lack of these controls, induces doubts in the estimation because they are important determinants of research productivity. Furthermore, the data has a problem of self-selection, because individuals are choosing to consume chocolate or coffee. Henceforth, we can observe the outcome of individuals of similar characteristics that do not consume coffee or chocolate (control or counterfactual group).
+
+
+
+## Social Norms and Energy Consumption.
+
+The study of [Schultz, Nolan, Et. Al, (2017)](https://journals.sagepub.com/doi/10.1111/j.1467-9280.2007.01917.x) conducts an experiment on 290 households in San Marcos, CA, USA. The experiment was design to analyze the effect of two different kinds of social norms. One group was treated with an intervention that induce a "descriptive norm", namely, the group was given information on their energy consumption compare to the average consumption of the neighborhood. The average consumption, has implicitly, a social norm given that individuals tend to have conformity with the behavior of their peers. The second group, was treated with another norm called the "injunctive norm" that embodies the perceptions of what is commonly right or wrong in a given situation. The core of the analysis is then to measure the effect of the two norms before and after the treatment.
+
+
+- Causal Mechanism
+
+The study uses the theoretical framework of "Focus theory" that predicts that if only one of the two types of norms is prominent in an individual's consciousness, it will exert the stronger influence on behavior [(Cialdini & Goldstein, 2004)](https://www.annualreviews.org/doi/abs/10.1146/annurev.psych.55.090902.142015?casa_token=ulIwMSo3LUQAAAAA:wRxVgEx3GoCzpwZv_2AQIWnVcLoKBs9ii-0fLxK1-8w86QqjIAarB5zkmGvyZiZXp0ISjMZkEY8F9g). The theory thus prescribe that the group treated with a "descriptive norm" will increase and decrease their energy consumption towards the mean. In contrast, the group that is treated with an "injunctive norm" should change the behavior only if they receive a negative signal (a sad face) when their consumption is above the mean, but not the other way around (boomerang effect).
 
 - Data
 
-He uses observational data, and he does not solve the problem of self-selection. The problem of self-selection for this study is clear as it is impossible to observe
+The study uses experimental data because the treatment (social norm) is allocated randomly. The experimental data has the advantage of removing the problem of self-selection and the variable of interest $$X$$, the social norm, is, by virtue of the random assignment, uncorrelated with other determinants $$Z$$, of the energy consumption $$Y$$.
 
+- Endogeneity
 
-
-
-
+The study only derives conclusions based on a difference in means, and they do not assess the effects of other factors that might drive the change of behavior, for instance, unemployment during the period of observation or absence in the household due to holidays or work. Further, it is not clear that the two groups were completely isolated from one another. The causal-mechanism depends on the prominence of one of the norms in the mind of the individuals. However, neighborhoods are typically well-know to communicate and interact among themselves, henceforth, it is not unlikely that a norm affected more than one household.
