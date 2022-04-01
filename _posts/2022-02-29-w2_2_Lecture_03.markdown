@@ -197,10 +197,9 @@ Let's define the following random variable,  $$X = \{1,2, \dots, 6\}$$, that des
 
 The concept of *probability*, is defined with a *probability space* of an experiment that has three elements: $$(\Omega, \mathcal{F}, \mathcal{P})$$.
 
-- $$\Omega = \{1, 2, \dots, 6\}$$ is a set that contains all possible outcomes of an experiment called *sample space*.
-- $$\mathcal{F}$$ is set one or more events $$E$$ whose elements are subsets of $$\Omega$$, called as a *field*.
-- $$\mathcal{P}$$ is a function that maps the outcomes of events, $$P(\mathcal{F}) \rightarrow [0,1]$$
-
+- $$\Omega$$ is a set that contains all possible outcomes of an experiment called *sample space*. For instance, in the experiment of rolling a die $$X$$, the sample space are all posible outcomes, namely, $$\Omega_X = \{1, 2, \dots, 6\}$$.
+- $$\mathcal{F}$$ is set one or more *events* $$E$$ whose elements are subsets of $$\Omega$$ called *field*. Imagine the event of rolling a pair number $$E_1$$, the corresponding field $$\mathcal{F}_1 = \{ 2, 4, 6 \}$$.
+- The last element of the probability space is $$\mathcal{P}$$, a function that maps the outcomes of events $$P(\mathcal{F}) \rightarrow [0,1]$$ with a corresponding measurement of uncertainty whose range is between 0 and 1.
 
 I'm sure all this sounds very abstract to some of you. But that is precisely why I am explaining probability in this section, so you will build upon the use of the frequency table to understand the concept of probability and the average or mean. So we go back out our experiment $$X$$ of rolling a die $$n=1000$$ times. Since, the number of trials $$n>\Omega$$, is bigger than the sample space, we have to use a sample by replacement `sample(1L:6L, n, replace = T)`.
 
@@ -239,9 +238,6 @@ Naturally, we know that if the die is fair, and all sides have equal chance of s
 <br>
 $$P(X=x_i)=\frac{1}{n}\sum_{i=1}^n 1_{\{ X = x_i\}}$$
 <br>
-
-
-
 
 
 From the table, we can put some numbers to the formula to make it less abstract, using our induction skills. First, we take one event $$X=5$$, then we write the formula:
