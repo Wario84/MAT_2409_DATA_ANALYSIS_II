@@ -126,7 +126,7 @@ df$cum_sum <- cumsum(df$Freq)
 
 ```
 
-With the cumulative sum on the third column, we can that around 60% of the values in the series lie between $$[A-F]$$.
+With the cumulative sum on the third column, we can observe that around 60% of the values in the series lie between $$[A-F]$$.
 
 <table border=1>
 <caption align="top"> Table: 7 </caption>
@@ -366,13 +366,13 @@ median(df_chunkers$Credit_Limit)
 median(df_chunkers$Dependent_count)
 
 ```
-
+<div id="tab_13">
 <table border=1>
 <caption align="top"> Table: 13 </caption>
 <tr> <th>  </th> <th> mean_cust_age </th> <th> median_cust_age </th> <th> mean_cred_lim </th> <th> median_cred_lim </th> <th> mean_dep_count </th> <th> median_dep_count </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 46.33 </td> <td align="right">  46 </td> <td align="right"> 8631.95 </td> <td align="right"> 4549.00 </td> <td align="right"> 2.35 </td> <td align="right">   2 </td> </tr>
    </table>
-
+</div>
 
 What we can observe, is that the variable `Credit_Limit`, must be loaded of few consumers with high credit card limit. We know that because the *mean* is significantly bigger than the *median*, or what is called **right-skewness**.  Is called right skewness because there are few values significantly bigger than the rest of the realizations of the random variable. Conversely, **left-skewness*** happens when the *mean* is smaller than the *median*. In the section of visualizing continuous variables, you can see a graphic representation of these two kinds of data arrangements.
 
@@ -402,7 +402,7 @@ max(df_chunkers$Dependent_count)
 ```
 
 
-<div class="tab_14">
+<div id="tab_14">
 <table border=1>
 <caption align="top"> Table: 14 </caption>
 <tr> <th>  </th> <th> cust_age </th> <th> cred_lim </th> <th> dep_count </th>  </tr>
@@ -414,7 +414,7 @@ max(df_chunkers$Dependent_count)
 </table>
  </div>
 
-## Measurements of Dispercion.
+## Measurements of Dispersion.
 
 In the last sections, I show you measurements that summarize the central tendency of the variables. In this section, I am presenting the basic measurements that describe the dispersion of the variables. First, it is useful to know the spread of a variable in terms of the minimum and maximum variable in the set, using the function `range`. This however is not very informative because we do not have an idea of the values within these two extreme points. To have a better understanding of the spread of the values, we compute the `variance` the and `standard deviation`. These two measurements describe the spread of a variable, taking the mean as the point of comparison. The two measurements are related, because the standard deviation is simply the square root of the variance $$\sqrt{s^2}$$. 
 
@@ -432,7 +432,7 @@ In the last sections, I show you measurements that summarize the central tendenc
 <br>
 
 
-From our previous analysis of measurements of central tendency [(Table 14)](https://github.com/Wario84/idsc_mgs#tab_14), we found that the credit `card limit` is a right-skewed variable. We may suspect already that this variable has a high dispersion in comparison to the `age` and `number of dependents` because there is large difference between the minim value and the maximum value, that is the `range`. Lets verify this suspicion using our R-skills.
+From our previous analysis of measurements of central tendency [(Table 14)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_14), we found that the credit `card limit` is a right-skewed variable. We may suspect already that this variable has a high dispersion in comparison to the `age` and `number of dependents` because there is large difference between the minim value and the maximum value, that is the `range`. Lets verify this suspicion using our R-skills.
 
 
 ```
@@ -462,7 +462,7 @@ sd(df_chunkers$Dependent_count)
 
 ```
 
-<div class="tab_15">
+<div id="tab_15">
 <table border=1>
 <caption align="top"> Table: 15 </caption>
 <tr> <th>  </th> <th> cust_age </th> <th> cred_lim </th> <th> dep_count </th>  </tr>
@@ -478,7 +478,7 @@ sd(df_chunkers$Dependent_count)
 
 
 
-What can we conclude from [(Table 15)](https://github.com/Wario84/idsc_mgs#tab_15)? As we suspected, the variables `credit card limit` depicts a very large dispersion from the mean; around $$9000.00$$ US dollars. The `number of dependents` does not depart much from the mean, on average all the observations departs around $$1.3$$ units from the mean. Also the variable `age` does not have a high dispersion, as we find customers ranging from 26 to 76 but the observations only deviate $$8$$ years on average from the mean of $$46$$ years.
+What can we conclude from [(Table 15)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_15)? As we suspected, the variables `credit card limit` depicts a very large dispersion from the mean; around $$9000.00$$ US dollars. The `number of dependents` does not depart much from the mean, on average all the observations departs around $$1.3$$ units from the mean. Also the variable `age` does not have a high dispersion, as we find customers ranging from 26 to 76 but the observations only deviate $$8$$ years on average from the mean of $$46$$ years.
 
 
 
@@ -541,7 +541,7 @@ As expected, the co-variance matrix [(Table 16)](/idsc_mgs/2022/02/22/w2_2_Lectu
 
 <div id="tab_17">
 <table border=1>
-<caption align="top"> Table: Correlation Matrix </caption>
+<caption align="top"> Table 17: Correlation Matrix </caption>
 <tr> <th>  </th> <th> Customer_Age </th> <th> Dependent_count </th> <th> Total_Revolving_Bal </th> <th> Avg_Utilization_Ratio </th>  </tr>
   <tr> <td align="right"> Customer_Age </td> <td align="right"> 1.00 </td> <td align="right">  </td> <td align="right">  </td> <td align="right">  </td> </tr>
   <tr> <td align="right"> Dependent_count </td> <td align="right"> -0.12 </td> <td align="right"> 1.00 </td> <td align="right">  </td> <td align="right">  </td> </tr>
@@ -565,7 +565,7 @@ Another important way to understand data is by using graphical techniques or plo
 
 The measurements of *centrality* and *dispersion* are better observed if we sort them, and we arrange the realizations of the random variable using plots. The first plot is called **histogram** and a smother version of this plot is called **density** plot. Histograms are excellent to visualize the arrangement of discrete variables, for instance `age` and `number of dependents` in the credit card data set. However, continuous variables like `credit card` limit are better observed with the density plot.
 
-If we pay attention to column three, from table 10, we can see how come the arrangement or **distribution** of a random variable `Credit_Limit` is **right-skewed**. The reason, is due to the fact that most observations lie to the left of the mean, but there are few individuals with a very high credit limit. This is also observed in the third row of the picture below Here, we can see that the distribution of `Credit_Limit` is leaning towards the left, because, there are few high values, the `mean` is bigger than the `median` and the `QQ-plot` deviates from at 45 degree line, but it is heavily loaded on the tails of the distribution.
+If we pay attention to column three, from [(Table 15)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_15), we can see how come the arrangement or **distribution** of a random variable `Credit_Limit` is **right-skewed**. The reason, is due to the fact that most observations lie to the left of the mean, but there are few individuals with a very high credit limit. This is also observed in the third row of the picture below. Here, we can observe the distribution of `Credit_Limit` leaning towards the left, because, there are few high values, the `mean` is bigger than the `median` and the `QQ-plot` deviates from at 45 degree line, but it is heavily loaded on the tails of the distribution.
 
 The variables `age` and `number of dependents` show a symmetrical arrangement. When the variables display this pattern, we called them approximately **normally distributed**. Many empirical variables render this pattern, when the `mean` and `median` do not deviate largely, such as the variables `age` and `number of dependents`. Furthermore, we can observe that the `QQ-plot` renders a line that is closer to a 45 degree line from origin to the top-right of the plot in rows one and two. Similarly, we can observe the symmetry of the distributions because the mean and the median are close to each other in the center of the distribution, and values to the right and left have a lower frequency.
 
