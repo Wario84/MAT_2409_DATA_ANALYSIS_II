@@ -537,7 +537,7 @@ cor(df_chunkers[,cols]) # correlation matrix
    </table>
 </div> 
 
-As expected, the co-variance matrix [(Table 16)](https://wario84.github.io/idsc_mgs/2022/03/21/w4_2_Lecture_04.html#tab_16) is only able to describe if the relationship between the variables is positive or negative. However, the values of the matrix does not tell anything about the strength of the relationship between pairs of variables.
+As expected, the co-variance matrix [(Table 16)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_16) is only able to describe if the relationship between the variables is positive or negative. However, the values of the matrix does not tell anything about the strength of the relationship between pairs of variables.
 
 <div id="tab_17">
 <table border=1>
@@ -550,7 +550,7 @@ As expected, the co-variance matrix [(Table 16)](https://wario84.github.io/idsc_
    </table>
 </div> 
 
-The correlation matrix [(Table 17)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_17) show more clearly the relationship between pairs of variables. Similarly to x [(Table 16)](https://wario84.github.io/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_16), the main diagonal (composed of ones) is not informative, as it only measures the correlation with the variable itself. Assessing the first column of the matrix, we can compare the correlation between `Customer_Age` and all the other variables in the sub-sample. We can tell that there is a negative relationship between `Dependent_count` and `Customer_Age`. This signifies that there when the age of the customers increases (for instance above the mean of 46 years) the tendency to have children reduces. Although, this association is weak, as the correlation coefficient is only $$-0.12$$. `Customer_Age` shows no correlation to the other variables `Total_Revolving_Bal` and `Avg_Utilization_Ratio`. Focusing on column three or the row number four of Table 13, we can see that there is a positive relationship between the `Avg_Utilization_Ratio` and `Total_Revolving_Bal`. This correlation follows our intuition, as customers use more often their credit card also most likely have a higher balance.
+The correlation matrix [(Table 17)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_17) show more clearly the relationship between pairs of variables. Similarly to x [(Table 16)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_16), the main diagonal (composed of ones) is not informative, as it only measures the correlation with the variable itself. Assessing the first column of the matrix, we can compare the correlation between `Customer_Age` and all the other variables in the sub-sample. We can tell that there is a negative relationship between `Dependent_count` and `Customer_Age`. This signifies that there when the age of the customers increases (for instance above the mean of 46 years) the tendency to have children reduces. Although, this association is weak, as the correlation coefficient is only $$-0.12$$. `Customer_Age` shows no correlation to the other variables `Total_Revolving_Bal` and `Avg_Utilization_Ratio`. Focusing on column three or the row number four of [(Table 17)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html#tab_17), we can see that there is a positive relationship between the `Avg_Utilization_Ratio` and `Total_Revolving_Bal`. This correlation follows our intuition, as customers use more often their credit card also most likely have a higher balance.
 
 
 # Visualizing Data.
