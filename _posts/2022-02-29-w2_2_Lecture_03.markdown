@@ -129,7 +129,7 @@ df$cum_sum <- cumsum(df$Freq)
 With the cumulative sum on the third column, we can that around 60% of the values in the series lie between $$[A-F]$$.
 
 <table border=1>
-<caption align="top"> Table: 1 </caption>
+<caption align="top"> Table: 7 </caption>
 <tr> <th>  </th> <th> X </th> <th> Freq </th> <th> cum_sum </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> A </td> <td align="right">   5 </td> <td align="right">   5 </td> </tr>
   <tr> <td align="right"> 2 </td> <td> B </td> <td align="right">   7 </td> <td align="right">  12 </td> </tr>
@@ -169,7 +169,7 @@ From this frequency table summarizing a continuous variable we can observe that 
 <!-- html table generated in R 4.1.2 by xtable 1.8-4 package -->
 <!-- Fri Mar 18 15:35:54 2022 -->
 <table border=1>
-<caption align="top"> Table: 2 </caption>
+<caption align="top"> Table: 8 </caption>
 <tr> <th>  </th> <th> Y_breaks </th> <th> Freq </th> <th> cum_sum </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> [1,1.5) </td> <td align="right">  10 </td> <td align="right">  10 </td> </tr>
   <tr> <td align="right"> 2 </td> <td> [1.5,2) </td> <td align="right">   6 </td> <td align="right">  16 </td> </tr>
@@ -224,7 +224,7 @@ df$prob <- df$Freq/n
 Naturally, we know that if the die is fair, and all sides have equal chance of showing off, then the probability of each event it $$P[X=1]={1/6}=0.16$$. Now look at the fourth column we have added the empirical probability of $$X$$. It seems that $$n=1000$$ is approaching the theoretical probability of $$1/6$$.
 
 <table border=1>
-<caption align="top"> Table: 3 </caption>
+<caption align="top"> Table: 9 </caption>
 <tr> <th>  </th> <th> X </th> <th> Freq </th> <th> cum_sum </th> <th> prob </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> 1 </td> <td align="right"> 164 </td> <td align="right"> 164 </td> <td align="right"> 0.16 </td> </tr>
   <tr> <td align="right"> 2 </td> <td> 2 </td> <td align="right"> 159 </td> <td align="right"> 323 </td> <td align="right"> 0.16 </td> </tr>
@@ -288,7 +288,7 @@ sum(df$x_freq)
 ```
 
 <table border=1>
-<caption align="top"> Table: 4 </caption>
+<caption align="top"> Table: 10 </caption>
 <tr> <th>  </th> <th> X </th> <th> Freq </th> <th> cum_sum </th> <th> prob </th> <th> x_freq </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> 1 </td> <td align="right"> 164 </td> <td align="right"> 164 </td> <td align="right"> 0.16 </td> <td align="right"> 0.16 </td> </tr>
   <tr> <td align="right"> 2 </td> <td> 2 </td> <td align="right"> 159 </td> <td align="right"> 323 </td> <td align="right"> 0.16 </td> <td align="right"> 0.32 </td> </tr>
@@ -328,14 +328,14 @@ mean(df_chunkers$Dependent_count)
 
 ```
 <table border=1>
-<caption align="top"> Table: 7 </caption>
+<caption align="top"> Table: 11 </caption>
 <tr> <th>  </th> <th> mean_cust_age </th> <th> mean_cred_lim </th> <th> mean_inac_months </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 46.33 </td> <td align="right"> 8631.95 </td> <td align="right"> 2.35 </td> </tr>
    </table>
 
    
 
-One issue of the mean or average is that unfortunately changes rapidly with higher values that may not come from the same data generation process as the described variable. In Data science and statistics, we call these values outlines, to detect them we have to do a separate lecture. But for demonstration purposes, follow this example with artificial data, so you can understand the use of the next measurement of central tendency: median. The variables `X` and `Y` both contain `10` elements, they are identical. The first `9` numbers of are actually the same $$[1-9]$$, however, the variable `Y` last number is `576`, whereas for `X` is `10`. Table 8, summarizes the `mean` of `X` and `Y`, followed by the `median` of `Y`. The value of the mean $$\hat{Y}=62.10$$ is 10 times more than the mean of $$\hat{X}=5.5$$. The difference is huge, and the increase of $$\hat{Y}$$ is only due to one large value. The median thus reflects better the central tendency of a random variable in the presence of outliers.
+One issue of the mean or average is that unfortunately changes rapidly with higher values that may not come from the same data generation process as the described variable. In Data science and statistics, we call these values outlines, to detect them we have to do a separate lecture. But for demonstration purposes, follow this example with artificial data, so you can understand the use of the next measurement of central tendency: median. The variables `X` and `Y` both contain `10` elements, they are identical. The first `9` numbers of are actually the same $$[1-9]$$, however, the variable `Y` last number is `576`, whereas for `X` is `10`. Table 12, summarizes the `mean` of `X` and `Y`, followed by the `median` of `Y`. The value of the mean $$\hat{Y}=62.10$$ is 10 times more than the mean of $$\hat{X}=5.5$$. The difference is huge, and the increase of $$\hat{Y}$$ is only due to one large value. The median thus reflects better the central tendency of a random variable in the presence of outliers.
 
 
 
@@ -351,7 +351,7 @@ median(Y)
 
 
 <table border=1>
-<caption align="top"> Table: 8 </caption>
+<caption align="top"> Table: 12 </caption>
 <tr> <th>  </th> <th> X_mean </th> <th> mean_Y </th> <th> median_Y </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 5.50 </td> <td align="right"> 62.10 </td> <td align="right"> 5.50 </td> </tr>
    </table>
@@ -368,7 +368,7 @@ median(df_chunkers$Dependent_count)
 ```
 
 <table border=1>
-<caption align="top"> Table: 9 </caption>
+<caption align="top"> Table: 13 </caption>
 <tr> <th>  </th> <th> mean_cust_age </th> <th> median_cust_age </th> <th> mean_cred_lim </th> <th> median_cred_lim </th> <th> mean_dep_count </th> <th> median_dep_count </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 46.33 </td> <td align="right">  46 </td> <td align="right"> 8631.95 </td> <td align="right"> 4549.00 </td> <td align="right"> 2.35 </td> <td align="right">   2 </td> </tr>
    </table>
@@ -402,16 +402,17 @@ max(df_chunkers$Dependent_count)
 ```
 
 
+<div class="tab_14">
 <table border=1>
-<caption align="top"> Table: 10 </caption>
+<caption align="top"> Table: 14 </caption>
 <tr> <th>  </th> <th> cust_age </th> <th> cred_lim </th> <th> dep_count </th>  </tr>
   <tr> <td align="right"> Mean </td> <td align="right"> 46.33 </td> <td align="right"> 8631.95 </td> <td align="right"> 2.35 </td> </tr>
   <tr> <td align="right"> Median </td> <td align="right"> 46.00 </td> <td align="right"> 4549.00 </td> <td align="right"> 2.00 </td> </tr>
   <tr> <td align="right"> Mode </td> <td align="right"> 44.00 </td> <td align="right"> 34516.00 </td> <td align="right"> 3.00 </td> </tr>
   <tr> <td align="right"> Min </td> <td align="right"> 26.00 </td> <td align="right"> 1438.30 </td> <td align="right"> 0.00 </td> </tr>
   <tr> <td align="right"> Max </td> <td align="right"> 73.00 </td> <td align="right"> 34516.00 </td> <td align="right"> 5.00 </td> </tr>
-   </table>
-
+</table>
+ </div>
 
 ## Measurements of Dispercion.
 
@@ -431,7 +432,7 @@ In the last sections, I show you measurements that summarize the central tendenc
 <br>
 
 
-From our previous analysis of measurements of central tendency (Table 10), we found that the credit `card limit` is a right-skewed variable. We may suspect already that this variable has a high dispersion in comparison to the `age` and `number of dependents` because there is large difference between the minim value and the maximum value, that is the `range`. Lets verify this suspicion using our R-skills.
+From our previous analysis of measurements of central tendency [(Table 14)](https://github.com/Wario84/idsc_mgs#tab_14), we found that the credit `card limit` is a right-skewed variable. We may suspect already that this variable has a high dispersion in comparison to the `age` and `number of dependents` because there is large difference between the minim value and the maximum value, that is the `range`. Lets verify this suspicion using our R-skills.
 
 
 ```
@@ -461,9 +462,9 @@ sd(df_chunkers$Dependent_count)
 
 ```
 
-
+<div class="tab_15">
 <table border=1>
-<caption align="top"> Table: 11 </caption>
+<caption align="top"> Table: 15 </caption>
 <tr> <th>  </th> <th> cust_age </th> <th> cred_lim </th> <th> dep_count </th>  </tr>
   <tr> <td align="right"> Mean </td> <td align="right"> 46.33 </td> <td align="right"> 8631.95 </td> <td align="right"> 2.35 </td> </tr>
   <tr> <td align="right"> Median </td> <td align="right"> 46.00 </td> <td align="right"> 4549.00 </td> <td align="right"> 2.00 </td> </tr>
@@ -473,11 +474,11 @@ sd(df_chunkers$Dependent_count)
   <tr> <td align="right"> Variance </td> <td align="right"> 64.27 </td> <td align="right"> 82605861.00 </td> <td align="right"> 1.69 </td> </tr>
   <tr> <td align="right"> S.D </td> <td align="right"> 8.02 </td> <td align="right"> 9088.78 </td> <td align="right"> 1.30 </td> </tr>
    </table>
+ </div>
 
 
 
-
-What can we conclude from Table 11? As we suspected, the variables `credit card limit` depicts a very large dispersion from the mean; around $$9000.00$$ US dollars. The `number of dependents` does not depart much from the mean, on average all the observations departs around $$1.3$$ units from the mean. Also the variable `age` does not have a high dispersion, as we find customers ranging from 26 to 76 but the observations only deviate $$8$$ years on average from the mean of $$46$$ years.
+What can we conclude from [(Table 15)](https://github.com/Wario84/idsc_mgs#tab_15)? As we suspected, the variables `credit card limit` depicts a very large dispersion from the mean; around $$9000.00$$ US dollars. The `number of dependents` does not depart much from the mean, on average all the observations departs around $$1.3$$ units from the mean. Also the variable `age` does not have a high dispersion, as we find customers ranging from 26 to 76 but the observations only deviate $$8$$ years on average from the mean of $$46$$ years.
 
 
 
@@ -524,18 +525,21 @@ cor(df_chunkers[,cols]) # correlation matrix
 
 
 ```
+
+<div class="tab_16">
 <table border=1>
-<caption align="top"> Table 12: Co-variance Matrix </caption>
+<caption align="top"> Table 16: Co-variance Matrix </caption>
 <tr> <th>  </th> <th> Customer_Age </th> <th> Dependent_count </th> <th> Total_Revolving_Bal </th> <th> Avg_Utilization_Ratio </th>  </tr>
   <tr> <td align="right"> Customer_Age </td> <td align="right"> 64.27 </td> <td align="right">  </td> <td align="right">  </td> <td align="right">  </td> </tr>
   <tr> <td align="right"> Dependent_count </td> <td align="right"> -1.27 </td> <td align="right"> 1.69 </td> <td align="right">  </td> <td align="right">  </td> </tr>
   <tr> <td align="right"> Total_Revolving_Bal </td> <td align="right"> 96.57 </td> <td align="right"> -2.85 </td> <td align="right"> 664204.36 </td> <td align="right">  </td> </tr>
   <tr> <td align="right"> Avg_Utilization_Ratio </td> <td align="right"> 0.02 </td> <td align="right"> -0.01 </td> <td align="right"> 140.21 </td> <td align="right"> 0.08 </td> </tr>
    </table>
+</div> 
 
-As expected, the co-variance matrix (Table 12) is only able to describe if the relationship between the variables is positive or negative. However, the values of the matrix does not tell anything about the strength of the relationship between pairs of variables.
+As expected, the co-variance matrix [(Table 16)](https://wario84.github.io/idsc_mgs/2022/03/21/w4_2_Lecture_04.html#tab_16) is only able to describe if the relationship between the variables is positive or negative. However, the values of the matrix does not tell anything about the strength of the relationship between pairs of variables.
 
-
+<div class="tab_17">
 <table border=1>
 <caption align="top"> Table: Correlation Matrix </caption>
 <tr> <th>  </th> <th> Customer_Age </th> <th> Dependent_count </th> <th> Total_Revolving_Bal </th> <th> Avg_Utilization_Ratio </th>  </tr>
@@ -544,8 +548,9 @@ As expected, the co-variance matrix (Table 12) is only able to describe if the r
   <tr> <td align="right"> Total_Revolving_Bal </td> <td align="right"> 0.01 </td> <td align="right"> -0.00 </td> <td align="right"> 1.00 </td> <td align="right">  </td> </tr>
   <tr> <td align="right"> Avg_Utilization_Ratio </td> <td align="right"> 0.01 </td> <td align="right"> -0.04 </td> <td align="right"> 0.62 </td> <td align="right"> 1.00 </td> </tr>
    </table>
+</div> 
 
-The correlation matrix (Table 13) show more clearly the relationship between pairs of variables. Similarly to Table 12, the main diagonal (composed of ones) is not informative, as it only measures the correlation with the variable itself. Assessing the first column of the matrix, we can compare the correlation between `Customer_Age` and all the other variables in the sub-sample. We can tell that there is a negative relationship between `Dependent_count` and `Customer_Age`. This signifies that there when the age of the customers increases (for instance above the mean of 46 years) the tendency to have children reduces. Although, this association is weak, as the correlation coefficient is only $$-0.12$$. `Customer_Age` shows no correlation to the other variables `Total_Revolving_Bal` and `Avg_Utilization_Ratio`. Focusing on column three or the row number four of Table 13, we can see that there is a positive relationship between the `Avg_Utilization_Ratio` and `Total_Revolving_Bal`. This correlation follows our intuition, as customers use more often their credit card also most likely have a higher balance.
+The correlation matrix [(Table 17)](https://wario84.github.io/idsc_mgs/2022/03/21/w4_2_Lecture_04.html#tab_17) show more clearly the relationship between pairs of variables. Similarly to x [(Table 16)](https://wario84.github.io/idsc_mgs/2022/03/21/w4_2_Lecture_04.html#tab_16), the main diagonal (composed of ones) is not informative, as it only measures the correlation with the variable itself. Assessing the first column of the matrix, we can compare the correlation between `Customer_Age` and all the other variables in the sub-sample. We can tell that there is a negative relationship between `Dependent_count` and `Customer_Age`. This signifies that there when the age of the customers increases (for instance above the mean of 46 years) the tendency to have children reduces. Although, this association is weak, as the correlation coefficient is only $$-0.12$$. `Customer_Age` shows no correlation to the other variables `Total_Revolving_Bal` and `Avg_Utilization_Ratio`. Focusing on column three or the row number four of Table 13, we can see that there is a positive relationship between the `Avg_Utilization_Ratio` and `Total_Revolving_Bal`. This correlation follows our intuition, as customers use more often their credit card also most likely have a higher balance.
 
 
 # Visualizing Data.
