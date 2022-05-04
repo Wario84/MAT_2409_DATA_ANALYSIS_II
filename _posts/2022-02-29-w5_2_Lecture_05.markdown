@@ -5,19 +5,75 @@ title: "Lecture 5: Introduction to Algorithms"
 author: "Mario H. Gonzalez-Sauri"
 date: "2022-03-27"
 mermaid: true
-bibliography:"./assets/bibs/bib_05.bib"
 ---
 
 
 # Introduction
 
-In the lectures one to four, we have set the stage to introduce the heart of Applied Data Science: algorithmic thinking for problem-solving. In lecture one, we learn about the scope of Data Science and the rise of Big Data. Lecture two, is an introduction to the use of inductive reasoning applied to Data Science. Lectures three and four are an overview on basic estimation using descriptive and statistics combined with an introduction **R** Programming. In this lecture, I cover the backbone elements of algorithm programming, namely,  *control flow structures* and *functions*.
+In the lectures one to four, we have set the stage to introduce the
+heart of Applied Data Science: algorithmic thinking for problem-solving.
+In lecture one, we learn about the scope of Data Science and the rise of
+Big Data. Lecture two, is an introduction to the use of inductive
+reasoning applied to Data Science. Lectures three and four are an
+overview on basic estimation using descriptive and statistics combined
+with an introduction **R** Programming. In this lecture, I cover the
+backbone elements of algorithm programming, namely, *control flow
+structures* and *functions*.
 
-Functions and control flow structures are the building blocks of algorithm programming. So far, we have use `r-packages` and more specifically `FUN(X)` functions, that take arguments and perform certain action. However, in this lecture, we will learn the elementary building blocks from algorithmic programming. Learning the elementary building blocks of algorithmic programming has two main advantages in your formation in Data Science. Firstly, algorithmic programming allows you to understand in detail how the functions work. I’m sure that thus far, you know that if we pass a numeric vector `x`, inside the function`mean(x)`, **R** somehow computes the mean. However, after learning the building blocks of algorithmic programming, we are going to be able to understand how the functions work. What is the series of steps behind the computation of a certain function? And how does the arguments of the function are being used, in which order? In a nutshell, algorithmic programming enables you to deeply understand functions and packages in **R**.
+Functions and control flow structures are the building blocks of
+algorithm programming. So far, we have use `r-packages` and more
+specifically `FUN(X)` functions, that take arguments and perform certain
+action. However, in this lecture, we will learn the elementary building
+blocks from algorithmic programming. Learning the elementary building
+blocks of algorithmic programming has two main advantages in your
+formation in Data Science. Firstly, algorithmic programming allows you
+to understand in detail how the functions work. I’m sure that thus far,
+you know that if we pass a numeric vector `x`, inside the
+function`mean(x)`, **R** somehow computes the mean. However, after
+learning the building blocks of algorithmic programming, we are going to
+be able to understand how the functions work. What is the series of
+steps behind the computation of a certain function? And how does the
+arguments of the function are being used, in which order? In a nutshell,
+algorithmic programming enables you to deeply understand functions and
+packages in **R**.
 
-The second advantage of algorithmic programming is that enables you to go beyond the "out-of-the-shelf" functions from the **R-base** and other packages. Indeed, instead of being bounded to only functions from the **R-base**  and other packages, algorithmic programming, gives you the tools to create your own functions. In general is recommended to search first if there are no functions available to perform the action that you want. But, knowing algorithmic programming removes the constraints of only using available tools and gives you the freedom of developing tools that fulfill your particular needs. Indeed, we would like to build our own functions and algorithms in two cases. Firstly, when we can’t find a similar function in [The R Base](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html) or in the packages maintained by [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/web/packages/available_packages_by_name.html). Specially, if this is your first course in Data Science, you would like to verify first if there is a function on CRAN that fulfills your need before investing time building your own function. Using a function from CRAN’s database is typically a better option, not only because we save time, but also because the code is audited by lead experts in their corresponding fields. Secondly, we may opt to build our own function when we often perform a sequential series of functions or repetitive steps. For instance, I typically use the function `lapply` combined with the function `class` to verify the class of each column from a `data.frame`.
+The second advantage of algorithmic programming is that enables you to
+go beyond the “out-of-the-shelf” functions from the **R-base** and other
+packages. Indeed, instead of being bounded to only functions from the
+**R-base** and other packages, algorithmic programming, gives you the
+tools to create your own functions. In general is recommended to search
+first if there are no functions available to perform the action that you
+want. But, knowing algorithmic programming removes the constraints of
+only using available tools and gives you the freedom of developing tools
+that fulfill your particular needs. Indeed, we would like to build our
+own functions and algorithms in two cases. Firstly, when we can’t find a
+similar function in [The R
+Base](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html)
+or in the packages maintained by [The Comprehensive R Archive Network
+(CRAN)](https://cran.r-project.org/web/packages/available_packages_by_name.html).
+Specially, if this is your first course in Data Science, you would like
+to verify first if there is a function on CRAN that fulfills your need
+before investing time building your own function. Using a function from
+CRAN’s database is typically a better option, not only because we save
+time, but also because the code is audited by lead experts in their
+corresponding fields. Secondly, we may opt to build our own function
+when we often perform a sequential series of functions or repetitive
+steps. For instance, I typically use the function `lapply` combined with
+the function `class` to verify the class of each column from a
+`data.frame`.
 
-This is an example of a citation [@2015Hill10.1007/s1334701401845]
-
+This is an example of a citation (Hill 2015)
 
 # References
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-2015Hill10.1007/s1334701401845" class="csl-entry">
+
+Hill, Robin K. 2015. “What an Algorithm Is.” *Philosophy
+&Amp$\\mathsemicolon$ Technology* 29 (1): 35–59.
+<https://doi.org/10.1007/s13347-014-0184-5>.
+
+</div>
+
+</div>
