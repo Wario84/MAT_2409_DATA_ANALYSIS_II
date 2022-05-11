@@ -206,7 +206,7 @@ I'm sure all this sounds very abstract to some of you. But that is precisely why
 
 ```
 set.seed(7953)
-# Sample 100 from the set 1 to 10.
+# Sample 1000 from the set 1 to 6.
 n <- 1000L
 X <- sample(1L:6L, n, replace = T)
 # Create a data.frame with the frequencies.
@@ -258,7 +258,7 @@ $$E[X]= \mu_{X} =\frac{1}{6}$$
 Bear in mind that the $$E[X]$$ describes the behavior of the random variables when we observe the population. Or in other words, when our sample size is sufficiently large to approximate the $$E[X]$$. In the previous example, we only have $$n=1000$$ trials, and for this sample we can compute the *sample mean* or average in the following way:
 
 <br>
-$$\hat{X}=\sum_1^S \frac{x_i *1_{\{ X = x_i\}}}{n}$$
+$$\bar{X}=\sum^i \frac{x_i *1_{\{ X = x_i\}}}{n}$$
 <br>
 
 To understand this equation better, we should use our deductive reasoning to expand the current formula. To make explicit the connection between the frequency, average and probability, let's follow the follow steps:
@@ -273,7 +273,7 @@ c. Replace $$1_{\{ X = x_1\}}$$ for the **Freq** of Table 3.
 This yields the following expansion:
 
 <br>
-$$\hat{X}= \frac{1 * 164}{1000}+ \dots + \frac{6 * 171}{1000}$$
+$$\bar{X}= \frac{1 * 164}{1000}+ \dots + \frac{6 * 171}{1000}$$
 <br>
 
 Now, to make the computation easier we can add the Table 3, one additional column equal to **X** times **Freq** divided by $$n$$. Summing this column completes the procedure of the computation of the *sample average* or mean, $$\hat{X}=3.541$$, given by `sum(df$x_freq)`. 
@@ -480,7 +480,7 @@ What can we conclude from [(Table 15)](/idsc_mgs/2022/02/22/w2_2_Lecture_03.html
 
 ## Measurements of Association.
 
-Aside from describing the data using the measurements of central tendency and dispersion, descriptive statistics, also involve measuring relations between pairs of variables. In [Lecture 4](https://wario84.github.io/idsc_mgs/2022/02/22/w4_2_Lecture_04.html), is all about the kinds of relationships between variables. As we will learn, an association is not a synonym of causation, and we should be careful about the claim you make about the relationship between two variables using the following measurements. These two measurements of association are not causal, which means they only inform about the way the pair of variables change together, namely *positive*, *negative* or *no-relation*.
+Aside from describing the data using the measurements of central tendency and dispersion, descriptive statistics, also involve measuring relations between pairs of variables. In [Lecture 4](https://wario84.github.io/idsc_mgs/2022/02/22/w4_2_Lecture_04.html), is all about the kind of relationships between variables. As we will learn, an association is not a synonym of causation, and we should be careful about the claim you make about the relationship between two variables using the following measurements. These two measurements of association are not causal, which means they only inform about the way the pair of variables change together, namely *positive*, *negative* or *no-relation*.
 
 
 - **Covariance** measures the extent from which two random variables change together. We compute the sample co-variance by adding the product of the deviations between two variables $$X$$ and $$Y$$.
