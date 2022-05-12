@@ -19,6 +19,7 @@ group :jekyll_plugins do
   gem "jekyll-mermaid"
   gem "jekyll-commonmark-ghpages", ">= 0.1.6"
   #gem "jekyll-commonmark-ghpages", ">= 0.2.0"
+  #gem "jekyll-scholar"
 end
  	
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
