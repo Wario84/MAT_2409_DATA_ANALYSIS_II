@@ -20,9 +20,7 @@ The distiction between a correlation and a causal relationship between two varia
 
 # Causality and Correlation
 
-As it turns out, the kind of relationship between two variables is no so clear. As Data Scientist, we should proceed with scientific skepticism when we analyze the relationship between two variables. When we measure a correlation between two variables, we are merely assessing the association between two variables, but that is not the same as causation. If you are approaching this distinction for the first time, perhaps it is better to give examples, so by induction you are able to understand the difference. But before I give you some examples, I want to explain a framework, so you can have enough knowledge to navigate the examples.
-
-To draw a line between an association or correlation to a causal relationship between two variables, I elaborate on two properties that causal relationships must have:
+As it turns out, the kind of relationship between two variables is no so clear. As Data Scientist, we should proceed with scientific skepticism when we analyze the relationship between two variables. When we measure a correlation between two variables, we are merely assessing the association between two variables, but that is not the same as causation. To help you draw a line between an association, correlation and a causal relationship between two variables, I elaborate on some properties that causal relationships must have:
 
 
 ## A Causal Mechanism
@@ -78,7 +76,7 @@ $$Y=\beta_1 X+ \beta_2 Z+\epsilon$$
 The classic example is the estimation of years of *education* ($$X$$) on *income* ($$Y$$). The problem is that we can measure really well the years of education, but other determinants like ability, motivation and number of hours of study are very hard to measure. Even if we have psychometric measurements of IQ, these metrics are only proxies of the latent ability at the individual level. A proxy means that is just an approximation of the real variable that remains or confounded or unobserved. The book of [Stock and Watson, (2019)](https://www.pearson.com/us/higher-education/program/Stock-Introduction-to-Econometrics-Plus-My-Lab-Economics-with-Pearson-e-Text-Access-Card-Package-4th-Edition/PGM2416966.html), offers another example from the study of school grades ($$Y$$) and the student-teacher ratio. The intuition of the study is that if the student-teacher ratio is high, then the grades are low. The causal mechanism is that explains this negative relation is the lack of capacity of teachers to properly tutor many students. However, the estimation, suffers from OBV, because it does not account for the percentage of English learners in some schools. This is a problem because migrant children might require additional tutoring, given that they do not master the language. Another potential source of OVB is the lack of control of the time of the test. As it turns out, the time of the test can impact the scores, because in early morning and later in the evening the alertness may reduce.
 
 
-A special type of OVB is called **self-selection**. Self-selection appears in an estimation when there are inherent characteristics of the unit of observation that affect the outcome variable ($$Y$$) but remain confounded or latent. This perhaps sounds quite abstract, so let's give some examples to clarify the concept. Imagine that you are interested in estimating the effect of education quality ($$Y$$) on the career success ($$Y$$), measured in monthly income. So you run a model and control for the different schools; among the sample you have graduates from Oxford, Harvard, Stanford and so on. Then in your estimation, it appears that indeed the higher the rank of the university (for the [World University Ranking](https://www.timeshighereducation.com/world-university-rankings)) the higher the measured salary of the graduates $$Y$$. But wait, aren't more able students also more likely to enroll themselves into highly ranked universities? Indeed, variables such as ability and motivation are very difficult to observe, and hence it is hard to determine if schooling from highly ranked universities causes latter career success. Although the association between university prestige and career success intuitively makes sense, most of the time we are only able to describe a simple correlation between the variables. Another example, from studies of science and technology, is whether research collaboration causes higher research productivity? Similarly to the previous example, intuitively, we may expect that increments in the collaboration render beneficial exchanges between researchers that increase the overall productivity of authors. Similar to the previous example, intuitively, makes sense collaboration brings gains of human capital, division of labor and pooling of resources. However, we disregard, that these positive externalities from collaboration depend on the individual self-selection into networks or teams. The self-selection takes place because researchers do not connect or make partnerships with everybody randomly. But most of the time, a researcher's own preferences in terms of discipline, research interest and other individual characteristics such as their personality are the reason behind the membership into different networks. Thus, it is hard to tell weather is collaboration the determinant of productivity or is it some other individual characteristics that help some researchers to be part of prolific networks.
+A special type of OVB is called **self-selection**. Self-selection appears in an estimation when there are inherent characteristics of the unit of observation that affect the outcome variable ($$Y$$) but remain confounded or latent. This perhaps sounds quite abstract, so let's give some examples to clarify the concept. Imagine that you are interested in estimating the effect of education quality ($$Y$$) on the career success ($$Y$$), measured in monthly income. So you run a model and control for the different schools; among the sample you have graduates from Oxford, Harvard, Stanford and so on. Then in your estimation, it appears that indeed the higher the rank of the university (for the [World University Ranking](https://www.timeshighereducation.com/world-university-rankings)) the higher the measured salary of the graduates $$Y$$. But wait, aren't more able students also more likely to enroll themselves into highly ranked universities? Indeed, variables such as ability and motivation are very difficult to observe, and hence it is hard to determine if schooling from highly ranked universities causes latter career success. Although the association between university prestige and career success intuitively makes sense, most of the time we are only able to describe a simple correlation between the variables  (Gonzalez-Sauri and Rossello 2022).. Another example, from studies of science and technology, is whether research collaboration causes higher research productivity? Similarly to the previous example, intuitively, we may expect that increments in the collaboration render beneficial exchanges between researchers that increase the overall productivity of authors. Similar to the previous example, intuitively, makes sense collaboration brings gains of human capital, division of labor and pooling of resources. However, we disregard, that these positive externalities from collaboration depend on the individual self-selection into networks or teams (Ductor 2015). The self-selection takes place because researchers do not connect or make partnerships with everybody randomly. But most of the time, a researcher's own preferences in terms of discipline, research interest and other individual characteristics such as their personality are the reason behind the membership into different networks. Thus, it is hard to tell weather is collaboration the determinant of productivity or is it some other individual characteristics that help some researchers to be part of prolific networks.
 
 A second source of **endogeneity** (opposite of exogeneity) is called **reverse-causality**. Reverse causality is a real problem in many datasets because there is some feedback mechanism $$Y \rightarrow X$$ in which the dependent variable also affects the explanatory variable. A classic example in economics of this issue is presents in the functions of supply and demand. The issue is that $$S=P$$ supply varies depending on the selling price, but simultaneously, the price is also changing according to the demand $$D=P$$. This is an issue of feedback, in which the dependent variable (supply-demand), affects the explanatory variable (price) under equilibrium. This system of equations has a problem of **reverse causality** that is not so straightforward to solve. In graphical form, the problem or reverse causality is represented in the following way:
 
@@ -263,3 +261,64 @@ The study uses experimental data because the treatment (social norm) is allocate
 - Endogeneity
 
 The study only derives conclusions based on a difference in means, and they do not assess the effects of other factors that might drive the change of behavior, for instance, unemployment during the period of observation or absence in the household due to holidays or work. Further, it is not clear that the two groups were completely isolated from one another. The causal-mechanism depends on the prominence of one of the norms in the mind of the individuals. However, neighborhoods are typically well-know to communicate and interact among themselves, henceforth, it is not unlikely that a norm affected more than one household.
+
+# References
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-1992Blaug10.1017/CBO9780511528224" class="csl-entry">
+Blaug, Mark. 1992. <em>The Methodology of Economics: Or, How Economists
+Explain</em>. 2nd ed. Cambridge Surveys of Economic Literature.
+Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511528224">https://doi.org/10.1017/CBO9780511528224</a>.
+</div>
+<div id="ref-2017Calude10.1007/s1069901694894" class="csl-entry">
+Calude, Cristian S., and Giuseppe Longo. 2017. <span>"The Deluge of
+Spurious Correlations in Big Data."</span> <em>Foundations of
+Science</em> 22 (3): 595-612. <a href="https://doi.org/10.1007/s10699-016-9489-4">https://doi.org/10.1007/s10699-016-9489-4</a>.
+</div>
+<div id="ref-2004Cialdini10.1146/annurev.psych.55.090902.142015" class="csl-entry">
+Cialdini, Robert B., and Noah J. Goldstein. 2004. <span>"Social
+Influence: Compliance and Conformity."</span> <em>Annual Review of
+Psychology</em> 55 (1): 591-621. <a href="https://doi.org/10.1146/annurev.psych.55.090902.142015">https://doi.org/10.1146/annurev.psych.55.090902.142015</a>.
+</div>
+<div id="ref-2015Ductorhttps//doi.org/10.1111/obes.12070" class="csl-entry">
+Ductor, Lorenzo. 2015. <span>"Does Co-Authorship Lead to Higher Academic
+Productivity?"</span> <em>Oxford Bulletin of Economics and
+Statistics</em> 77 (3): 385-407. https://doi.org/<a href="https://doi.org/10.1111/obes.12070">https://doi.org/10.1111/obes.12070</a>.
+</div>
+<div id="ref-2022GonzalezSauri10.1007/s11162022096797" class="csl-entry">
+Gonzalez-Sauri, Mario, and Giulia Rossello. 2022. <span>"The Role of
+Early-Career University Prestige Stratification on the Future Academic
+Performance of Scholars."</span> <em>Research in Higher Education</em>,
+April. <a href="https://doi.org/10.1007/s11162-022-09679-7">https://doi.org/10.1007/s11162-022-09679-7</a>.
+</div>
+<div id="ref-2018Maass10.17705/1jais.00526" class="csl-entry">
+Maass, Wolfgang, Jeffrey Parsons, Sandeep Purao, Veda C Storey, and
+Carson Woo. 2018. <span>"Data-Driven Meets Theory-Driven Research in the
+Era of Big Data: Opportunities and Challenges for Information Systems
+Research."</span> <em>Journal of the Association for Information
+Systems</em> 19 (12): 1. <a href="https://doi.org/10.17705/1jais.00526">https://doi.org/10.17705/1jais.00526</a>.
+</div>
+<div id="ref-2020Nabavi" class="csl-entry">
+Nabavi, Noushin. 2020. <em><span class="nocase">Chapter 4 Defining the
+problem</span></em>. <a href="https://noushinn.github.io/experimentation_course/defining-the-problem.html">https://noushinn.github.io/experimentation_course/defining-the-problem.html</a>.
+</div>
+<div id="ref-2020Prinzhttps//doi.org/10.1016/j.ssaho.2020.100082" class="csl-entry">
+Prinz, Aloys Leo. 2020. <span>"Chocolate Consumption and Noble
+Laureates."</span> <em>Social Sciences &amp; Humanities Open</em>. <a href="https://doi.org/10.1016/j.ssaho.2020.100082">https://doi.org/10.1016/j.ssaho.2020.100082</a>.
+</div>
+<div id="ref-2007Schultz10.1111/j.14679280.2007.01917.x" class="csl-entry">
+Schultz, P. Wesley, Jessica M. Nolan, Robert B. Cialdini, Noah J.
+Goldstein, and Vladas Griskevicius. 2007. <span>"The Constructive,
+Destructive, and Reconstructive Power of Social Norms."</span>
+<em>Psychological Science</em> 18 (5): 429-34. <a href="https://doi.org/10.1111/j.1467-9280.2007.01917.x">https://doi.org/10.1111/j.1467-9280.2007.01917.x</a>.
+</div>
+<div id="ref-2003Stock" class="csl-entry">
+Stock, James, and Mark W. Watson. 2003. <em>Introduction to
+Econometrics</em>. New York: Prentice Hall; Prentice Hall.
+</div>
+<div id="ref-2022THE" class="csl-entry">
+Times Higher Education. 2022. <span>"<span>World University
+Rankings</span>."</span> <a href="https://www.timeshighereducation.com/world-university-rankings">https://www.timeshighereducation.com/world-university-rankings</a>.
+</div>
+</div>
+</div>
