@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\assets",
+    "\\assets\\data",
     "\\_posts"
   ],
-  "SelectedNode": "\\_posts\\2022-03-27-w6_2_Lecture_06.markdown",
+  "SelectedNode": "\\assets\\data\\bike_data.csv",
   "PreviewInSolutionExplorer": false
 }
