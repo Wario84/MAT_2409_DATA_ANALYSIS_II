@@ -35,7 +35,7 @@ An algorithm is simply a "well-defined computational procedure that takes some v
     Fibonacci Sequence Generator:
     <div class="mermaid">
     graph TD
-    A[Input x: number of numbers to generate] -->|Start| B(Sum the last 2 numbers)
+    A[Input x: lenght of sequence to generate] -->|Start| B(Sum the last 2 numbers)
     B--> C(Add the number to the series z)
     C--> D(Count the y of generated numbers)
     D--> Z{Is x = y?}
