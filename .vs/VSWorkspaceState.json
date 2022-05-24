@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assets",
-    "\\assets\\data",
-    "\\_posts"
+    "\\assets\\imgs",
+    "\\assets\\imgs\\tutorial04",
+    "\\_posts",
+    "\\_sass"
   ],
-  "SelectedNode": "\\_posts\\2022-02-29-w5_2_Lecture_05.markdown",
+  "SelectedNode": "\\_posts\\2022-02-29-w4_1_Tutorial_04.md",
   "PreviewInSolutionExplorer": false
 }
