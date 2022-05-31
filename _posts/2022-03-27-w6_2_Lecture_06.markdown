@@ -10,5 +10,7 @@ mermaid: true
 
 # Download presentation
 
-Refer to the presentation of this lecture ![here](https://github.com/Wario84/idsc_mgs/raw/master/assets/data/06.zip?raw=true).
+Refer to the presentation of this lecture:
 
+
+[Lecture 06 download](https://github.com/Wario84/idsc_mgs/raw/master/assets/data/06.zip?raw=true)
