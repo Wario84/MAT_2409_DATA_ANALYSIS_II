@@ -36,10 +36,7 @@ mermaid: true
 # Presentación
 
 
-![Presentación](https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/raw/master/assets/lectures/MAT2409_02.html)
-
-
-
+{% include lectures/MAT2409_02.html %}
 
 
 
