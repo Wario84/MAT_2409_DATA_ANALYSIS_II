@@ -35,7 +35,6 @@ mermaid: true
 
 # Presentación
 
-{% include lectures/MAT2409_02.html %}
 
 
 
