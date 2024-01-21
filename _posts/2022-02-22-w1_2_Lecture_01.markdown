@@ -12,7 +12,6 @@ mermaid: true
 
 # Temas
 
-Índice de temas:
 
 - **Tema 1: Introducción a la estimación de parámetros.**
 - **Tema 1.1.1 Variables Aleatorias**
@@ -37,7 +36,7 @@ mermaid: true
 # Presentación
 
 
-![Presentación](https://github.com/Wario84/idsc_mgs/raw/master/assets/MAT2409_02.html)
+![Presentación](https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/raw/master/assets/lectures/MAT2409_02.html)
 
 
 
