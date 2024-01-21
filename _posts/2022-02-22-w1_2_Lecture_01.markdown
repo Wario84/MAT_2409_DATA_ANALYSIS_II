@@ -36,7 +36,7 @@ mermaid: true
 # Presentación
 
 
-[Testing](/lectures/MAT2409_02.html)
+[Testing](/MAT2409_02.html)
 
 
 
