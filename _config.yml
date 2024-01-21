@@ -27,6 +27,7 @@ baseurl: "/MAT_2409_DATA_ANALYSIS_II" # the subpath of your site, e.g. /blog
 url: "https://wario84.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Intermind
 github_username:  wario84
+include: ["_includes"]
 
 # Build settings
 theme: minima
