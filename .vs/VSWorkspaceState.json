@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\assets",
+    "\\assets\\resources",
+    "\\_archives",
+    "\\_includes",
+    "\\_posts",
+    "\\_posts\\lectures"
   ],
-  "SelectedNode": "\\C:\\Users\\mglez\\Documents\\PHD\\Semester 17\\19092023_mayab\\Licenciatura en economia y negocios\\courseworks\\MAT2409_ANA_D_II\\blog",
+  "SelectedNode": "\\_posts\\2024-01-22-w1_2_Lecture_03.markdown",
   "PreviewInSolutionExplorer": false
 }
