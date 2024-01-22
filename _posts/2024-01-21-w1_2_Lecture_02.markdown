@@ -3,7 +3,7 @@
 layout: post
 title: "Lecture 2: Introducción a la Estimación de Parámetros."
 author: "Mario H. Gonzalez-Sauri"
-date: "2022-02-22"
+date: "2024-01-21"
 mermaid: true
 
 ---
@@ -38,20 +38,10 @@ mermaid: true
 
 [Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_02.html)
 
-<a href="https://raw.githubusercontent.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_02.html" download>
-  <svg aria-hidden="true" focusable="false" role="img" class="octicon octicon-download" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible">
-    <path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"></path>
-    <path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"></path>
-  </svg>
-  Bajar la presentación
+
+<a href="https://downgit.github.io/#/home?url=https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_02.html" download>
+  Bajar Presentación
 </a>
-
-
-
-
-
-
-
 
 
 

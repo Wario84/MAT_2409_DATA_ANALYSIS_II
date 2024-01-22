@@ -1,0 +1,41 @@
+---
+
+layout: post
+title: "Lecture 1: Contenido del Curso, Resultados de Aprendizaje, Bibliografía."
+author: "Mario H. Gonzalez-Sauri"
+date: "2024-01-14"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+
+# Introducción
+
+Este curso abarca desde los fundamentos estadísticos para estimar parámetros y hacer inferencias estadísticas para optimizar la toma de decisiones en la economía y los negocios. Descubriremos el arte de la estimación, aprendiendo a dar vida a los números a través de estimaciones puntuales y por intervalos. Utilizaremos pruebas de hipótesis, donde desafiaremos suposiciones y tomaremos decisiones informadas. Luego revisaremos el uso de técnicas análisis de varianza (ANOVA) que se usan generalmente cuando vamos a comparar más de dos grupos. Aplicaremos nuestro conocimiento en laboratorios aplicados usando principalmente Excel para llevar a práctica los temas aprendidos. Finalmente, aprenderemos a estimar modelos de regresión que se usan para estudiar los determinantes de variables dependientes.
+
+
+# Resultados del Aprendizaje:
+
+Al finalizar el curso, el alumno podrá estimar de forma precisa parámetros para hacer inferencias correctas y mejorar la toma de decisiones en la economía y los negocios.
+
+
+# Bibliografía:
+
+- Smith, G. (2015).&nbsp;<em>Essential statistics, regression, and econometrics.
+- Stock, J. H., & Watson, M. W. (2020). Introduction to econometrics. Pearson.
+- Ross, S. M. (2014). A first course in probability.
+- Lipschutz, S. (2000). Schaum's outline of probability. McGraw Hill Professional.
+- https://espanol.libretexts.org/Estadisticas/
+
+
+
+
+
+
+
+
+
+
+

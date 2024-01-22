@@ -1,0 +1,70 @@
+---
+
+layout: post
+title: "Lecture 1: Contenido del Curso, Resultados de Aprendizaje, Bibliografía."
+author: "Mario H. Gonzalez-Sauri"
+date: "2024-01-21"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Introducción
+
+Este curso abarca desde los fundamentos estadísticos para estimar parámetros y hacer inferencias estadísticas para optimizar la toma de decisiones en la economía y los negocios. Descubriremos el arte de la estimación, aprendiendo a dar vida a los números a través de estimaciones puntuales y por intervalos. Utilizaremos pruebas de hipótesis, donde desafiaremos suposiciones y tomaremos decisiones informadas. Luego revisaremos el uso de técnicas análisis de varianza (ANOVA) que se usan generalmente cuando vamos a comparar más de dos grupos. Aplicaremos nuestro conocimiento en laboratorios aplicados usando principalmente Excel para llevar a práctica los temas aprendidos. Finalmente, aprenderemos a estimar modelos de regresión que se usan para estudiar los determinantes de variables dependientes.
+
+
+# Resultados del Aprendizaje:
+
+Al finalizar el curso, el alumno podrá estimar de forma precisa parámetros para hacer inferencias correctas y mejorar la toma de decisiones en la economía y los negocios.
+
+# Temario
+
+**PRIMER PARCIAL**
+
+1. **Introducción a la estimación de parámetros**
+   - 1.1 Estimación de Parámetros (1 sesión)
+   - 1.2 Estimación puntual e intervalos (1 sesión)
+   - 1.3 Estimación del tamaño de muestra (1 sesión)
+   - 1.4 Aplicaciones con Excel y paquetería estadística (1 sesión)
+
+2. **Introducción a las pruebas de hipótesis**
+   - 2.1 Pruebas de Hipótesis una muestra: Media poblacional (Prueba t) y Proporción poblacional (Prueba z) (2 sesiones)
+   - 2.2 Pruebas de Hipótesis dos muestras: Diferencia de medias poblacionales con datos independientes (1 sesión)
+   - 2.3 Aplicaciones con Excel y paquetería estadística de los temas anteriores (1 sesión)
+   - 2.4 Pruebas de Hipótesis dos muestras: Diferencia de medias poblacionales con datos dependientes (1 sesión)
+   - 2.5 Pruebas de Hipótesis dos muestras: Diferencia Proporciones poblacionales. (1 sesión)
+   - 2.6 Pruebas de Hipótesis para datos categóricos. (1 sesión)
+   - 2.7 Aplicaciones con Excel y paquetería estadística de los temas anteriores (1 sesión)
+**SEGUNDO PARCIAL**
+3. **Introducción al análisis ANOVA**
+   - 3.1 ANOVA unidireccional (2 sesiones)
+   - 3.2 ANOVA bidireccional (2 sesiones)
+   - 3.3 Aplicaciones con Excel y paquetería estadística  (1 sesión)
+4. **Introducción al modelo de regresión lineal**
+   - 4.1 Introducción al modelo de regresión lineal (1 sesión)
+   - 4.2 Prueba de hipótesis de los coeficientes, Error estándar y coeficiente de determinación (1 sesión)
+   - 4.3 Interpretación del modelo (2 sesiones)
+   - 4.4 Aplicaciones con Excel y paquetería estadística (1 sesión)
+**Ordinario [1-5]**
+5. **Introducción al modelo de regresión lineal múltiple**
+   - 5.1 Modelo de regresión lineal múltiple (1 sesión)
+   - 5.2 Medidas de Ajuste en Regresión Múltiple (1 sesión)
+   - 5.3 Endogeneidad, validez interna y externa del modelo (1 sesión)
+   - 5.4 Variables instrumentales (1 sesión)
+   - 5.5 Interpretación del modelo (2 sesiones)
+   - 5.6 Aplicaciones con Excel y paquetería estadística (1 sesión)
+
+# Bibliografía:
+
+- Smith, G. (2015).&nbsp;<em>Essential statistics, regression, and econometrics.
+- Stock, J. H., & Watson, M. W. (2020). Introduction to econometrics. Pearson.
+- Ross, S. M. (2014). A first course in probability.
+- Lipschutz, S. (2000). Schaum's outline of probability. McGraw Hill Professional.
+- https://espanol.libretexts.org/Estadisticas/
+
+
+
+
+

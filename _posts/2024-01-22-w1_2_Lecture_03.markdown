@@ -1,0 +1,61 @@
+---
+
+layout: post
+title: "Lecture 3: Estimación Puntual y por Intervalos."
+author: "Mario H. Gonzalez-Sauri"
+date: "2024-01-21"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Temas
+
+
+- **Tema 1: Introducción a la estimación de parámetros.**
+- **Tema 1.2: Estimación Puntual y por Intervalos.**
+- **Tema 1.2.1 Teorema del Límite Central** 
+- **Tema 1.2.2 Distribución Normal: Estimación Puntual**
+ - Media muestral
+ - Varianza muestral
+ - Desviación estándar muestral
+- **Tema 1.2.3 Estimación Puntual y Estimación Ponderada**
+- **Tema 1.2.4 Distribucion Normal: Estimación de probabilidad**
+    - Probabilidad de que $$X$$ sea mayor o igual a un punto muestral. 
+    - Probabilidad de que $$X$$ sea menor o igual a un punto muestral.  
+    - Probabilidad de que $$X$$ esté entre dos puntos muestrales. 
+
+**Tema 1.2.5 Distribucion Normal: Estimación por intervalo**
+
+
+
+# Presentación
+
+
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_03.html)
+
+
+<a href="https://downgit.github.io/#/home?url=https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blog/master/_posts/lectures/MAT2409_03.html" download>
+  Bajar Presentación
+</a>
+
+
+# Tabla de Probabilidad de la Distribución Normal
+
+
+
+<a href="https://downgit.github.io/#/home?url=https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blog/master/assets/resources/a_1_st_normal.pdf" download>
+  Bajar la Tabla
+</a>
+
+
+
+
+
+
+
+
+
+
+
