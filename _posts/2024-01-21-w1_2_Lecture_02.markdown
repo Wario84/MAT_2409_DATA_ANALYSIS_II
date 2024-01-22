@@ -43,6 +43,9 @@ mermaid: true
   Bajar Presentación
 </a>
 
+# Tarea
+
+[Tarea 01](https://forms.gle/NraudFdEdKFLfsdB8)
 
 
 
