@@ -45,8 +45,8 @@ mermaid: true
 
 
 # Tarea
-a
-[Tarea 01](https://forms.gle/NraudFdEdKFLfsdB8)
+
+[Ir a la Tarea 01](https://forms.gle/NraudFdEdKFLfsdB8)
 
 
 
