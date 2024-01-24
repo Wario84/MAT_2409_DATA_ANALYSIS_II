@@ -1,0 +1,47 @@
+---
+
+layout: post
+title: "Lecture 4: La Distribución T-Student."
+author: "Mario H. Gonzalez-Sauri"
+date: "2024-01-24"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Temas
+
+
+- **Tema 1.3. La La Distribución T-Student.**
+
+
+# Presentación
+
+
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_04.html)
+
+
+<a href="https://downgit.github.io/#/home?url=https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_04.html" download>
+  Bajar Presentación
+</a>
+
+
+# Tabla de Probabilidad de la T-Student
+
+
+
+<a href="https://downgit.github.io/#/home?url=https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/assets/resources/a2_t_student.pdf" download>
+  Bajar la Tabla
+</a>
+
+
+
+
+
+
+
+
+
+
+
