@@ -35,6 +35,9 @@ mermaid: true
   Bajar la Tabla
 </a>
 
+# Tarea
+
+[Ir a la Tarea 02](https://forms.gle/e1whJorniGFSaS3f9)
 
 
 
