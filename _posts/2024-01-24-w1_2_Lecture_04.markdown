@@ -22,7 +22,7 @@ mermaid: true
 [Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_04.html)
 
 
-<a href="https://downgit.github.io/#/home?url=https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_04.html" download>
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_04.html" download>
   Bajar Presentación
 </a>
 
@@ -31,7 +31,7 @@ mermaid: true
 
 
 
-<a href="https://downgit.github.io/#/home?url=https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/assets/resources/a2_t_student.pdf" download>
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/assets/resources/a2_t_student.pdf" download>
   Bajar la Tabla
 </a>
 
