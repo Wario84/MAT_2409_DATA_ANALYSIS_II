@@ -1,9 +1,9 @@
 ---
 
 layout: post
-title: "Lecture 4: Estimación del Tamaño de Muestra."
+title: "Lecture 6: Pruebas de hipótesis."
 author: "Mario H. Gonzalez-Sauri"
-date: "2024-02-07"
+date: "2024-02-14"
 mermaid: true
 
 ---
@@ -13,16 +13,16 @@ mermaid: true
 # Temas
 
 
-- **Tema 1.4 Tamaño de la Muestra.**
+- **Tema 2.1 Pruebas de hipótesis.**
 
 
 # Presentación
 
 
-[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_06.html)
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_07.html)
 
 
-<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_06.html" download>
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_07.html" download>
   Bajar Presentación
 </a>
 
