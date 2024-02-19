@@ -4,10 +4,10 @@
     "\\assets",
     "\\assets\\resources",
     "\\_archives",
-    "\\_includes",
     "\\_posts",
-    "\\_posts\\lectures"
+    "\\_posts\\lectures",
+    "\\_sass"
   ],
-  "SelectedNode": "\\_posts\\lectures",
+  "SelectedNode": "\\_posts\\2024-02-15-w1_2_Lecture_07.markdown",
   "PreviewInSolutionExplorer": false
 }
