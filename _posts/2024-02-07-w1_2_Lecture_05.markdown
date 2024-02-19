@@ -1,9 +1,9 @@
 ---
 
 layout: post
-title: "Lecture 6: Pruebas de hipótesis."
+title: "Lecture 5: Introducción a la estimación de parámetros (ejercicios)."
 author: "Mario H. Gonzalez-Sauri"
-date: "2024-02-14"
+date: "2024-02-07"
 mermaid: true
 
 ---
@@ -19,10 +19,10 @@ mermaid: true
 # Presentación
 
 
-[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_07.html)
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_05.html)
 
 
-<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_07.html" download>
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_05.html" download>
   Bajar Presentación
 </a>
 

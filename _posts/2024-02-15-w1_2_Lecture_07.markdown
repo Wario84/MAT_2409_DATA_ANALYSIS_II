@@ -1,0 +1,60 @@
+---
+
+layout: post
+title: "Lecture 7: Pruebas de Hipótesis I."
+author: "Mario H. Gonzalez-Sauri"
+date: "2024-02-15"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Temas
+
+
+- **Tema 2 -  Pruebas de Hipótesis.**
+
+Tema 2.1 Introducción.
+Tema 2.1 Introducción.
+Tema 2.1 Introducción.
+Tema 2.3 Limitaciones.
+Tema 2.3 Componentes de la prueba de Hipótesis.
+Tema 2.4 Vocabulario de la prueba de Hipótesis.
+Tema 2.5 Elementos de la prueba de Hipótesis.
+Tema 2.6 Error tipo I y II.
+Tema 2.6 Error tipo I y II.
+Tema 2.5 Pruebas de Medias: σ conocido.
+Tema 2.6 Pruebas de Medias: σ desconocido.
+Tema 2.6 Pruebas de Proporciones.
+Tema 2.6 Pruebas de Proporciones: σ desconocido.
+2.6 Tipos de Pruebas: Dos Colas.
+2.6 Tipos de Pruebas: Dos Colas.
+2.6 Tipos de Pruebas: Cola Inferior
+2.6 Tipos de Pruebas: Cola Inferior
+2.6 Tipos de Pruebas: Cola Superior
+2.7 Reglas para el rechazo de H0
+
+
+# Presentación
+
+
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_06.html)
+
+
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_06.html" download>
+  Bajar Presentación
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+

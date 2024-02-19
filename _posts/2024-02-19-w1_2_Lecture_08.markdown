@@ -1,0 +1,53 @@
+---
+
+layout: post
+title: "Lecture 8: Pruebas de Hipótesis II."
+author: "Mario H. Gonzalez-Sauri"
+date: "2024-02-19"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Temas
+
+
+- **Tema 2 -  Pruebas de Hipótesis.**
+
+Tema 2.9.1 Diferencia de medias poblacionales con datos independientes (dos muestras).
+
+Tema 2.10.1 Pruebas de Hipótesis dos muestras: Diferencia Proporciones poblacionales
+
+Tema 2.11.1 Pruebas de Hipótesis para datos categóricos
+
+
+
+# Presentación
+
+
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_08.html)
+
+
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_08.html" download>
+  Bajar Presentación
+</a>
+
+
+
+# Tabla de Probabilidad de la Distribución Chi-SQRT
+
+
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/assets/resources/chi_square.pdf" download>
+  Bajar la Tabla
+</a>
+
+
+
+
+
+
+
+
+
+
