@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>04 Introducción a la estimación de parámetros.</title>
+  <title>05 Tamaño de la Muestra.</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -20,7 +20,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: '04 Introducción a la estimación de parámetros.',
+                title: '05 Tamaño de la Muestra.',
                         subtitle: 'Análisis de datos II (MAT2409)',
                 useBuilds: true,
         usePrettify: true,
@@ -3123,6 +3123,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 
 
@@ -3142,159 +3205,423 @@ ul.task-list{list-style: none;}
           </hgroup>
   </slide>
 
-<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Ejercicios Resueltos Tarea 01</h2></hgroup><article  id="ejercicios-resueltos-tarea-01">
+<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Tema 1.4 Tamaño de la Muestra.</h2></hgroup><article  id="tema-1.4-tamaño-de-la-muestra.">
 
-</article></slide><slide class=""><hgroup><h2>Ejercicio (1/1)</h2></hgroup><article  id="ejercicio-11">
-
-<ol>
-<li>Supongamos que estás jugando a un juego de tiro al blanco, y en promedio un \(20\%\) de las veces le das al blanco. Quieres calcular la probabilidad de que, de 10 tiros, aciertes exactamente 7 veces.</li>
-</ol>
-
-</article></slide><slide class=""><hgroup><h2>Ejercicio (1/2)</h2></hgroup><article  id="ejercicio-12">
-
-<p>Identificar:</p>
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.1 Tamaño de la Muestra.</h2></hgroup><article  id="tema-1.4.1-tamaño-de-la-muestra.">
 
 <ul>
-<li>Solo hay dos resultados posibles en cada intento: acertar al blanco (éxito) o no acertar (fracaso).</li>
-<li>Hay \(n=10\) eventos independientes de acertar al blanco (éxito) o no acertar (fracaso).</li>
-<li>Probabilidad constante de éxito, en cada intento hay siempre \(20\%\)</li>
-<li>\(P(X)\) es la probabilidad de obtener un número específico de éxitos/fracasos en una serie de eventos independientes.</li>
-<li>La distribución de \(X\) es binomial.</li>
+<li><p>En los temas [1-3] hemos estudiado técnicas para la estimación de parámetros.</p></li>
+<li><p>En los temas [1-3] técnicas para el cómputo de probabilidades.</p></li>
+<li><p>Pero es necesario determinar un tamaño de muestra adecuado para estimar con precisión nuestros parámetros.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Ejercicio (1/3)</h2></hgroup><article  id="ejercicio-13">
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.2 Tipo de variable.</h2></hgroup><article  id="tema-1.4.2-tipo-de-variable.">
 
-<p>Definición del D. Binomial: \[
-P(X=k \text{ de } n) = \frac{{n!}}{{k!(n-k)!}} p^k (1-p)^{n-k}
-\]</p>
+<p>¿Qué tipo de variable vamos a muestrear?</p>
 
 <ul>
-<li>\(n=10\) es el número total de intentos.</li>
-<li>\(k=7\) es el número de éxitos que estamos buscando.</li>
-<li>\(p=0.20\) es la probabilidad de éxito en un solo intento.</li>
+<li><p>Variables Continuas: Se miden (Tiempo, temperatura, velocidad…).</p></li>
+<li><p>Variables Discretas: Se cuentan (# hijos, # estudiantes, # maestros…).</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Ejercicio (1/4)</h2></hgroup><article  id="ejercicio-14">
-
-<p>\[
-P(X=7 \text{ de } 10) = \frac{{10!}}{{7!(10-7)!}} \cdot (0.20)^7 \cdot (0.80)^3
-\]</p>
-
-<p>\[
-P(X=7 \text{ de } 10) =  0.21
-\]</p>
-
-<pre >## [1] 0.2050781</pre>
-
-</article></slide><slide class=""><hgroup><h2>Ejercicio (2/1)</h2></hgroup><article  id="ejercicio-21">
-
-<ol>
-<li>Supongamos que un espacio muestral \(S\) consta de 4 elementos \(S=\{a1,a2,a3,a4\}\). ¿Cuál función define un espacio de probabilidad en P(S)?</li>
-</ol>
-
-<p>Por el axioma de probabilidad total (Normalización) \(P(S)=1\)</p>
-
-</article></slide><slide class=""><hgroup><h2>Ejecicio (3/1)</h2></hgroup><article  id="ejecicio-31">
-
-<ol>
-<li>Supongamos que eres dueño de un food truck y que el número de pedidos que recibes por día sigue la siguiente distribución:</li>
-</ol>
-
-<p>Días con pocos pedidos: 40% de probabilidad (10 pedidos) Días con pedidos moderados: 30% de probabilidad (20 pedidos) Días con muchos pedidos: 30% de probabilidad (30 pedidos)</p>
-
-<p>Calcula la media del número de pedidos que esperas recibir cada día.</p>
-
-</article></slide><slide class=""><hgroup><h2>Ejercicio (3/2)</h2></hgroup><article  id="ejercicio-32">
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.3 Tipo de estudio.</h2></hgroup><article  id="tema-1.4.3-tipo-de-estudio.">
 
 <ul>
-<li>La media ponderada como una relación entre probabilidad y número de realizaciones (frecuencia).</li>
-<li>Sustituir los valores en la fórmula del valor esperado:</li>
+<li><p><strong>Estudios de observación</strong>: implican observar y medir individuos o grupos sin intervenir ni manipular variables. En los estudios observacionales, los investigadores simplemente observan lo que sucede naturalmente.</p></li>
+<li><p><strong>Estudios experimentales</strong>: implican la manipulación activa de variables y la evaluación de los efectos de esas manipulaciones. Los investigadores controlan y manipulan variables para establecer relaciones de causa y efecto.</p></li>
 </ul>
 
-<p>\[
-\mu = \sum_{i} X_i \cdot P[X_i] = X_1 \cdot P[X_1] + \\
-X_2 \cdot P[X_2] + X_3 \cdot P[X_3]
-\]</p>
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.3. Tipo de estudio, Observación.</h2></hgroup><article  id="tema-1.4.3.-tipo-de-estudio-observación.">
 
-<p>\[
-\mu = 10 \cdot 0.40 + 20 \cdot 0.30 + \\
-30 \cdot 0.30 = 4 + 6 + 9 = 19
-\]</p>
-
-</article></slide><slide class=""><hgroup><h2>Ejercicio (3/3)</h2></hgroup><article  id="ejercicio-33">
-
-<ol>
-<li>Del ejercicio 10, calcula la varianza de los pedidos que esperas recibir cada día.</li>
-</ol>
-
-<p>Primero, calculamos la varianza:</p>
-
-<p>\[
-\text{Var}(X) = \sum_{i} (X_i - \mu)^2 P(X_i) = (10 - 19)^2 \cdot 0.40 \\
-+ (20 - 19)^2 \cdot 0.30 + (30 - 19)^2 \cdot 0.30
-\]</p>
-
-<p>\[
-\text{Var}(X) = 69
-\]</p>
-
-</article></slide><slide class=""><hgroup><h2>Ejecicio (3/4)</h2></hgroup><article  id="ejecicio-34">
-
-<ol>
-<li>Del ejercicio 10, calcula la desviación estándar de los pedidos que esperas recibir cada día.</li>
-</ol>
-
-<p>\[
-\text{sqr}(Var(X)) = \sqrt{69} \approx 8.31
-\]</p>
-
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Ejercicios Resueltos Tarea 02</h2></hgroup><article  id="ejercicios-resueltos-tarea-02">
-
-</article></slide><slide class=""><hgroup><h2>Ejercicio (1/1)</h2></hgroup><article  id="ejercicio-11-1">
-
-<ol>
-<li>Si la variable X se distribuye de forma normal. Encuentra la probabilidad de encontrar realizaciones \(P(-1.37&lt;=Z&lt;=2.01)\)</li>
-</ol>
+<p>Determinantes del rendimiento académico:</p>
 
 <ul>
-<li><p>Hacer la gráfica.</p></li>
-<li><p>Por el axioma de probabilidad total, y por simetría. \[
-P(-1.37&lt;=Z&lt;=2.01)=1-(P(Z\geq 1.37)+\\
-P(Z\geq 2.01))
-\] Sustituyendo en la tabla: \[
-1-(0.0853+0.0222)=0.8925
-\]</p></li>
+<li>Se recopila datos sobre horas de estudio.</li>
+<li>Asistencia a clases.</li>
+<li>Uso de recursos de aprendizaje.</li>
+<li>Evaluaciones del profesor.</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Ejecicio (2/1)</h2></hgroup><article  id="ejecicio-21">
+<p>Sin intervenir en los hábitos de estudio de los estudiantes.</p>
 
-<ol>
-<li>Supongamos que los diámetros de los tornillos fabricados por una empresa se distribuyen normalmente con la media \(0.25\) cm y desviación estándar \(0.02\) cm. Un tornillo se considera defectuoso si su diámetro es menor a \(0.20\) cm o mayor \(0.28\) pulgadas. Encuentre el porcentaje de tornillos defectuosos fabricados por la empresa.</li>
-</ol>
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.3. Tipo de estudio, Experimental.</h2></hgroup><article  id="tema-1.4.3.-tipo-de-estudio-experimental.">
+
+<p>Determinantes del rendimiento académico:</p>
 
 <ul>
-<li>Encontrar los valores críticos: \[Z_1=\frac{0.20-0.25}{0.02}=-2.5\]</li>
+<li>Se asignan aleatoriamente a dos grupos de estudiantes.</li>
+<li>Se controlan las variables y la influencia externa.</li>
+<li>Un grupo usa una técnica de estudio específica(novedosa)</li>
+<li>Otro grupo sigue sus métodos habituales.</li>
+<li>Se mide y compara el rendimiento de ambos grupos.</li>
 </ul>
 
-<p>\[Z_1=\frac{0.28-0.25}{0.02}=1.5\]</p>
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.3. Tipo de estudio, Observación.</h2></hgroup><article  id="tema-1.4.3.-tipo-de-estudio-observación.-1">
+
+<p>Los estudios de observación:</p>
 
 <ul>
-<li>Hacer la gráfica</li>
+<li><p>Son más comunes en las ciencias sociales.</p></li>
+<li><p>Tienden a tener más problemas de sesgo (selección, medición, ect…)</p></li>
+<li><p>Es más complicado establecer relaciones causales.</p></li>
+<li><p>Hay más abundancia de datos.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Ejecicio (2/1)</h2></hgroup><article  id="ejecicio-21-1">
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.3. Tipo de estudio, Experimental.</h2></hgroup><article  id="tema-1.4.3.-tipo-de-estudio-experimental.-1">
 
-<p>Los tornillos defectuosos: \[P(D)=P(Z \leq -2.5) + P(Z \geq 1.5) \]</p>
+<p>Los estudios experimentales (RCT):</p>
 
-<p>Por simetría \[P(D)=P(Z \geq 2.5) + P(Z \geq 1.5) \]</p>
+<ul>
+<li><p>Tienden a tener más menos problemas de sesgo.</p></li>
+<li><p>Es más fácil establecer relaciones causa-efecto.</p></li>
+<li><p>Es más costoso recopilar datos.</p></li>
+<li><p>Pueden tener problemas éticos.</p></li>
+<li><p>No aplica para todas las variables.</p></li>
+</ul>
 
-<p>Sustituyendo: \[P(D)=0.0062 + 0.0668=0.073 \]</p>
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.3. Abundancia de Estudios de Observación.</h2></hgroup><article  id="tema-1.4.3.-abundancia-de-estudios-de-observación.">
+
+<ul>
+<li><p>Relevancia y aplicabilidad en la vida práctica.</p></li>
+<li><p>Abundancia de datos.</p></li>
+<li><p>Menos costo y problemas éticos.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.4. Muestreo con Reemplazo</h2></hgroup><article  id="tema-1.4.4.-muestreo-con-reemplazo">
+
+<ul>
+<li><p>En el muestreo con reemplazo, cada elemento de la población tiene la misma probabilidad de ser seleccionado en cada extracción.</p></li>
+<li><p>Después de seleccionar un elemento, este se devuelve a la población antes de realizar la siguiente extracción.</p></li>
+<li><p>Este método permite que un elemento sea seleccionado más de una vez en la muestra.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.4. Muestreo sin Reemplazo</h2></hgroup><article  id="tema-1.4.4.-muestreo-sin-reemplazo">
+
+<ul>
+<li><p>En el muestreo sin reemplazo, cada elemento de la población tiene la misma probabilidad de ser seleccionado en la primera extracción.</p></li>
+<li><p>Este método garantiza que cada elemento sea seleccionado exactamente una vez en la muestra.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.4. Muestreo con Reemplazo (situaciones)</h2></hgroup><article  id="tema-1.4.4.-muestreo-con-reemplazo-situaciones">
+
+<ul>
+<li><p>\(N&lt;n\)</p></li>
+<li><p>En situaciones donde la reposición de los elementos no afecta significativamente los resultados.</p></li>
+<li><p>Para alcanzar mejores propiedades cuando la población es pequeña.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.4. Muestreo con Reemplazo (situaciones)</h2></hgroup><article  id="tema-1.4.4.-muestreo-con-reemplazo-situaciones-1">
+
+<ul>
+<li><p>\(N&lt;n\)</p></li>
+<li><p>Garantizar que cada elemento sea seleccionado exactamente una vez en la muestra.</p></li>
+<li><p>La reposición de los elementos podría distorsionar los resultados.</p></li>
+<li><p>\(N/n\): Depende de cada estudio, requiere investigación.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5. Condiciones Principales del Muestreo iid</h2></hgroup><article  id="tema-1.4.5.-condiciones-principales-del-muestreo-iid">
+
+<ul>
+<li><p>El muestreo iid (independiente e idénticamente distribuido) es fundamental para aplicar correctamente la fórmula de tamaño de muestra. Las principales condiciones son:</p></li>
+<li><p><strong>Independencia</strong>: Las observaciones en la muestra deben ser independientes entre sí, es decir, el valor de una observación no está influenciado por el valor de otra.</p></li>
+<li><p><strong>Identidad de Distribución</strong>: Las observaciones deben tener la misma distribución de probabilidad.</p></li>
+<li><p><strong>Tamaño de Muestra Suficiente</strong>: El tamaño de la muestra debe ser lo suficientemente grande para garantizar que las estimaciones sean precisas y confiables.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\), Continua o Discreta, C/S Remplazo.</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-continua-o-discreta-cs-remplazo.">
+
+<p>Fórmula: \[
+n = \frac{{Z^2 \cdot \sigma^2}}{{E^2}},\; E = Z \frac{\sigma}{\sqrt{n}}
+\]</p>
+
+<p>Donde:</p>
+
+<ul>
+<li><p>\(n\) es el tamaño de la muestra.</p></li>
+<li><p>\(Z\) es el valor crítico de la distribución normal estándar, asociado con el nivel de confianza deseado.</p></li>
+<li><p>\(\sigma\) es la desviación estándar de la población o su estimador.</p></li>
+<li><p>\(E\) es el margen de error deseado.</p></li>
+<li><p>Con o sin remplazo.</p></li>
+</ul>
+
+<!-- El error estándar es una medida de la variabilidad en las estimaciones de la media muestral de una población. Se calcula como la desviación estándar de la población dividida por la raíz cuadrada del tamaño de la muestra (σ/n). El error estándar se reduce a medida que aumenta el tamaño de la muestra, lo que tiene sentido intuitivamente: cuanto más datos tengamos, más precisa será nuestra estimación de la media de la población. -->
+
+<!-- Por otro lado, el margen de error (E) en la fórmula del tamaño de la muestra es la cantidad máxima por la que esperamos que nuestra estimación de la media de la población difiera del valor verdadero. En otras palabras, es la precisión que deseamos en nuestra estimación. En la fórmula del tamaño de la muestra, el margen de error se define como E=Znσ, donde Z es el valor crítico de la distribución normal estándar para un cierto nivel de confianza. -->
+
+<!-- Entonces, aunque ambos conceptos están relacionados (ambos tratan sobre la precisión de nuestras estimaciones), no son lo mismo. El error estándar es una característica de la distribución de la media muestral, mientras que el margen de error es la precisión que deseamos en nuestra estimación y se utiliza para determinar el tamaño de la muestra necesario para lograr esa precisión. Espero que esto aclare la diferencia. -->
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\), Continua o Discreta, Ejemplo (1/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-continua-o-discreta-ejemplo-11">
+
+<ul>
+<li><p>Se quiere estimar la estatura media de los estudiantes de una universidad.</p></li>
+<li><p>Con un nivel de confianza del 90%.</p></li>
+<li><p>Supongamos también que la desviación estándar es de 8 centímetros.</p></li>
+<li><p>Nos interesa tolerar un margen de error del 10%.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\), Continua o Discreta, Ejemplo (1/2)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-continua-o-discreta-ejemplo-12">
+
+<ul>
+<li><p>Se busca en la tabla el valor crítico para un nivel de confianza de 90%, considerando \(\alpha/2=.1/2\) tomando la probabilidad de la cola derecha en tabla: \(P(Z&gt;z)=1-(.9+.1/2)=0.05\) correspondiente a \(Z=1.64\).</p></li>
+<li><p>En Excel:</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>=DISTR.NORM.INV(.95,0,1)=1.6449</pre>
+
+<ul>
+<li>En R:</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>qnorm(.95)</pre>
+
+<pre >## [1] 1.644854</pre>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\), Continua o Discreta, Ejemplo (1/3)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-continua-o-discreta-ejemplo-13">
+
+<p>Sustituyendo:</p>
+
+<p>\[
+n = \frac{{(1.644854)^2 \cdot (8)^2}}{{(.1)^2}}
+\]</p>
+
+<pre class = 'prettyprint lang-r'>(1.644854^2*8^2)/.1^2</pre>
+
+<pre >## [1] 17315.49</pre>
+
+<p>El tamaño de muestra:</p>
+
+<p>\[
+n=17315.49∼18316
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\), Continua o Discreta, Ejemplo (2/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-continua-o-discreta-ejemplo-21">
+
+<p>Para estudiar la imagen de los diferentes políticos, se pide a los encuestados que los evalúen en una escala (continúa) de 0 a 10 puntos.</p>
+
+<ul>
+<li>Si la desviación típica de esta variable es de 1.5 puntos y se quiere estimar la muestra con un nivel de significancia del 95%.</li>
+</ul>
+
+<p>¿Cuántos casos se necesitan para alcanzar un error máximo de 0.05 puntos?</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\), Continua o Discreta, Ejemplo (2/2)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-continua-o-discreta-ejemplo-22">
+
+<ul>
+<li><p>Se busca en la tabla el valor crítico para un nivel de confianza de 95%, considerando \(\alpha/2=.05/2\) tomando la probabilidad de la cola derecha en tabla: \(P(Z&gt;z)=1-0.975=0.025\) correspondiente a \(Z=1.96\).</p></li>
+<li><p>En Excel:</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>=DISTR.NORM.INV(.975,0,1)=1.96</pre>
+
+<ul>
+<li>En R:</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>qnorm(.975)</pre>
+
+<pre >## [1] 1.959964</pre>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\), Continua o Discreta, Ejemplo (2/3)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-continua-o-discreta-ejemplo-23">
+
+<p>Sustituyendo:</p>
+
+<p>\[
+n = \frac{{(1.96)^2 \cdot (1.5)^2}}{{(0.05)^2}}
+\]</p>
+
+<pre class = 'prettyprint lang-r'>(1.96^2*1.5^2)/0.05^2</pre>
+
+<pre >## [1] 3457.44</pre>
+
+<p>El tamaño de muestra:</p>
+
+<p>\[
+n=3457.44∼3458
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) Para una Proporción.</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-para-una-proporción.">
+
+<p>Cuando la proporción de una variable categórica \((X)\) binaria es conocida:</p>
+
+<p>\[
+n = \frac{{Z^2 \cdot p \cdot (1-p)}}{{E^2}}
+\]</p>
+
+<p>Donde:</p>
+
+<ul>
+<li><p>\(X\) se distribuye de forma binomial (éxito o fracaso), \(p\) es la proporción estimada (constante) y \(n\) es el tamaño de la muestra.</p></li>
+<li><p>\(Z\) es el valor crítico de la distribución normal estándar, asociado con el nivel de confianza deseado y \(E\) es el margen de error deseado.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) Para una Proporción, Ejemplo (1/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-para-una-proporción-ejemplo-11">
+
+<p>Se quiere estimar la proporción de hogares que poseen automóvil en una determinada ciudad. Si se estima que la proporción estimada de hogares con automóvil es del 60%.</p>
+
+<p>¿Cuál es el tamaño de muestra necesario para estimar esta proporción con un margen de error máximo del 5% y un nivel de confianza del 95%.</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) Para una Proporción, Ejemplo (2/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-para-una-proporción-ejemplo-21">
+
+<ul>
+<li><p>Se busca en la tabla el valor crítico para un nivel de confianza de 95%, considerando \(\alpha/2=.05/2\) tomando la probabilidad de la cola derecha en tabla: \(P(Z&gt;z)=1-0.975=0.025\) correspondiente a \(Z=1.96\).</p></li>
+<li><p>En Excel:</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>=DISTR.NORM.INV(.975,0,1)=1.96</pre>
+
+<ul>
+<li>En R:</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>qnorm(.975)</pre>
+
+<pre >## [1] 1.959964</pre>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) Para una Proporción, Ejemplo (3/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-para-una-proporción-ejemplo-31">
+
+<p>Sustituyendo:</p>
+
+<p>n = </p>
+
+<pre class = 'prettyprint lang-r'>(1.96^2*.6*(1-.6))/0.05^2</pre>
+
+<pre >## [1] 368.7936</pre>
+
+<p>El tamaño de muestra:</p>
+
+<p>\[
+n=368.7936 \sim 369
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) Para una Proporción, Ejemplo (2/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-para-una-proporción-ejemplo-21-1">
+
+<ul>
+<li>Se quiere estimar la proporción de personas que tienen una cuenta bancaria.</li>
+<li>Si se estima que la proporción estimada de personas con cuenta bancaria es del 40%.</li>
+<li>Se puede tolerar un error maximo de 10%. ¿Cuál es el tamaño de muestra necesario para estimar esta proporción con un nivel de confianza del 90%?</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) Para una Proporción, Ejemplo (2/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-para-una-proporción-ejemplo-21-2">
+
+<ul>
+<li><p>Se busca en la tabla el valor crítico para un nivel de confianza de 90%, considerando \(\alpha/2=.1/2\) tomando la probabilidad de la cola derecha en tabla: \(P(Z&gt;z)=1-0.95=0.05\) correspondiente a \(Z=1.96\).</p></li>
+<li><p>En Excel:</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>=DISTR.NORM.INV(.95,0,1)=1.645</pre>
+
+<ul>
+<li>En R:</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>qnorm(.95)</pre>
+
+<pre >## [1] 1.644854</pre>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) Para una Proporción, Ejemplo (3/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-para-una-proporción-ejemplo-31-1">
+
+<p>Sustituyendo:</p>
+
+<p>n = </p>
+
+<pre class = 'prettyprint lang-r'>(1.645^2*.6*(1-.6))/0.1^2</pre>
+
+<pre >## [1] 64.9446</pre>
+
+<p>El tamaño de muestra:</p>
+
+<p>\[
+n=64.9446∼65
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) sin conocer la proporcion</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-sin-conocer-la-proporcion">
+
+<p>Usando la fórmula:</p>
+
+<p>\[
+n = \left(\frac{Z}{2E}\right)^2
+\]</p>
+
+<p>Cuando: \[
+Max(\sigma) = \sqrt{n \cdot p \cdot (1-p)}=0.5
+\]</p>
+
+<p>Por lo tanto suele dar un tamaño de muestra mayor.</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) sin conocer la proporcion, Ejemplo (1/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-sin-conocer-la-proporcion-ejemplo-11">
+
+<ul>
+<li>Estimar el porcentaje de estudiantes universitarios que tienen una tablet con un margen de error máximo de 10%.</li>
+<li>Usando un nivel de confianza del 90%</li>
+</ul>
+
+<p>¿Cuántos estudiantes se necesitan para esta muestra?</p>
+
+<p>\[
+n = \left(\frac{1.645}{2 \times 0.1}\right)^2
+\]</p>
+
+<pre class = 'prettyprint lang-r'>(1.645/(2*0.1))^2</pre>
+
+<pre >## [1] 67.65062</pre>
+
+<p>\[
+n = 67.65  \sim 68
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) sin conocer la proporcion, Ejemplo (1/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-sin-conocer-la-proporcion-ejemplo-11-1">
+
+<ul>
+<li>Se quiere estimar el porcentaje de hogares que tienen acceso a internet con un margen de error máximo de 5% y un nivel de 95%.</li>
+</ul>
+
+<p>¿Cuántos hogares se necesitan para esta muestra?</p>
+
+<p>\[
+n = \left(\frac{1.645}{2 \times 0.1}\right)^2
+\]</p>
+
+<pre class = 'prettyprint lang-r'>(1.96/(2*0.05))^2</pre>
+
+<pre >## [1] 384.16</pre>
+
+<p>\[
+n = 384.16  \sim 385
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) conociendo \(N\)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-conociendo-n">
+
+<ul>
+<li>Para variables continuas o discretas.</li>
+<li>Si se conoce el tamaño de la población.</li>
+<li>Si se muestrea sin remplazo.</li>
+</ul>
+
+<p>Entonces, se puede usar: \[
+n = \frac{N}{1+N \cdot E^2}
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Tema 1.4.5 Estimación de \(n\) conociendo \(N\), Ejemplo (1/1)</h2></hgroup><article  id="tema-1.4.5-estimación-de-n-conociendo-n-ejemplo-11">
+
+<p>Se quiere estimar la proporción de personas que consumen pasta en una ciudad con una población de 500,000 habitantes, con un nivel de precisión del 5% y un nivel de confianza del 95%.</p>
+
+<p>\[
+n = \frac{500000}{1+500000 \cdot (.05))^2}
+\]</p>
+
+<pre class = 'prettyprint lang-r'>500000/(1+500000*0.05^2)</pre>
+
+<pre >## [1] 399.6803</pre>
+
+<p>\[
+n = 399.6803  \sim 400
+\]</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Revisión</h2></hgroup><article  id="revisión">
 
 </article></slide><slide class=""><hgroup><h2>Revisión</h2></hgroup><article  id="revisión-1">
 
-<pre >## Versión: 28/01/2024</pre>
+<pre >## Versión: 27/02/2024</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Bibliografía</h2></hgroup><article  id="bibliografía">
 
