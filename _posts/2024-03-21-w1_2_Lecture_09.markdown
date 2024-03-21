@@ -1,0 +1,52 @@
+---
+
+layout: post
+title: "Lecture 9: ANOVA. Un Factor."
+author: "Mario H. González-Sauri"
+date: "2024-03-21"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Temas
+
+
+- **Tema 3 -  Análisis de varianza (ANOVA).**
+
+
+
+# Presentación
+
+
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_09.html)
+
+
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_09.html" download>
+  Bajar Presentación
+</a>
+
+
+# Video de la Presentación
+
+[Ver Video](https://youtu.be/wQ7xWCNe_0M?si=4y6SQQCll28Rn_Qf)
+
+
+
+# Tabla de Probabilidad de la Distribución Fisher
+
+
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/assets/resources/t_fisher.pdf" download>
+  Bajar la Tabla
+</a>
+
+
+
+
+
+
+
+
+
+

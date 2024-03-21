@@ -2,7 +2,7 @@
 
 layout: post
 title: "Lecture 5: Introducción a la estimación de parámetros (ejercicios)."
-author: "Mario H. Gonzalez-Sauri"
+author: "Mario H. González-Sauri"
 date: "2024-02-07"
 mermaid: true
 

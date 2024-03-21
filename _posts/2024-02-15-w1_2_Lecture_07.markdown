@@ -2,7 +2,7 @@
 
 layout: post
 title: "Lecture 7: Pruebas de Hipótesis I."
-author: "Mario H. Gonzalez-Sauri"
+author: "Mario H. González-Sauri"
 date: "2024-02-15"
 mermaid: true
 

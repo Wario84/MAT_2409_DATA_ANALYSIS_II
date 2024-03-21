@@ -2,7 +2,7 @@
 
 layout: post
 title: "Lecture 2: Introducción a la Estimación de Parámetros."
-author: "Mario H. Gonzalez-Sauri"
+author: "Mario H. González-Sauri"
 date: "2024-01-21"
 mermaid: true
 

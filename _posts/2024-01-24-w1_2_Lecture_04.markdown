@@ -2,7 +2,7 @@
 
 layout: post
 title: "Lecture 4: La Distribución T-Student."
-author: "Mario H. Gonzalez-Sauri"
+author: "Mario H. González-Sauri"
 date: "2024-01-24"
 mermaid: true
 
