@@ -1,9 +1,9 @@
 ---
 
 layout: post
-title: "Lecture 9: ANOVA. Un Factor."
+title: "Lecture 10: ANOVA. Un Factor. - Ejemplo"
 author: "Mario H. González-Sauri"
-date: "2024-03-31"
+date: "2024-04-09"
 mermaid: true
 
 ---
@@ -20,17 +20,12 @@ mermaid: true
 # Presentación
 
 
-[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_09b.html)
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_09_b.html)
 
 
-<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_09b.html" download>
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_09_b.html" download>
   Bajar Presentación
 </a>
-
-
-# Video de la Presentación
-
-[Ver Video](https://youtu.be/wQ7xWCNe_0M?si=4y6SQQCll28Rn_Qf)
 
 
 
