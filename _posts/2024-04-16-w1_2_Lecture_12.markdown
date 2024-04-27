@@ -1,0 +1,35 @@
+---
+
+layout: post
+title: "Lecture 12: Introducción a los Mínimos Cuadrados Ordinarios (OLS)."
+author: "Mario H. González-Sauri"
+date: "2024-04-16"
+mermaid: true
+
+---
+
+<!--  FORMAT: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+# Temas
+
+
+- **Tema 4 -  Introducción a los Mínimos Cuadrados Ordinarios (OLS).**
+
+
+
+# Presentación
+
+
+[Ver la presentación](https://raw.githack.com/Wario84/MAT_2409_DATA_ANALYSIS_II/master/_posts/lectures/MAT2409_11.html)
+
+
+<a href="https://github.com/Wario84/MAT_2409_DATA_ANALYSIS_II/blob/master/_posts/lectures/MAT2409_11.html" download>
+  Bajar Presentación
+</a>
+
+
+
+
+
+
+
